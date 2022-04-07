@@ -1,0 +1,72 @@
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #39ACA2;
+    background-image: url("../../assets/up.png");
+    z-index: 100;
+}
+
+#carouselExampleDark{
+    width: 80%;
+    margin: auto;
+}
+
+.carousel-indicators {
+    justify-content: center;
+    padding-left: 10%;
+}
+
+#txt{
+    text-align: center;
+}
+
+#bgc{
+    background-color: white;
+}
+
+#centro{
+    background-color: #39ACA2;
+    height: 2500px;
+    margin-top: 8%;
+}
+
+h1{
+    font-size: 48px;
+    margin-bottom: 3%;
+    margin-top: 1%;
+}
+
+h2{
+    font-size: 40px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+h3{
+    text-align: center;
+    color: grey;
+    font-weight: normal;
+    margin-top: 30px;
+}
+
+#productos{
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius:  20px 20px 20px 20px;
+    -webkit-border-radius:  20px 20px 20px 20px;
+    border: 0px solid #000000;
+}
+
+.btn{
+    background-color: #d2eeec;
+    border-color: #205f5a;
+    color: black;
+    border-radius: 15px;
+}
+
+
+
+
+/* 
+justify-content: space-around;
+*/
