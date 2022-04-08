@@ -13,14 +13,16 @@ import { mascotaService } from "../services/mascota.service";
 export class vistamascotaComponent implements OnInit{
 
     constructor(private _activRoute:ActivatedRoute, private _mascotaService:mascotaService){}
-    urlVal="";
+    urlVal=0;
+    catch="";
     cnt=false;
     mascota:Array<Mascota>=[];
 
     ngOnInit(): void {
         this._activRoute.paramMap.subscribe(
             (params) => {
-            this.urlVal = params.get("mascota")+"";
+            this.catch = params.get("mascota")+"";
+            this.urlVal = Number(this.catch);
             
             
         }

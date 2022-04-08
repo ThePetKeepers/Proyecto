@@ -18,4 +18,15 @@ export class mascotaService{
         );
     }
 
+
+    getTop5Mascotas():Observable<any>{
+        return this.conexHttp.get(
+            "/Proyecto/CARPETA_PHP/getTop5Mascotas.php",
+            {headers:new HttpHeaders(
+                {'Content-Type':'application/json'})
+               
+           }
+        );
+    }
+
 }

@@ -17,7 +17,6 @@ import { perfilComponent } from './perfilComponent/perfil.component';
 import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
 import { SuscriptorService } from './services/suscriptor.service';
 import { ServicioService } from './services/servicio.service';
-import { FooterComponent } from './footerComponent/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +31,7 @@ import { FooterComponent } from './footerComponent/footer.component';
     vistamascotaComponent,
     perfilComponent,
     mostrarserviciosComponent,
-    PageNotFoundComponent,
-    FooterComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

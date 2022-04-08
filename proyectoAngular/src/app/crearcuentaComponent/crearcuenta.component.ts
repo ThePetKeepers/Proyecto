@@ -4,34 +4,33 @@ import { RegistrarServices } from "../services/registrar.service";
 import { countries } from "./countries/country-data-store";
 
 @Component({
-    selector: 'crearcuenta-comp',
-    templateUrl: 'crearcuenta.component.html',
-    styleUrls: ['crearcuenta.component.css'],
-    providers: [RegistrarServices]
+    selector:'crearcuenta-comp',
+    templateUrl:'crearcuenta.component.html',
+    styleUrls:['crearcuenta.component.css'],
+    providers:[RegistrarServices]
 })
 
-export class crearcuentaComponent implements OnInit {
-    public countries: any = countries;
-    constructor(private _registrar: RegistrarServices) {
+export class crearcuentaComponent implements OnInit{
+    public countries:any = countries;
+    constructor (private _registrar: RegistrarServices){
 
     }
     ngOnInit(): void {
     }
-    step = 0;
-    cuenta: any[] = [];
-    nom = "";
-    ape1 = "";
-    ape2 = "";
-    cor = "";
-    con = "";
-    DNI = "";
-    nac = "";
-    tel = 0;
-    ciu = "";
-    dir = "";
-    img = "";
-    filesToUpload: any;
-    handleFileInput(event: Event) {
+    cuenta: any[] =[];
+    nom="";
+    ape1="";
+    ape2="";
+    cor="";
+    con="";
+    DNI="";
+    nac="";
+    tel=0;
+    ciu="";
+    dir="";
+    img="";
+    filesToUpload: any; 
+    handleFileInput(event: Event){
         const el = event.currentTarget as HTMLInputElement;
         let FileList: FileList | null = el.files;
         this.filesToUpload = FileList;
@@ -47,23 +46,7 @@ export class crearcuentaComponent implements OnInit {
 
             },(error)=>{console.log("error: ",error); }
 
-            )
+        )
 
-    }
-
-    nextStep() {
-        if (this.step == 1) {
-            this.step = 2;
-        } else if (this.step == 0) {
-            this.step = 1;
-        }
-    }
-
-    backStep() {
-        if (this.step == 1) {
-            this.step = 0;
-        } else if (this.step == 2) {
-            this.step = 1;
-        }
     }
 }

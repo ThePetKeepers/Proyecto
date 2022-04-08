@@ -63,4 +63,16 @@ export class ServicioService {
             }
         );
     }
+
+    getServiciosById(id: Number): Observable<any> {
+        return this.conexHttp.get(
+            "/Proyecto/CARPETA_PHP/getServicioById.php?id=" + id,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
+
+    
 }
