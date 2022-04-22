@@ -20,6 +20,8 @@ public class Suscripcion {
 	@JsonProperty("descripcion")
 	private String descripcion;
 
+	//Notas: @notnull
+	
 	// CONSTRUCTORES
 	@JsonCreator
 	public Suscripcion(@JsonProperty("id") final int id, 
@@ -32,6 +34,9 @@ public class Suscripcion {
 		this.descripcion = descripcion;
 	}
 
+	@JsonCreator
+	public Suscripcion() {}
+	
 	// ENCAPSULACION
 	@JsonProperty("id")
 	public int getId() {

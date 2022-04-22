@@ -13,6 +13,8 @@ public class ServiceProducto {
 	private ProductoDao Dao;
 
 	public ArrayList<Producto> getProductos() throws SQLException, ClassNotFoundException {
+		System.out.println("Antes de conectar");
+
 		Dao = new ProductoDao();
 		try {
 			Dao.connect();
@@ -22,8 +24,10 @@ public class ServiceProducto {
 			e.printStackTrace();
 		}
 
-		ArrayList<Producto> productos = Dao.getProveedores();
+		ArrayList<Producto> productos = Dao.getProductos();
 		Dao.disconnect();
+		
+		System.out.println("Despues de conectar");
 
 		return productos;
 	}

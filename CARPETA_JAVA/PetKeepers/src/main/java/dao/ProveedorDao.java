@@ -1,12 +1,6 @@
 package dao;
 
 //CLASES
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -83,5 +77,43 @@ public class ProveedorDao {
 		}
 
 		return proveedorObtenido;
+	}
+	
+	public void postProveedor(Proveedor proveedor) throws SQLException, NullPointerException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.POST_PROVEEDOR);
+
+		ps.setString(1, proveedor.getNombre());
+		ps.setString(2, proveedor.getCif());
+		ps.setString(3, proveedor.getEmail());
+		ps.setString(4, proveedor.getTelefono());
+		ps.setString(5, proveedor.getCiudad());
+		ps.setString(6, proveedor.getDireccion());
+
+		ps.execute();
+		ps.close();
+	}
+
+	public void updateProveedor(int id, Proveedor proveedor) throws SQLException, NullPointerException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.UPDATE_PROVEEDOR);
+
+		ps.setString(1, proveedor.getNombre());
+		ps.setString(2, proveedor.getCif());
+		ps.setString(3, proveedor.getEmail());
+		ps.setString(4, proveedor.getTelefono());
+		ps.setString(5, proveedor.getCiudad());
+		ps.setString(6, proveedor.getDireccion());
+		ps.setInt(7, id);
+
+		ps.execute();
+		ps.close();
+	}
+	
+	public void deleteProveedor(int id) throws SQLException, NullPointerException, ClassNotFoundException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.DELETE_PROVEEDOR);
+
+		ps.setInt(1, id);
+		ps.execute();
+		ps.close();
+
 	}
 }

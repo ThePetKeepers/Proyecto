@@ -30,6 +30,7 @@ public class ProductoDao {
 				ConstantsApi.USER_CONNECTION,
 				ConstantsApi.PASS_CONNECTION
 		);
+		System.out.println("hola" + bbddConnection);
 	}
 
 	public void disconnect() throws SQLException {
@@ -38,7 +39,8 @@ public class ProductoDao {
 		}
 	}
 
-	public ArrayList<Producto> getProveedores() throws SQLException, ClassNotFoundException {
+	public ArrayList<Producto> getProductos() throws SQLException, ClassNotFoundException {
+		System.out.println(bbddConnection);
 		ArrayList<Producto> productos = new ArrayList<>();
 
 		String select = ConstantsApi.GET_PRODUCTOS;
@@ -66,7 +68,6 @@ public class ProductoDao {
 			productos.add(proveedorObtenido);
 
 		}
-
 		return productos;
 	}
 }

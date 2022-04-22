@@ -1,10 +1,6 @@
 package dao;
 
 //CLASES
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.sql.Connection;
@@ -47,16 +43,64 @@ public class SuscripcionDao {
 
 		while (rs.next()) {
 
-			Suscripcion suscripcionObtenida = new Suscripcion(
-					rs.getInt("id"), 
-					rs.getString("tiempo"),
-					rs.getString("precio"), 
-					rs.getString("descripcion")
-			);
+			Suscripcion suscripcionObtenida = new Suscripcion(rs.getInt("id"), rs.getString("tiempo"),
+					rs.getString("precio"), rs.getString("descripcion"));
 			suscripciones.add(suscripcionObtenida);
 
 		}
 
 		return suscripciones;
 	}
+	
+	public Suscripcion getSuscripcion(int id) throws SQLException, ClassNotFoundException {
+		Suscripcion suscripcionObtenida = new Suscripcion();
+
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_SUSCRIPCION_BY_ID);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			suscripcionObtenida = new Suscripcion(
+					rs.getInt("id"), 
+					rs.getString("tiempo"),
+					rs.getString("precio"),
+					rs.getString("descripcion")
+			);
+		}
+
+		return suscripcionObtenida;
+	}
+
+	public void postSuscripcion(Suscripcion suscripcion) throws SQLException, NullPointerException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.POST_SUSCRIPCION);
+
+		ps.setString(1, suscripcion.getTiempo());
+		ps.setString(2, suscripcion.getPrecio());
+		ps.setString(3, suscripcion.getDescripcion());
+
+		ps.execute();
+		ps.close();
+	}
+
+	public void updateSuscripcion(int id, Suscripcion suscripcion) throws SQLException, NullPointerException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.UPDATE_SUSCRIPCION);
+
+		ps.setString(1, suscripcion.getTiempo());
+		ps.setString(2, suscripcion.getPrecio());
+		ps.setString(3, suscripcion.getDescripcion());
+		ps.setInt(4, id);
+
+		ps.execute();
+		ps.close();
+	}
+	
+	public void deleteSuscripcion(int id) throws SQLException, NullPointerException, ClassNotFoundException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.DELETE_SUSCRIPCION);
+
+		ps.setInt(1, id);
+		ps.execute();
+		ps.close();
+
+	}
+
 }
