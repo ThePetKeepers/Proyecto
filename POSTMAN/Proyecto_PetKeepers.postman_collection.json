@@ -214,7 +214,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/proveedor/12",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/proveedor/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -224,7 +224,7 @@
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
 								"proveedor",
-								"12"
+								"4"
 							]
 						}
 					},
@@ -301,6 +301,80 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/producto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"producto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto_GET_ONE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/producto/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"producto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto_DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/producto/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"producto",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto_POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Collar Rosado\",\r\n    \"descripcion\": \"\",\r\n    \"precio\": 2.50,\r\n    \"puntuacion\": 0,\r\n    \"activo\": true,\r\n    \"imagenes\": [\r\n        \"hola.png\",\r\n        \"adeu.png\"\r\n    ],\r\n    \"proveedor\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/producto",
 							"protocol": "http",

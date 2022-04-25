@@ -19,10 +19,10 @@ public class Objeto {
 	private String descripcion;
 
 	@JsonProperty("precio")
-	private String precio;
+	private double precio;
 
 	@JsonProperty("puntuacion")
-	private int puntuacion;
+	private double puntuacion;
 
 	@JsonProperty("activo")
 	private boolean activo;
@@ -36,8 +36,8 @@ public class Objeto {
 			@JsonProperty("id") final int id,
 			@JsonProperty("nombre") final String nombre,
 			@JsonProperty("descripcion") final String descripcion,
-			@JsonProperty("precio") final String precio,
-			@JsonProperty("puntuacion") final int puntuacion,
+			@JsonProperty("precio") final double precio,
+			@JsonProperty("puntuacion") final double puntuacion,
 			@JsonProperty("activo") final boolean activo,
 			@JsonProperty("imagenes") final ArrayList<String> imagenes) {
 		this.id = id;
@@ -49,6 +49,9 @@ public class Objeto {
 		this.imagenes = imagenes;
 	}
 
+	@JsonCreator
+	public Objeto() {}
+	
 	//ENCAPSULACION
 	@JsonProperty("id")
 	public int getId() {
@@ -71,12 +74,12 @@ public class Objeto {
 	}
 
 	@JsonProperty("precio")
-	public String getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
 	@JsonProperty("puntuacion")
-	public int getPuntuacion() {
+	public double getPuntuacion() {
 		return puntuacion;
 	}
 

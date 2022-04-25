@@ -24,5 +24,9 @@ public class ConstantsApi {
 	
 	// PRODUCTO
 	public static final String GET_PRODUCTOS = "SELECT * FROM petkeepers.producto";
+	public static final String GET_PRODUCTO_BY_ID = "SELECT * FROM petkeepers.producto WHERE id = ?";
+	public static final String POST_PRODUCTO = "INSERT INTO petkeepers.producto (nombre, descripcion, precio, puntuacion, activo, imagenes, id_proveedor) VALUES (?,?,?,?,?,?,?)";
+	public static final String UPDATE_PRODUCTO = "UPDATE petkeepers.producto SET nombre = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_proveedor = ? WHERE (id = ?)";
+	public static final String DELETE_PRODUCTO = "DELETE FROM petkeepers.producto WHERE (id = ?)";
 
 }

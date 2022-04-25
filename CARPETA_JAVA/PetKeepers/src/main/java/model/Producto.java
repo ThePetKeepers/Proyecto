@@ -18,8 +18,8 @@ public class Producto extends Objeto {
 			@JsonProperty("id") final int id,
 			@JsonProperty("nombre") final String nombre,
 			@JsonProperty("descripcion") final String descripcion,
-			@JsonProperty("precio") final String precio,
-			@JsonProperty("puntuacion") final int puntuacion,
+			@JsonProperty("precio") final double precio,
+			@JsonProperty("puntuacion") final double puntuacion,
 			@JsonProperty("activo") final boolean activo,
 			@JsonProperty("imagenes") final ArrayList<String> imagenes,
 			@JsonProperty("proveedor") final Proveedor proveedor) {
@@ -27,6 +27,11 @@ public class Producto extends Objeto {
 		this.proveedor = proveedor;
 	}
 
+	@JsonCreator
+	public Producto() {
+		super();
+	}
+	
 	//ENCAPSULACION
 	@JsonProperty("proveedor")
 	public Proveedor getProveedor() {
