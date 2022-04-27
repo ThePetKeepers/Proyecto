@@ -4,28 +4,28 @@ import { Observable } from "rxjs";
 import { Mascota } from "../clases/mascota";
 
 @Injectable()
-export class mascotaService{
-    mascotas:Array<Mascota>=[];
-    constructor(private conexHttp:HttpClient){}
+export class mascotaService {
+    mascotas: Array<Mascota> = [];
+    constructor(private conexHttp: HttpClient) { }
 
-    getMascotasAjax():Observable<any>{
+    getMascotasAjax(): Observable<any> {
         return this.conexHttp.get(
             "/CARPETA_PHP/mascotasGET.php",
-            {headers:new HttpHeaders(
-                {'Content-Type':'application/json'})
-               
-           }
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
         );
     }
 
 
-    getTop5Mascotas():Observable<any>{
+    getTop5Mascotas(): Observable<any> {
         return this.conexHttp.get(
             "/CARPETA_PHP/getTop5Mascotas.php",
-            {headers:new HttpHeaders(
-                {'Content-Type':'application/json'})
-               
-           }
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
         );
     }
 

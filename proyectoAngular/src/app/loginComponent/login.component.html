@@ -1,19 +1,20 @@
 <body style="font-family: Arial;">
   <div id="tapar">
-    <div class="form-group" id="login">
+    <div class="form-group" id="login"  align="center">
       <h1>Inicia Sesión en tu Cuenta</h1>
       <h3>Inicia sesión utilizando tus redes sociales</h3>
 
       <button class="btn btn-primary" id="botonRed">f</button>
-      <button class="btn btn-primary" id="botonRed">G+</button> 
+      <button class="btn btn-primary" id="botonRed">G+</button>
       <button class="btn btn-primary" id="botonRed">in</button> <br><br>
 
-      <hr style="color: grey;" width="70%"/>
+      <hr style="color: grey;" width="70%" />
 
-      <input type="email"  class="form-control" aria-describedby="emailHelp" placeholder="Correo" [(ngModel)]="email">
-      <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+      <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Correo" [(ngModel)]="email">
+      <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie
+        más.</small>
 
-      <input type="password" class="form-control" placeholder="Contraseña"  [(ngModel)]="password" >    <br>
+      <input type="password" class="form-control" placeholder="Contraseña" [(ngModel)]="password"> <br>
       <button (click)="loginUser()" class="btn btn-primary" id="singButton">Iniciar sesión</button> <br><br>
     </div>
   </div>
@@ -21,6 +22,8 @@
   <div class="form-group" id="register">
     <h2 id="title">¿Eres nuevo en PetKeeper?</h2>
     <div id="texto">¡Crea una nueva cuenta y descubre cientos de servicios para tus queridas mascotas!</div>
-    <button class="btn btn-primary" [routerLink] = "['/crearcuenta']" id="logButton">Crear cuenta</button> 
+    <div align="center">
+      <button class="btn btn-primary" [routerLink]="['/crearcuenta']" id="logButton">Crear cuenta</button>
+    </div>
   </div>
 </body>

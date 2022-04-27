@@ -34,5 +34,4 @@ export class LoginServices{
             return {headers: new HttpHeaders({'Content-Type':'application/json'})};
         }
     }
-
 }

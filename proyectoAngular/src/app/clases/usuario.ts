@@ -10,6 +10,7 @@ export class Usuario {
     password: String = "";
     nacimiento: String = "";
     telefono: String = "";
+    pais: String = "";
     ciudad: String = "";
     direccion: String = "";
     foto: String = "";
@@ -21,7 +22,7 @@ export class Usuario {
         primer_apellido: String = "", segundo_apellido: String = "",
         email: String = "", password: String = "",
         nacimiento: String = "", telefono: String = "",
-        ciudad: String = "",
+        pais: String = "", ciudad: String = "",
         direccion: String = "", foto: String = "",
         mascotas:Array<Mascota> = [], productos:Array<Producto> = []
     ) {
@@ -33,6 +34,7 @@ export class Usuario {
         this.password = password;
         this.nacimiento = nacimiento;
         this.telefono = telefono;
+        this.pais = pais;
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.foto = foto;

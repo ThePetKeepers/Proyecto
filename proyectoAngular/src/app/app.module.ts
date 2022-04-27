@@ -17,6 +17,8 @@ import { perfilComponent } from './perfilComponent/perfil.component';
 import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
 import { SuscriptorService } from './services/suscriptor.service';
 import { ServicioService } from './services/servicio.service';
+import { FooterComponent } from './footerComponent/footer.component';
+import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ServicioService } from './services/servicio.service';
     vistamascotaComponent,
     perfilComponent,
     mostrarserviciosComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FooterComponent,
+    SubscriptionsComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,7 @@ import { ServicioService } from './services/servicio.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [SuscriptorService, ServicioService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

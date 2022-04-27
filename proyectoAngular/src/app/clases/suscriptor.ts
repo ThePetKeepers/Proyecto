@@ -17,7 +17,7 @@ export class Suscriptor extends Usuario {
             primer_apellido: String = "", segundo_apellido: String = "",
             email: String = "", password: String = "",
             nacimiento: String = "", telefono: String = "",
-            ciudad: String = "",
+            pais: String = "", ciudad: String = "",
             direccion: String = "", foto: String = "",
             mascotas:Array<Mascota> = [], productos:Array<Producto> = [],
             id_tipo_usuario: String = "", pago: Pago = new Pago(),
@@ -28,7 +28,7 @@ export class Suscriptor extends Usuario {
             (
                 id, nombre, primer_apellido, segundo_apellido,
                 email, password, nacimiento, telefono,
-                ciudad, direccion, foto, 
+                pais, ciudad, direccion, foto, 
                 mascotas, productos
             );
         this.id_tipo_usuario = id_tipo_usuario;
