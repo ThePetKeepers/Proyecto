@@ -1,9 +1,7 @@
 {
     "/CARPETA_PHP/*": {
-    //Juan y Diego 
-    "target": "http://localhost:80",
-    //Cristian "target": "http://localhost:8888",
-    "secure": false,
-    "logLevel": "debug"
+        "target": "http://localhost:80",
+        "secure": false,
+        "logLevel": "debug"
     }
 }
