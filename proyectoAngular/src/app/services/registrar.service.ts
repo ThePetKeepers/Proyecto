@@ -42,7 +42,17 @@ postEntidadAjax(nombre:String,clase:Number,descripcion:String,tipo:String,PKE:St
     postNuevaCuenta(nom:string,ape1:string,ape2:string,cor:string,con:string,DNI:string,nac:string,tel:Number,ciu:string,dir:string,filesToUpload:FileList):Observable<any>{
         let url="/CARPETA_PHP/crearcuentaPOST.php";
         let formData:FormData= new FormData();
-        formData.append("a","dsa");
+
+        formData.append("nom",nom);
+        formData.append("ape1",ape1);
+        formData.append("ape2",ape2);
+        formData.append("cor",cor);
+        formData.append("con",con);
+        formData.append("DNI",DNI);
+        formData.append("nac",nac);
+        formData.append("tel",tel+"");
+        formData.append("ciu",ciu);
+        formData.append("dir",dir);
         return this.conexHttp.post(url,formData);
     }
 /*
