@@ -7,7 +7,7 @@
     height: 50px;
     font-size: 20px;
     margin-top: 40px;
-    margin-left: 14%;
+
 }
 
 #botonRed{
@@ -29,7 +29,6 @@ h1{
 h3{
     color: grey;
     padding-top: 2%;
-    padding-left: 15%;
     padding-bottom: 2%;
 }
 
@@ -37,10 +36,10 @@ input{
     border-radius: 25px;
     background-color: #EEF5F3;
     border-color: white;
-    width: 600px;
+    width: 70%;
     height: 40px;
     font-size: 17px;
-    padding-left: 20px;
+
     margin-top: 25px;
 }
 
@@ -56,7 +55,7 @@ input{
     float: right;
     top:0px;
     right:0px;
-    bottom:0px;
+    bottom:-10px;
     left:70%;
     position: absolute;
     background-color: #39ACA2;
@@ -77,11 +76,11 @@ input{
     border-radius: 25px;
     background-color: white;
     border-color: transparent;
-    width: 350px;
+    width: 60%;
     height: 50px;
     font-size: 20px;
     margin-top: 10%;
-    margin-left: 16%;
+
 }
 
 #title{

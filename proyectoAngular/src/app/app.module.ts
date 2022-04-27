@@ -15,9 +15,8 @@ import { mascotaComponent } from './mascotaComponent/mascota.component';
 import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.component';
 import { perfilComponent } from './perfilComponent/perfil.component';
 import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
-import { SuscriptorService } from './services/suscriptor.service';
-import { ServicioService } from './services/servicio.service';
 import { FooterComponent } from './footerComponent/footer.component';
+import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,8 @@ import { FooterComponent } from './footerComponent/footer.component';
     perfilComponent,
     mostrarserviciosComponent,
     PageNotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    SubscriptionsComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +41,7 @@ import { FooterComponent } from './footerComponent/footer.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [SuscriptorService, ServicioService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

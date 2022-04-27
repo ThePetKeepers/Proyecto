@@ -1,14 +1,7 @@
 <div id="tapar">
   <img [src]="'/assets/logoSinFondo.png'" id="logo" href="#" [routerLink]="['/']">
-  <h1>
-    <ng-container *ngIf="servicioPedido=='null'">
-      Todos los servicios
-    </ng-container>
-    <ng-container *ngIf="servicioPedido!='null'">
-      {{ servicioPedido.toUpperCase() }}
-    </ng-container>
-  </h1>
-  
+  <h1>{{ serv.toUpperCase() }}</h1>
+
   <ul id="buscador" class="navbar-nav me-auto mb-2 mb-lg-0">
     <li class="nav-item">
       <input type="text" placeholder="Buscar en todas las categorías..." (keyup.enter)="sendit()"
@@ -28,13 +21,13 @@
   <h2>Novedades</h2>
   <p id="anuncios">624 anuncios para ti</p>
   <ul>
-    <ng-container *ngFor="let servicio of servicios">
-      <li style="display: inline-block;  padding-top: 2%; margin-right: 2%;">
-        <div class="card" id="servicios" style="width: 30rem;" [routerLink]="['/vistaservicio',servicio.id]">
+    <ng-container *ngFor="let ser of servicio">
+      <li style="display: inline-block;  padding-top: 2%; margin-right: 2%;" *ngIf="ser.nombre.toLowerCase() == serv.toLowerCase()">
+        <div class="card" id="servicios" style="width: 30rem;" [routerLink] = "['/vistaservicio',ser.id]">
           <img class="card-img-top" src="./../../assets/dog.png" style="margin-top: 5%; padding: 5%"
             alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-text">{{servicio.descripcion}}</h5>
+            <h5 class="card-text">{{ser.descripcion}}</h5>
           </div>
         </div>
       </li>

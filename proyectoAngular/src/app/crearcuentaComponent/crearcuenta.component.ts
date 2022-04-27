@@ -37,15 +37,15 @@ export class crearcuentaComponent implements OnInit {
         this.filesToUpload = FileList;
     }
 
-    crearCuenta(){
-        this.cuenta=[{"nom":this.nom,"ape1":this.ape1,"ape2":this.ape2,"cor":this.cor,"con":this.con,"DNI":this.DNI,"nac":this.nac,"tel":this.tel,"ciu":this.ciu,"dir":this.dir}]
-    
-        this._registrar.postNuevaCuenta(this.nom,this.ape1,this.ape2,this.cor,this.con,this.DNI,this.nac,this.tel,this.ciu,this.dir,this.filesToUpload)
-        .subscribe(
-            (result) => {
-                alert(result);
+    crearCuenta() {
+        this.cuenta = [{ "nom": this.nom, "ape1": this.ape1, "ape2": this.ape2, "cor": this.cor, "con": this.con, "DNI": this.DNI, "nac": this.nac, "tel": this.tel }]
+        this._registrar.postNuevaCuenta(this.cuenta)
+            .subscribe(
+                (result) => {
+                    console.log(result);
+                    window.location.reload();
 
-            },(error)=>{console.log("error: ",error); }
+                }, (error) => { console.log("error: ", error); window.location.reload(); }
 
             )
 

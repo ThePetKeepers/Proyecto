@@ -10,7 +10,7 @@ export class mascotaService{
 
     getMascotasAjax():Observable<any>{
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/mascotasGET.php",
+            "/CARPETA_PHP/mascotasGET.php",
             {headers:new HttpHeaders(
                 {'Content-Type':'application/json'})
                

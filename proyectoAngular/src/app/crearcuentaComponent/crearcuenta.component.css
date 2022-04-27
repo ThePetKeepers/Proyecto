@@ -2,7 +2,7 @@ input{
     border-radius: 25px;
     background-color: #EEF5F3;
     border-color: white;
-    width: 600px;
+    width: 60%;
     height: 40px;
     font-size: 16px;
     display: inline-flex;
@@ -30,6 +30,7 @@ select{
     border-radius: 25px;
     border-color: white;
     background-color: #39ACA2;
+    border-color: #205f5a;
 }
 
 h1{
@@ -72,4 +73,5 @@ button:hover {
     color: black;
     border-color: #205f5a;
 }
+
 
