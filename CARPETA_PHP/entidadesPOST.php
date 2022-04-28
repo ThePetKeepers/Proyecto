@@ -33,7 +33,7 @@ foreach ($_FILES as $file) {
     move_uploaded_file($nomImg,$UrlImg);
 }
 
-$SoloUrl= "http://localhost/CARPETA_PHP/imagenes/".$SoloUrl;
+$SoloUrl= "http://localhost/Proyecto/CARPETA_PHP/imagenes/".$SoloUrl;
 $clase = intval($clas);
 $crear = "INSERT INTO entidades (nombre,clase,descripcion,tipo,PKE,imagen) VALUES ('$nom','$clase','$des','$tipo','$PKE','$SoloUrl')";
 if(mysqli_query($db,$crear)){
