@@ -53,5 +53,15 @@ export class AppComponent {
               console.log(error);
           }
       )
+
+      this._entidadesService.getUsrToken().subscribe(
+        (resul)=>{ 
+            console.log(resul);
+
+        },
+        (error)=>{
+            console.log(error);
+        }
+    )
     }
 }

@@ -21,4 +21,19 @@ if($resultedsignature == $signature) {
 }
 }
 
+
+function getUsr($jwt_token){
+    $secret_key = 'Secret Key';
+    $jwt_values = explode('.', $jwt_token);
+    $header =$jwt_values[0] ;
+    $payload = $jwt_values[1];
+    $signature = $jwt_values[2];
+    $resultedsignature = base64_encode(hash_hmac('sha256', $header . '.' . $payload , $secret_key, true));
+    if($resultedsignature == $signature) { 
+        return $payload; 
+    } else { 
+        return false; 
+    }
+}
+
 ?>
