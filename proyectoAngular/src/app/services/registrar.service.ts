@@ -12,14 +12,14 @@ constructor(private conexHttp:HttpClient) { }
 postEntidadAjax(nombre:String,clase:Number,descripcion:String,tipo:String,PKE:String,imagen:String):Observable<any>{
     let formData:FormData= new FormData();  
     return this.conexHttp.post(
-            "/Proyecto/CARPETA_PHP/entidadesPOST.php",
+            "/CARPETA_PHP/entidadesPOST.php",
             {nombre,clase,descripcion,tipo,PKE,imagen},{headers:new HttpHeaders(
                 {'Content-Type':'application/json'})
            }
         );
      }
     postFiles(nombre:string,clase:Number,descripcion:string,tipo:string,PKE:string,filesToUpload:FileList):Observable<any>{
-        let url="/Proyecto/CARPETA_PHP/entidadesPOST.php";
+        let url="/CARPETA_PHP/entidadesPOST.php";
         let formData:FormData = new FormData();
         for (var i=0 ;i<filesToUpload.length;i++){
             let file = filesToUpload.item(i);
@@ -40,7 +40,7 @@ postEntidadAjax(nombre:String,clase:Number,descripcion:String,tipo:String,PKE:St
     }
 
     postNuevaCuenta(nom:string,ape1:string,ape2:string,cor:string,con:string,DNI:string,nac:string,tel:Number,ciu:string,dir:string,filesToUpload:FileList):Observable<any>{
-        let url="/Proyecto/CARPETA_PHP/crearcuentaPOST.php";
+        let url="/CARPETA_PHP/crearcuentaPOST.php";
         let formData:FormData= new FormData();
 
         formData.append("nom",nom);

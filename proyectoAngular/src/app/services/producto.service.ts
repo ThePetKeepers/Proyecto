@@ -1,16 +1,16 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Mascota } from "../clases/mascota";
+
 
 @Injectable()
-export class mascotaService {
-    mascotas: Array<Mascota> = [];
+export class ProductoService {
     constructor(private conexHttp: HttpClient) { }
 
-    getMascotasAjax(): Observable<any> {
+
+    getAllProductos(): Observable<any> {
         return this.conexHttp.get(
-            "/CARPETA_PHP/mascotasGET.php",
+            "/CARPETA_PHP/getAllProductos.php",
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -18,15 +18,13 @@ export class mascotaService {
         );
     }
 
-
-    getTop5Mascotas(): Observable<any> {
+    getTop5Productos(): Observable<any> {
         return this.conexHttp.get(
-            "/CARPETA_PHP/getTop5Mascotas.php",
+            "/CARPETA_PHP/getTop5Productos.php",
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
             }
         );
     }
-
 }

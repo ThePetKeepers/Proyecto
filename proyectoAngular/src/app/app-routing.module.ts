@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule }   from '@angular/forms';
@@ -12,6 +13,7 @@ import { mascotaComponent } from './mascotaComponent/mascota.component';
 import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.component';
 import { perfilComponent } from './perfilComponent/perfil.component';
 import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
+import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,7 @@ const routes: Routes = [
   {path:'main',component:mainComponent},
   {path:'login',component:loginComponent},
   {path:'servicio',component:servicioComponent},
+  {path:'suscripciones',component:SubscriptionsComponentComponent},
   {path:'servicio/:tipo',component:servicioComponent},
   {path:'mensajes',component:mensajesComponent},
   {path:'crearcuenta',component:crearcuentaComponent},

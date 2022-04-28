@@ -14,17 +14,17 @@ if(!$db){
     echo json_encode("ERROR");
 }else{
 $usr = json_decode(file_get_contents("php://input"),true);
-$nom = $usr["email"];
+$mail = $usr["email"];
 $pas= $usr["password"];
 $value=array();
 $resposta= array();
 
-$query = $db->query("select * from cliente WHERE nombre='$nom';");
+$query = $db->query("select * from cliente WHERE email='$mail';");
 while($fila = mysqli_fetch_array($query)){
     $value=$fila;
 }
 
-if($value[1] == $nom && $value[5] == $pas){
+if($value[4] == $mail && $value[5] == $pas){
     $resposta["login"]=true;
 }else{
     $resposta["login"]=false;
