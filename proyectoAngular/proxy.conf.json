@@ -1,5 +1,5 @@
 {
-    "/Proyecto/Proyecto/CARPETA_PHP/*": {
+    "/Proyecto/CARPETA_PHP/*": {
         "target": "http://localhost:8888",
         "secure": false,
         "logLevel": "debug"
