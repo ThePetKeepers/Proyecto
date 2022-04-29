@@ -36,7 +36,7 @@ export class EntidadesService{
 
     deleteEntidad(nombre:String):Observable<any>{
         return this.conexHttp.post(
-                "/CARPETA_PHP/entidadesDELETE.php",
+                "/Proyecto/CARPETA_PHP/entidadesDELETE.php",
                 {nombre},{headers:new HttpHeaders(
                     {'Content-Type':'application/json'})
                }
@@ -44,7 +44,7 @@ export class EntidadesService{
          }
     postEntidadAjax(nombre:String,clase:Number,descripcion:String,tipo:String,PKE:String,imagen:String):Observable<any>{
         return this.conexHttp.post(
-                "/CARPETA_PHP/entidadesPOST.php",
+                "/Proyecto/CARPETA_PHP/entidadesPOST.php",
                 {nombre,clase,descripcion,tipo,PKE,imagen},{headers:new HttpHeaders(
                     {'Content-Type':'application/json'})
                }
@@ -55,7 +55,7 @@ export class EntidadesService{
     
     getEntidadAjax():Observable<any>{
         return this.conexHttp.get(
-            "/CARPETA_PHP/entidadesGET.php",
+            "/Proyecto/CARPETA_PHP/entidadesGET.php",
             {headers:new HttpHeaders(
                 {'Content-Type':'application/json'})
                
@@ -64,7 +64,7 @@ export class EntidadesService{
     }
     getUnaEntidadAjax(id:Number):Observable<any>{
         return this.conexHttp.post(
-            "/CARPETA_PHP/entidadGET.php",
+            "/Proyecto/CARPETA_PHP/entidadGET.php",
             {id},{headers:new HttpHeaders(
                 {'Content-Type':'application/json'})
            }
@@ -73,7 +73,7 @@ export class EntidadesService{
 
     getToken():Observable<any>{
         return this.conexHttp.get(
-            "/CARPETA_PHP/repPeticiones.php",
+            "/Proyecto/CARPETA_PHP/repPeticiones.php",
             {headers:new HttpHeaders(
                 {'Content-Type':'application/json','Authorization': ''+localStorage.getItem("token")})
            }
