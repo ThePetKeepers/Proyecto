@@ -8,7 +8,7 @@ export class LoginServices{
 
     postDadesAjax(email:any,password:any):Observable<any>{
         return this.conexHttp.post(
-            "/CARPETA_PHP/myAPI.php",
+            "/Proyecto/CARPETA_PHP/myAPI.php",
             {email,password},this.generarHeaders()
         );
 
@@ -16,13 +16,13 @@ export class LoginServices{
 
          registrarUsuario(email:any,password:any):Observable<any>{
              return this.conexHttp.post(
-                 "/CARPETA_PHP/register.php",
+                 "/Proyecto/CARPETA_PHP/register.php",
                  {email,password},this.generarHeaders()
              )
          }
          loguearUsuario(email:any,password:any):Observable<any>{
             return this.conexHttp.post(
-                "http://localhost:4200/CARPETA_PHP/login.php",
+                "http://localhost:4200/Proyecto/CARPETA_PHP/login.php",
                 {email,password},this.generarHeaders()
             )
         }
