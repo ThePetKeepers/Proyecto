@@ -1,6 +1,6 @@
 {
     "/Proyecto/CARPETA_PHP/*": {
-        "target": "http://localhost:8888",
+        "target": "http://localhost:80",
         "secure": false,
         "logLevel": "debug"
     }

@@ -58,6 +58,20 @@ public class ServiceProducto {
 		Dao.disconnect();
 	}
 	
+	public void updateProducto(int id, Producto producto) throws SQLException, NullPointerException, ClassNotFoundException {
+		Dao = new ProductoDao();
+		try {
+			Dao.connect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		Dao.updateProducto(id, producto);
+		Dao.disconnect();
+	}
+	
 	public void deleteProducto(int id) throws SQLException, NullPointerException, ClassNotFoundException {
 		Dao = new ProductoDao();
 		try {

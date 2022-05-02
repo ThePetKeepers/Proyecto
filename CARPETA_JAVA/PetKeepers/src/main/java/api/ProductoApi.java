@@ -53,6 +53,14 @@ public class ProductoApi {
 		return Response.ok("Se ha creado un nuevo producto", MediaType.APPLICATION_JSON).build();
 	}
 	
+	@POST
+	@Path("{id}")
+	public Response postProducto(Producto producto, @PathParam("id") int id) throws ClassNotFoundException, SQLException, NullPointerException {
+		service = new ServiceProducto();
+		service.updateProducto(id, producto);
+		return Response.ok("Se ha actualizado producto", MediaType.APPLICATION_JSON).build();
+	}
+	
 	@DELETE
 	@Path("{id}")
 	public Response deleteProducto(@PathParam("id") int id) throws ClassNotFoundException, SQLException, NullPointerException {

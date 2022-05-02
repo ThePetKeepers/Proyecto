@@ -19,12 +19,16 @@ public class Servicio extends Objeto {
 			@JsonProperty("nombre") final String nombre,
 			@JsonProperty("descripcion") final String descripcion,
 			@JsonProperty("precio") final double precio,
-			@JsonProperty("puntuacion") final int puntuacion,
+			@JsonProperty("puntuacion") final double puntuacion,
 			@JsonProperty("activo") final boolean activo,
 			@JsonProperty("imagenes") final ArrayList<String> imagenes,
 			@JsonProperty("suscriptor") final Suscriptor suscriptor) {
 		super(id, nombre, descripcion, precio, puntuacion, activo, imagenes);
 		this.suscriptor = suscriptor;
+	}
+	
+	@JsonCreator
+	public Servicio() {	
 	}
 
 	//ENCAPSULACION

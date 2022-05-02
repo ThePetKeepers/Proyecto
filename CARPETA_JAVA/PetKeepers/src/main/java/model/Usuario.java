@@ -26,7 +26,13 @@ public class Usuario {
 
 	@JsonProperty("password")
 	private String password;
-
+	
+	@JsonProperty("dni")
+	private String dni;
+	
+	@JsonProperty("nacimiento")
+	private String nacimiento;
+	
 	@JsonProperty("telefono")
 	private String telefono;
 
@@ -42,9 +48,6 @@ public class Usuario {
 	@JsonProperty("mascotas")
     private ArrayList<Mascota> mascotas = new ArrayList<>();
 
-	@JsonProperty("productos")
-    private ArrayList<Producto> productos = new ArrayList<>();
-
 	//CONSTRUCTORES
 	@JsonCreator
 	public Usuario(
@@ -54,31 +57,38 @@ public class Usuario {
 			@JsonProperty("segundo_apellido") final String segundo_apellido,
 			@JsonProperty("email") final String email,
 			@JsonProperty("password") final String password,
+			@JsonProperty("dni") final String dni,
+			@JsonProperty("nacimiento") final String nacimiento,
 			@JsonProperty("telefono") final String telefono,
 			@JsonProperty("ciudad") final String ciudad,
 			@JsonProperty("direccion") final String direccion,
 			@JsonProperty("foto") final String foto,
-			@JsonProperty("mascotas") final ArrayList<Mascota> mascotas,
-			@JsonProperty("productos") final ArrayList<Producto> productos) {
+			@JsonProperty("mascotas") final ArrayList<Mascota> mascotas) {
 		this.id = id;
 		this.nombre = nombre;
 		this.primer_apellido = primer_apellido;
 		this.segundo_apellido = segundo_apellido;
 		this.email = email;
 		this.password = password;
+		this.dni = dni;
+		this.nacimiento = nacimiento;
 		this.telefono = telefono;
 		this.ciudad = ciudad;
 		this.direccion = direccion;
 		this.foto = foto;
 		this.mascotas = mascotas;
-		this.productos = productos;
 	}
-
+	
+	@JsonCreator
+	public Usuario() {}
+	
 	//ENCAPSULACION
+
 	@JsonProperty("id")
 	public int getId() {
 		return id;
 	}
+
 	@JsonProperty("id")
 	public void setId(int id) {
 		this.id = id;
@@ -109,6 +119,16 @@ public class Usuario {
 		return password;
 	}
 
+	@JsonProperty("dni")
+	public String getDni() {
+		return dni;
+	}
+
+	@JsonProperty("nacimiento")
+	public String getNacimiento() {
+		return nacimiento;
+	}
+
 	@JsonProperty("telefono")
 	public String getTelefono() {
 		return telefono;
@@ -133,12 +153,4 @@ public class Usuario {
 	public ArrayList<Mascota> getMascotas() {
 		return mascotas;
 	}
-
-	@JsonProperty("productos")
-	public ArrayList<Producto> getProductos() {
-		return productos;
-	}
-	
-	
-
 }

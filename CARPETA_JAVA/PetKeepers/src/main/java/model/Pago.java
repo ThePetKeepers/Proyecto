@@ -10,32 +10,37 @@ public class Pago {
 	//ATRIBUTOS
 	@JsonProperty("id")
 	private int id;
-
 	@JsonProperty("tipo")
-	private String nombre;
+	private String tipo;
 
 	//CONSTRUCTORES
 	@JsonCreator
 	public Pago(
-			@JsonProperty("id") final int id,
-			@JsonProperty("tipo") final String nombre) {
+			@JsonProperty("id") final int id, 
+			@JsonProperty("tipo") final String tipo) {
 		this.id = id;
-		this.nombre = nombre;
+		this.tipo = tipo;
 	}
+	
+	@JsonCreator
+	public Pago() {}
 
 	//ENCAPSULACION
 	@JsonProperty("id")
 	public int getId() {
 		return id;
 	}
+
 	@JsonProperty("id")
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
 	@JsonProperty("tipo")
-	public String getNombre() {
-		return nombre;
+	public String getTipo() {
+		return tipo;
 	}
+
+	
 	
 }

@@ -21,7 +21,7 @@ public class Mascota extends Objeto {
 			@JsonProperty("id") final int id,
 			@JsonProperty("nombre") final String nombre,
 			@JsonProperty("descripcion") final String descripcion,
-			@JsonProperty("precio") final String precio,
+			@JsonProperty("precio") final double precio,
 			@JsonProperty("puntuacion") final int puntuacion,
 			@JsonProperty("activo") final boolean activo,
 			@JsonProperty("imagenes") final ArrayList<String> imagenes,
