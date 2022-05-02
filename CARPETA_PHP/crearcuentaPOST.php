@@ -23,6 +23,14 @@ $fecha_nacimiento= $_POST["nac"];
 $telefono= $_POST["tel"];
 $ciudad= $_POST["ciu"];
 $direccion= $_POST["dir"];
+var_dump($_FILES);
+foreach ($_FILES as $file) {
+    $nomImg=$file["tmp_name"];
+    $SoloUrl = $file["name"];
+    $UrlImg = $folderUrl.$file["name"]; 
+    move_uploaded_file($nomImg,$UrlImg);
+}
+$SoloUrl= "http://localhost/Proyecto/CARPETA_PHP/imagenes/".$SoloUrl;
 
 $update = "INSERT INTO cliente (nombre,primer_apellido,segundo_apellido,email,password,dni,nacimiento,telefono,ciudad,direccion) VALUES ('$nom','$ape1','$ape2','$correo','$contraseña','$DNI','$fecha_nacimiento','$telefono','$ciudad','$direccion')";
 if(mysqli_query($db,$update)){

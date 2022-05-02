@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EntidadesService } from './services/entidades.service';
+import { UsuarioService } from './services/usuario.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers:[EntidadesService]
+  providers:[EntidadesService,UsuarioService]
 })
 export class AppComponent {
   title = 'Practica05';
 
-  constructor(private _entidadesService:EntidadesService){
+  constructor(private _entidadesService:EntidadesService, private _usuarioService:UsuarioService){
 
 }
 
@@ -22,6 +23,7 @@ export class AppComponent {
   }
   limit=true;
   search='';
+  id=0;
   buscador(){
     if(this.search == ''){
         this.limit=true;
@@ -56,7 +58,17 @@ export class AppComponent {
 
       this._entidadesService.getUsrToken().subscribe(
         (resul)=>{ 
-            console.log(resul);
+            var mail = resul;
+            this._usuarioService.getUserByEmail(mail).subscribe(
+                (resul)=>{
+                    this.id=resul.id;
+                    console.log(this.id);
+                    
+                },
+                (error)=>{
+                    console.log(error);
+                }
+            )
 
         },
         (error)=>{

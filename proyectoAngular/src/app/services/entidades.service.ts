@@ -82,7 +82,7 @@ export class EntidadesService{
 
     getUsrToken():Observable<any>{
         return this.conexHttp.get(
-            "/CARPETA_PHP/repUserToken.php",
+            "/Proyecto/CARPETA_PHP/repUserToken.php",
             {headers:new HttpHeaders(
                 {'Content-Type':'application/json','Authorization': ''+localStorage.getItem("token")})
            }

@@ -29,11 +29,8 @@ function getUsr($jwt_token){
     $payload = $jwt_values[1];
     $signature = $jwt_values[2];
     $resultedsignature = base64_encode(hash_hmac('sha256', $header . '.' . $payload , $secret_key, true));
-    if($resultedsignature == $signature) { 
-        return $payload; 
-    } else { 
-        return false; 
-    }
+    return base64_decode($payload); 
+
 }
 
 ?>

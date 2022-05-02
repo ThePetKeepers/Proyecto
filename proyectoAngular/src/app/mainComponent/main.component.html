@@ -126,52 +126,6 @@
           </div>
         </div>
       </ng-container>
-      <!--
-          <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/gatos.png" alt="Card image cap" style="margin-top: 18%;">
-          <div class="card-body">
-            <h5 class="card-title">Rascador para gatos</h5>
-            <p class="card-text">Rascador con poste y pelota para gatos.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/jaula.jpeg" alt="Card image cap" style="margin-top: 15%;">
-          <div class="card-body">
-            <h5 class="card-title">Jaula para pajaros</h5>
-            <p class="card-text">Alamber presenta la Ninfa Cromo, una espaciosa jaula diseñada para todo tipo de
-              pájaros,
-              con gran puerta frontal para un fácil acceso al interior.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/conejo.jpeg" alt="Card image cap" style="margin-top: 15%;">
-          <div class="card-body">
-            <h5 class="card-title">Snacks para conejos</h5>
-            <p class="card-text">Barritas de fruta para conejos. Son beneficiosas para estas mascotas porque les ayuda a
-              limar los dientes.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/tortuga.jpeg" alt="Card image cap" style="margin-top: 15%;">
-          <div class="card-body">
-            <h5 class="card-title">Tortuguera</h5>
-            <p class="card-text">Tortuguera de plástico, perfecta para mantener a tus tortugas pequeñas en un espacio
-              habilitado para ellas.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Comprar</a>
-            </div>
-          </div>
-        </div>
--->
     </div>
     <h2 align="center" style="margin-top:5%;">Usuarios destacados</h2>
     <ng-container *ngFor="let servicio of servicios">
@@ -187,75 +141,12 @@
 
           </div>
           <div class="text-center">
-            <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Contactar</a>
+            <a style="width: 100px; height: 30px; font-size: 13px;" [routerLink]="['/vistaservicio',servicio.id]" class="btn btn-primary">Contactar</a>
           </div>
         </div>
       </div>
     </ng-container>
-    <!-- 
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="../assets/gato.jpg" alt="Card image cap" style="padding: 5%;">
-          <div class="card-body">
-            <h5 class="card-title">Laura Perez</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu rhoncus velit.
-              Pellentesque fringilla ligula massa, sed hendrerit metus varius quis. Aenean ut justo lacinia, tempor
-              augue
-              sed, tincidunt quam. Nullam at orci id magna ultricies lacinia ac et turpis. Quisque eget nulla vel nibh
-              pretium pharetra vitae id est. Duis elit sapien, commodo molestie lectus pellentesque, tincidunt pharetra
-              nisl.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Contactar</a>
-            </div>
-          </div>
-        </div>
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/nose.jpeg" alt="Card image cap" style="padding: 5%;">
-          <div class="card-body">
-            <h5 class="card-title">Manuel Gomez</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu rhoncus velit.
-              Pellentesque fringilla ligula massa, sed hendrerit metus varius quis. Aenean ut justo lacinia, tempor
-              augue
-              sed, tincidunt quam. Nullam at orci id magna ultricies lacinia ac et turpis. Quisque eget nulla vel nibh
-              pretium pharetra vitae id est. Duis elit sapien, commodo molestie lectus pellentesque, tincidunt pharetra
-              nisl.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Contactar</a>
-            </div>
-          </div>
-        </div>
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/loro.jpg" alt="Card image cap" style="padding: 5%;">
-          <div class="card-body">
-            <h5 class="card-title">Lucia Martinez</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu rhoncus velit.
-              Pellentesque fringilla ligula massa, sed hendrerit metus varius quis. Aenean ut justo lacinia, tempor
-              augue
-              sed, tincidunt quam. Nullam at orci id magna ultricies lacinia ac et turpis. Quisque eget nulla vel nibh
-              pretium pharetra vitae id est. Duis elit sapien, commodo molestie lectus pellentesque, tincidunt pharetra
-              nisl.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Contactar</a>
-            </div>
-          </div>
-        </div>
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/conejo.jpg" alt="Card image cap" style="padding: 5%;">
-          <div class="card-body">
-            <h5 class="card-title">Alba Caballero</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu rhoncus velit.
-              Pellentesque fringilla ligula massa, sed hendrerit metus varius quis. Aenean ut justo lacinia, tempor
-              augue
-              sed, tincidunt quam. Nullam at orci id magna ultricies lacinia ac et turpis. Quisque eget nulla vel nibh
-              pretium pharetra vitae id est. Duis elit sapien, commodo molestie lectus pellentesque, tincidunt pharetra
-              nisl.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Contactar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      -->
-    <div *ngIf="token==true">*****MASCOTAS QUE REQUIEREN SERVICIOS*****</div>
+    <div *ngIf="token==true">
     <h2 align="center" style="margin-top:5%;">Mascotas que requieren servicios</h2>
     <div style="display: flex; flex-direction: row; justify-content: space-around;">
       <ng-container *ngFor="let masc of mascotas">
@@ -265,80 +156,14 @@
             <img class="card-img-top" src="./assets/perro.jpg" alt="Card image cap" style="padding: 5%;">
           </div>
           <div class="card-body">
-            <h5 class="card-title">Alaska</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu rhoncus velit.
-              Pellentesque fringilla ligula massa, sed hendrerit metus varius quis. Aenean ut justo lacinia, tempor
-              augue
-              sed, tincidunt quam. Nullam at orci id magna ultricies lacinia ac et turpis. Quisque eget nulla vel nibh
-              pretium pharetra vitae id est. Duis elit sapien, commodo molestie lectus pellentesque, tincidunt pharetra
-              nisl.</p>
+            <h5 class="card-title">{{masc.nombre_mascota}}</h5>
+            <p class="card-text">{{masc.nombre}}</p>
           </div>
           <div class="text-center">
-            <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Contactar</a>
+            <a style="width: 100px; height: 30px; font-size: 13px;" [routerLink]="['/mascota',masc.id]" class="btn btn-primary">Contactar</a>
           </div>
         </div>
       </ng-container>
-      <!-- 
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/gato.jpeg" alt="Card image cap" style="padding: 5%;">
-          <div class="card-body">
-            <h5 class="card-title">Oreo</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu rhoncus velit.
-              Pellentesque fringilla ligula massa, sed hendrerit metus varius quis. Aenean ut justo lacinia, tempor
-              augue
-              sed, tincidunt quam. Nullam at orci id magna ultricies lacinia ac et turpis. Quisque eget nulla vel nibh
-              pretium pharetra vitae id est. Duis elit sapien, commodo molestie lectus pellentesque, tincidunt pharetra
-              nisl.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Contactar</a>
-            </div>
-          </div>
-        </div>
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/conejoM.jpeg" alt="Card image cap" style="padding: 5%; height: 53%;">
-          <div class="card-body">
-            <h5 class="card-title">Bigotes</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu rhoncus velit.
-              Pellentesque fringilla ligula massa, sed hendrerit metus varius quis. Aenean ut justo lacinia, tempor
-              augue
-              sed, tincidunt quam. Nullam at orci id magna ultricies lacinia ac et turpis. Quisque eget nulla vel nibh
-              pretium pharetra vitae id est. Duis elit sapien, commodo molestie lectus pellentesque, tincidunt pharetra
-              nisl.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Contactar</a>
-            </div>
-          </div>
-        </div>
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/loro.jpeg" alt="Card image cap" style="padding: 5%;">
-          <div class="card-body">
-            <h5 class="card-title">Kus</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu rhoncus velit.
-              Pellentesque fringilla ligula massa, sed hendrerit metus varius quis. Aenean ut justo lacinia, tempor
-              augue
-              sed, tincidunt quam. Nullam at orci id magna ultricies lacinia ac et turpis. Quisque eget nulla vel nibh
-              pretium pharetra vitae id est. Duis elit sapien, commodo molestie lectus pellentesque, tincidunt pharetra
-              nisl.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Contactar</a>
-            </div>
-          </div>
-        </div>
-        <div id="productos" class="card" style="width: 30rem;">
-          <img class="card-img-top" src="./assets/hamster.jpeg" alt="Card image cap" style="padding: 5%;">
-          <div class="card-body">
-            <h5 class="card-title">Jerry</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu rhoncus velit.
-              Pellentesque fringilla ligula massa, sed hendrerit metus varius quis. Aenean ut justo lacinia, tempor
-              augue
-              sed, tincidunt quam. Nullam at orci id magna ultricies lacinia ac et turpis. Quisque eget nulla vel nibh
-              pretium pharetra vitae id est. Duis elit sapien, commodo molestie lectus pellentesque, tincidunt pharetra
-              nisl.</p>
-            <div class="text-center">
-              <a style="width: 100px; height: 30px; font-size: 13px;" href="#" class="btn btn-primary">Contactar</a>
-            </div>
-          </div>
-        </div>
-        -->
+    </div>
     </div>
   </div>

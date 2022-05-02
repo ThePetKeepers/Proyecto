@@ -72,12 +72,12 @@
             <label for="exampleFormControlInput1">Ciudad</label>
             <select class="form-control" [(ngModel)]="ciu" #ciuEn="ngModel" name="ciuEn" required>
               <option value="" disabled selected>Inserta tu ciudad</option>
-              <option *ngFor="let country of countries" [value]="country.name">{{country.nm}}</option>
+              <option *ngFor="let country of countries">{{country.nm}}</option>
             </select>
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Dirección</label>
-            <input type="number" class="form-control" [(ngModel)]="dir" #dirEn="ngModel" name="dirEn"
+            <input type="text" class="form-control" [(ngModel)]="dir" #dirEn="ngModel" name="dirEn"
               placeholder="Inserte tu dirección" required>
           </div>
           <div class="form-group">

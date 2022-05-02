@@ -26,8 +26,10 @@ const routes: Routes = [
   {path:'crearcuenta',component:crearcuentaComponent},
   {path:'vistaservicio/:servicio',component:vistaservicioComponent},
   {path:'mascota',component:mascotaComponent},
+  {path:'mascota/:id',component:mascotaComponent},
   {path:'vistamascota/:mascota',component:vistamascotaComponent},
   {path:'perfil',component:perfilComponent},
+  {path:'perfil/:id',component:perfilComponent},
   {path:'servicio',component:mostrarserviciosComponent},
   {path: '**', component:PageNotFoundComponent }
 ];
