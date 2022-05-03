@@ -54,7 +54,7 @@ public class ServiceProducto {
 			e.printStackTrace();
 		}
 
-		Dao.postProveedor(producto);
+		Dao.postProducto(producto);
 		Dao.disconnect();
 	}
 	

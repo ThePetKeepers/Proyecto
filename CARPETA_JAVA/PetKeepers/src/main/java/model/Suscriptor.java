@@ -22,7 +22,7 @@ public class Suscriptor extends Usuario {
 	private Suscripcion suscripcion;
 
 	@JsonProperty("servicios")
-	private ArrayList<Servicio> servicios = new ArrayList<>();
+	private ArrayList<Integer> servicios = new ArrayList<>();
 
 	//CONSTRUCTORES
 	@JsonCreator
@@ -39,12 +39,12 @@ public class Suscriptor extends Usuario {
 			@JsonProperty("ciudad") final String ciudad,
 			@JsonProperty("direccion") final String direccion,
 			@JsonProperty("foto") final String foto,
-			@JsonProperty("mascotas") final ArrayList<Mascota> mascotas,
+			@JsonProperty("mascotas") final ArrayList<Integer> mascotas,
 			@JsonProperty("tipo_usuario") final int tipo_usuario,
 			@JsonProperty("id_cliente") final int id_cliente,
 			@JsonProperty("pago") final Pago pago,
 			@JsonProperty("suscripcion") final Suscripcion suscripcion,
-			@JsonProperty("servicios") final ArrayList<Servicio> servicios) {
+			@JsonProperty("servicios") final ArrayList<Integer> servicios) {
 		super(
 			id, nombre, primer_apellido,
 			segundo_apellido, email, password, 
@@ -84,7 +84,7 @@ public class Suscriptor extends Usuario {
 	}
 
 	@JsonProperty("servicios")
-	public ArrayList<Servicio> getServicios() {
+	public ArrayList<Integer> getServicios() {
 		return servicios;
 	}
 }

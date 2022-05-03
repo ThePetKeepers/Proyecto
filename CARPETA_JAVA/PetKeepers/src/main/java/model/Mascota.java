@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Mascota extends Objeto {
 	//ATRIBUTOS
 	@JsonProperty("usuario")
-	private Usuario usuario;
+	private int usuario;
 	
 	@JsonProperty("nombre_mascota")
 	private String nombre_mascota;
@@ -22,19 +22,24 @@ public class Mascota extends Objeto {
 			@JsonProperty("nombre") final String nombre,
 			@JsonProperty("descripcion") final String descripcion,
 			@JsonProperty("precio") final double precio,
-			@JsonProperty("puntuacion") final int puntuacion,
+			@JsonProperty("puntuacion") final double puntuacion,
 			@JsonProperty("activo") final boolean activo,
 			@JsonProperty("imagenes") final ArrayList<String> imagenes,
-			@JsonProperty("usuario") final Usuario usuario,
+			@JsonProperty("usuario") final int usuario,
 			@JsonProperty("nombre_mascota") final String nombre_mascota) {
 		super(id, nombre, descripcion, precio, puntuacion, activo, imagenes);
 		this.usuario = usuario;
 		this.nombre_mascota = nombre_mascota;
 	}
 	
+	@JsonCreator
+	public Mascota() {
+		super();
+	}
+	
 	//ENCAPSULACION
 	@JsonProperty("usuario")
-	public Usuario getUsuario() {
+	public int getUsuario() {
 		return usuario;
 	}
 

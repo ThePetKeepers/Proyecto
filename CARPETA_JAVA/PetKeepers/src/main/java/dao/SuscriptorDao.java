@@ -1,13 +1,6 @@
 package dao;
 
 //CLASES
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,13 +11,9 @@ import java.util.ArrayList;
 //OBJETOS
 import config.ConstantsApi;
 import externalLibrary.MyFunctions;
-import model.Mascota;
 import model.Pago;
-import model.Producto;
-import model.Servicio;
 import model.Suscripcion;
 import model.Suscriptor;
-import model.Servicio;
 //ECEPCIONES
 import java.sql.SQLException;
 
@@ -56,12 +45,12 @@ public class SuscriptorDao {
 			while (rs.next()) {
 				MascotaDao daoMascota = new MascotaDao();
 				daoMascota.connect();
-				ArrayList<Mascota> mascotas = daoMascota.getMascotasByClient(rs.getInt("id_cliente"));
+				ArrayList<Integer> mascotas = daoMascota.getMascotasByClient(rs.getInt("id_cliente"));
 				daoMascota.disconnect();
 				
 				ServicioDao daoServicio = new ServicioDao();
 				daoServicio.connect();
-				ArrayList<Servicio> servicios = daoServicio.getServiciosByClient(rs.getInt("id_cliente"));
+				ArrayList<Integer> servicios = daoServicio.getServiciosByClient(rs.getInt("id_cliente"));
 				daoServicio.disconnect();
 				
 				PagoDao daoPago = new PagoDao();
@@ -93,17 +82,122 @@ public class SuscriptorDao {
 						rs.getInt("id_cliente"),
 						pago,
 						suscripcion,
-						servicios);
+						servicios
+				);
 				suscriptores.add(suscriptorObtenido);
 
 			}
 
 			return suscriptores;
-		}
+	}
 	
 	public Suscriptor getSuscriptor(int id) throws SQLException, ClassNotFoundException {
 		Suscriptor suscriptorObtenido = new Suscriptor();
+		
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_SUSCRIPTOR);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			MascotaDao daoMascota = new MascotaDao();
+			daoMascota.connect();
+			ArrayList<Integer> mascotas = daoMascota.getMascotasByClient(rs.getInt("id_cliente"));
+			daoMascota.disconnect();
+			
+			ServicioDao daoServicio = new ServicioDao();
+			daoServicio.connect();
+			ArrayList<Integer> servicios = daoServicio.getServiciosByClient(rs.getInt("id_cliente"));
+			daoServicio.disconnect();
+			
+			PagoDao daoPago = new PagoDao();
+			daoPago.connect();
+			Pago pago = daoPago.getPago(rs.getInt("metodo_de_pago"));
+			daoPago.disconnect();
+			
+			SuscripcionDao daoSuscripcion = new SuscripcionDao();
+			daoSuscripcion.connect();
+			Suscripcion suscripcion = daoSuscripcion.getSuscripcion(rs.getInt("id_suscripcion"));
+			daoSuscripcion.disconnect();
+
+			
+			suscriptorObtenido = new Suscriptor(
+					rs.getInt("id"),
+					rs.getString("nombre"),
+					rs.getString("primer_apellido"),
+					rs.getString("segundo_apellido"),
+					rs.getString("email"),
+					rs.getString("password"),
+					rs.getString("dni"),
+					rs.getString("nacimiento"),
+					rs.getString("telefono"),
+					rs.getString("ciudad"),
+					rs.getString("direccion"),
+					rs.getString("foto"),
+					mascotas,
+					rs.getInt("tipo_usuario"),
+					rs.getInt("id_cliente"),
+					pago,
+					suscripcion,
+					servicios
+			);
+		}
+		
 		return suscriptorObtenido;
+	}
+	
+	public void postSuscriptor(Suscriptor suscriptor) throws SQLException, NullPointerException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.POST_SUSCRIPTOR);
+		
+		ps.setString(1, suscriptor.getNombre());
+		ps.setString(2, suscriptor.getPrimer_apellido());
+		ps.setString(3, suscriptor.getSegundo_apellido());
+		ps.setString(4, suscriptor.getEmail());
+		ps.setString(5, suscriptor.getDni());
+		ps.setString(6, suscriptor.getNacimiento());
+		ps.setString(7, suscriptor.getTelefono());
+		ps.setString(8, suscriptor.getCiudad());
+		ps.setString(9, suscriptor.getDireccion());
+		ps.setString(10, suscriptor.getFoto());
+		ps.setString(11, suscriptor.getPassword());
+		ps.setInt(12, suscriptor.getId_cliente());
+		ps.setInt(13, suscriptor.getTipo_usuario());
+		ps.setInt(14, suscriptor.getPago().getId());
+		ps.setInt(15, suscriptor.getSuscripcion().getId());
+
+		ps.execute();
+		ps.close();
+	}
+
+	public void updateSuscriptor(int id, Suscriptor suscriptor) throws SQLException, NullPointerException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.UPDATE_SUSCRIPTOR);
+
+		ps.setString(1, suscriptor.getNombre());
+		ps.setString(2, suscriptor.getPrimer_apellido());
+		ps.setString(3, suscriptor.getSegundo_apellido());
+		ps.setString(4, suscriptor.getEmail());
+		ps.setString(5, suscriptor.getDni());
+		ps.setString(6, suscriptor.getNacimiento());
+		ps.setString(7, suscriptor.getTelefono());
+		ps.setString(8, suscriptor.getCiudad());
+		ps.setString(9, suscriptor.getDireccion());
+		ps.setString(10, suscriptor.getFoto());
+		ps.setString(11, suscriptor.getPassword());
+		ps.setInt(12, suscriptor.getId_cliente());
+		ps.setInt(13, suscriptor.getTipo_usuario());
+		ps.setInt(14, suscriptor.getPago().getId());
+		ps.setInt(15, suscriptor.getSuscripcion().getId());
+		ps.setInt(16, id);
+
+		ps.execute();
+		ps.close();
+	}
+	
+	public void deleteSuscriptor(int id) throws SQLException, NullPointerException, ClassNotFoundException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.DELETE_SUSCRIPTOR);
+
+		ps.setInt(1, id);
+		ps.execute();
+		ps.close();
 
 	}
 }

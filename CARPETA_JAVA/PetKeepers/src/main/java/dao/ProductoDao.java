@@ -98,7 +98,7 @@ public class ProductoDao {
 		return productoObtenido;
 	}
 
-	public void postProveedor(Producto producto) throws SQLException, NullPointerException {
+	public void postProducto(Producto producto) throws SQLException, NullPointerException {
 		PreparedStatement ps =  bbddConnection.prepareStatement(ConstantsApi.POST_PRODUCTO);
 		
 		ps.setString(1, producto.getNombre());

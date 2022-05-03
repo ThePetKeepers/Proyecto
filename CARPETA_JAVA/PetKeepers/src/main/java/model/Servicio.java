@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Servicio extends Objeto {
 	// ATRIBUTOS
 	@JsonProperty("suscriptor")
-	private Suscriptor suscriptor;
+	private int suscriptor;
 
 	// CONSTRUCTORES
 	@JsonCreator
@@ -22,7 +22,7 @@ public class Servicio extends Objeto {
 			@JsonProperty("puntuacion") final double puntuacion,
 			@JsonProperty("activo") final boolean activo,
 			@JsonProperty("imagenes") final ArrayList<String> imagenes,
-			@JsonProperty("suscriptor") final Suscriptor suscriptor) {
+			@JsonProperty("suscriptor") final int suscriptor) {
 		super(id, nombre, descripcion, precio, puntuacion, activo, imagenes);
 		this.suscriptor = suscriptor;
 	}
@@ -33,7 +33,7 @@ public class Servicio extends Objeto {
 
 	//ENCAPSULACION
 	@JsonProperty("suscriptor")
-	public Suscriptor getSuscriptor() {
+	public int getSuscriptor() {
 		return suscriptor;
 	}
 	
