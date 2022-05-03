@@ -12,7 +12,7 @@ import { SuscriptorService } from "../services/suscriptor.service";
     selector: 'servicio-comp',
     templateUrl: 'servicio.component.html',
     styleUrls: ['servicio.component.css'],
-    providers: [SuscriptorService, ServicioService]
+    providers: [ServicioService, SuscriptorService]
 })
 
 export class servicioComponent implements OnInit {

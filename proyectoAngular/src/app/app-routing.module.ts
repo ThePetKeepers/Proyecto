@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule }   from '@angular/forms';
@@ -27,8 +26,10 @@ const routes: Routes = [
   {path:'crearcuenta',component:crearcuentaComponent},
   {path:'vistaservicio/:servicio',component:vistaservicioComponent},
   {path:'mascota',component:mascotaComponent},
+  {path:'mascota/:id',component:mascotaComponent},
   {path:'vistamascota/:mascota',component:vistamascotaComponent},
   {path:'perfil',component:perfilComponent},
+  {path:'perfil/:id',component:perfilComponent},
   {path:'servicio',component:mostrarserviciosComponent},
   {path: '**', component:PageNotFoundComponent }
 ];

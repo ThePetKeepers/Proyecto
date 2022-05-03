@@ -29,24 +29,6 @@ export class vistaservicioComponent implements OnInit{
         }
         );
         console.log(this.id);
-        /*this._suscriptorService.getSuscriptor(this.id)
-            .subscribe(async (response) => {
-                console.log(response);
-                this.suscriptor = new Suscriptor(
-                    response.id, response.nombre,
-                    response.primer_apellido, response.segundo_apellido,
-                    response.email, response.password,
-                    response.nacimiento, response.telefono,
-                    response.ciudad,
-                    response.direccion, response.foto,
-                    response.mascotas, response.productos,
-                    response.id_tipo_usuario, response.pago,
-                    response.suscripcion, response.servicios
-                );
-            },(error) =>{
-                console.log("Error: "+error);
-            })*/
-
         this._servicioService.getServiciosById(this.id)
             .subscribe(async (response) =>{
 
