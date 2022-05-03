@@ -24,9 +24,6 @@
                 <button class="btn btn-primary" aria-current="page"
                   [routerLink]="['/suscripciones']">Suscripciones</button>
               </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/perfil']" style="margin-left: 60%;">Perfil</button>
-              </li>
             </ul>
           </div>
           <div class="col">
@@ -60,17 +57,16 @@
             </ul>-->
           </div>
 
-          <!--<div class="col">
-            *ngIf="token==true"
-            <ul class="nav">
+          <div class="col">
+            <ul class="nav" *ngIf="token==true">
               <li class="nav-item">
                 <button type="button" class="btn btn-primary" [routerLink]="['/mensajes']">Mensajes</button>
               </li>
               <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/perfil']">Perfil</button>
-              </li> -->
+                <button type="button" class="btn btn-primary" [routerLink]="['/perfil',id]">Perfil</button>
+              </li> 
 
-              <!--<div class="dropdown">
+              <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">≡
                 </button>
                 <ul class="dropdown-menu">
@@ -80,7 +76,7 @@
                 </ul>
               </div>
             </ul>
-          </div>-->
+          </div>
         </div>
       </div>
     </div>
