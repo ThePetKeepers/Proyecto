@@ -13,6 +13,7 @@ import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.comp
 import { perfilComponent } from './perfilComponent/perfil.component';
 import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
 import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
+import { crearservicioComponent } from './crearservicioComponent/crearservicio.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,8 @@ const routes: Routes = [
   {path:'perfil',component:perfilComponent},
   {path:'perfil/:id',component:perfilComponent},
   {path:'servicio',component:mostrarserviciosComponent},
+  {path:'crearServicio',component:crearservicioComponent},
+  {path:'crearServicio/:id',component:crearservicioComponent},
   {path: '**', component:PageNotFoundComponent }
 ];
 
