@@ -7,7 +7,7 @@
             <img [src]="'/assets/logoSinFondo.png'" id="logo" href="#" [routerLink]="['/']">
           </div>
           <div class="col-11">
-            <ul>
+            <ul >
               <li class="nav-item">
                 <input type="text" placeholder="Buscar en todas las categorías..." (keyup.enter)="sendit()"
                   [(ngModel)]="search"> <a id="lens" [routerLink]="['/servicio']">🔎</a>
@@ -27,6 +27,27 @@
             </ul>
           </div>
           <div class="col">
+            <ul class="nav" *ngIf="token==true">
+              <li class="nav-item">
+                <button type="button" class="btn btn-primary" [routerLink]="['/mensajes']">Mensajes</button>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="nav" >
+              <li class="nav-item">
+                <button type="button" class="btn btn-primary" [routerLink]="['/perfil',id]">Perfil</button>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="nav" *ngIf="token==true">
+              <li class="nav-item">
+                <button class="btn btn-primary" aria-current="page" (click)="logout()">Cerrar Sesión</button>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6">
             <ul *ngIf="token==false" class="nav">
               <li class="nav-item">
                 <button class="btn btn-primary" aria-current="page" [routerLink]="['/login']">Iniciar sesión</button>
@@ -35,46 +56,7 @@
                 <button class="btn btn-primary" aria-current="page" [routerLink]="['/crearcuenta']"
                   style="margin-left: 60%;">Registrarse</button>
               </li>
-            
-            </ul>
-            <!--<ul class="col">
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/mensajes']">Mensajes</button>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/perfil']">Perfil</button>
-              </li>
 
-              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">≡
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a [routerLink]="['/perfil']">PERFIL</a></li>
-                  <li><button class="btn btn-primary" aria-current="page" (click)="logout()">Cerrar Sesión</button>
-                  </li>
-                </ul>
-              </div>
-            </ul>-->
-          </div>
-
-          <div class="col">
-            <ul class="nav" *ngIf="token==true">
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/mensajes']">Mensajes</button>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/perfil',id]">Perfil</button>
-              </li> 
-
-              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">≡
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a [routerLink]="['/perfil']">PERFIL</a></li>
-                  <li><button class="btn btn-primary" aria-current="page" (click)="logout()">Cerrar Sesión</button>
-                  </li>
-                </ul>
-              </div>
             </ul>
           </div>
         </div>

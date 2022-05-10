@@ -20,6 +20,32 @@ h1{
     display: flex;
 }
 
+#puntuacion{
+    font-size: 15px; 
+    padding-top: 2%; 
+    color:white; 
+    margin-left: 5%;
+}
+
+#serviceDescr{
+    width: 90%; 
+    color: white; 
+    font-size: 13px; 
+    padding-left: 10%; 
+    padding-top: 5%;
+}
+
+#mapa{
+    border:0; 
+    margin-bottom: 10%; 
+    padding-left: 5%;
+}
+
+#mapContainer{
+    padding-left: 10%; 
+    padding-top: 5%;
+}
+
 .btn{
     height: 40px;
     width: 40px;
@@ -30,9 +56,33 @@ h1{
 #carouselExampleDark{
     width: 80%;
     margin: auto;
+    margin-top: 20px;
 }
 
 .carousel-indicators {
     justify-content: center;
     padding-left: 10%;
+}
+
+#chatButton{
+    font-size: 20px; 
+    background-color: white !important; 
+    border-color: transparent !important; 
+    border-radius: 20px; 
+    width: 120px; 
+    height: 40px; 
+    font-weight: bold; 
+    margin-top: 2.5%; 
+    margin-left: 15%;
+}
+
+#likeButton{
+    background-color: white !important; 
+    padding-top: 4%; 
+    border-color: transparent !important; 
+    border-radius: 20px; 
+    margin-left: 90% !important; 
+    font-size: 35px; 
+    margin-top: 15%; 
+    width: 60px;
 }

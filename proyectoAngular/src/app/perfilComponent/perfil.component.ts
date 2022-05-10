@@ -27,6 +27,7 @@ export class perfilComponent implements OnInit{
             this.id = Number(this.urlVal);
         }
         );
+        this.id=1;
         console.log(this.id);
 
         this._usuarioService.getUserById(this.id)

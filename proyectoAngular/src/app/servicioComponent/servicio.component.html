@@ -23,15 +23,15 @@
     </ul>
     -->
   </ul>
-  <a style="margin-left: 17%; margin-top: 0.5%;" href="#" class="btn btn-primary">Profundizar busqueda</a>
+  <a id="profButton" href="#" class="btn btn-primary">Profundizar busqueda</a>
 </div>
-<div style="margin-top: 13%; margin-left: 13%;">
+<div id="cards">
   <h2>Novedades</h2>
   <p id="anuncios">624 anuncios para ti</p>
   <ul>
     <ng-container *ngFor="let servicio of servicios">
-      <li style="display: inline-block;  padding-top: 2%; margin-right: 2%;">
-        <div class="card" id="servicios" style="width: 30rem;" [routerLink]="['/vistaservicio',servicio.id]">
+      <li id="serviceCard">
+        <div class="card" id="servicios" [routerLink]="['/vistaservicio',servicio.id]">
           <img class="card-img-top" src="./../../assets/dog.png" style="margin-top: 5%; padding: 5%"
             alt="Card image cap">
           <div class="card-body">

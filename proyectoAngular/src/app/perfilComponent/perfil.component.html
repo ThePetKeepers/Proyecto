@@ -33,63 +33,64 @@
                 </div>
             </div>
             <div class="col-7">
-                <h2 class="card-title" style="padding-top: 10%;">{{usuario.nombre}} {{usuario.primer_apellido}} {{usuario.segundo_apellido}} </h2>
-                <div>
-                    Correo electrónico: {{usuario.email}}
-                </div>
-                <div>
-                    {{usuario.nacimiento}}
-                </div>
-                <div>
-                    {{usuario.telefono}}
-                </div>
-                <div>
-                    {{usuario.pais}}
-                </div>
-                <div>
-                    {{usuario.ciudad}}
-                </div>
-                <div>
-                    {{usuario.direccion}}
-                </div>
-                <div>
-                    {{usuario.foto}}
-                </div>
-                <div>
-                    {{usuario.mascotas}}
-                </div>
-                <div>
-                    {{usuario.productos}}
+                <h2 class="card-title" style="padding-top: 7%;">{{usuario.nombre}} {{usuario.primer_apellido}}
+                    {{usuario.segundo_apellido}} </h2>
+                <div >
+                    <p style="padding-top: 2%;">📩 {{usuario.email}}</p>
+
+                    <p>
+                        📅 {{usuario.nacimiento}}
+                    </p>
+                    <p>
+                        📞 {{usuario.telefono}}
+                    </p>
+                    <p>
+                        🗺️ {{usuario.pais}}
+
+                        {{usuario.ciudad}}
+
+                        {{usuario.direccion}}
+                    </p>
+
+                    <p>
+                        {{usuario.foto}}
+                    </p>
+                    <p>
+                        {{usuario.mascotas}}
+                    </p>
+                    <p style="padding-bottom: 2%;">
+                        {{usuario.productos}}
+                    </p>
                 </div>
                 <table class="table table-bordered">
                     <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                      </tr>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
                     </tbody>
-                  </table>
+                </table>
                 <div *ngIf="step==1" class="card" id="card1">
                     <h3 class="card-title">Edita tu información</h3>
                     <div class="form-group">

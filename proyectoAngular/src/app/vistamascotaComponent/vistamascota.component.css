@@ -20,6 +20,12 @@ h1{
     display: flex;
 }
 
+#puntuacion{
+    font-size: 15px; 
+    padding-top: 5%; 
+    color:white; 
+}
+
 .btn{
     height: 40px;
     width: 40px;
@@ -31,6 +37,15 @@ h1{
     width: 80%;
     margin: auto;
     margin-top: 20px;
+}
+
+#mapCont{
+    padding-top: 5%;
+}
+
+#maps{
+    border:0; 
+    margin-bottom: 7%;
 }
 
 .carousel-indicators {

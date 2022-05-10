@@ -50,6 +50,15 @@ h2{
     background-color: #39ACA2;
 }
 
+#cards{
+    margin-top: 15%; 
+    margin-left: 13%;
+}
+
+#profButton{
+    margin-left: 17%; margin-top: 0.5%;
+}
+
 #lens{
     background-color: transparent;
     border: transparent;
@@ -81,4 +90,11 @@ input{
     -moz-border-radius:  20px 20px 20px 20px;
     -webkit-border-radius:  20px 20px 20px 20px;
     border: 0px solid #000000;
+    width: 30rem;
+}
+
+#serviceCard{
+    display: inline-block;  
+    padding-top: 2%; 
+    margin-right: 2%;
 }
