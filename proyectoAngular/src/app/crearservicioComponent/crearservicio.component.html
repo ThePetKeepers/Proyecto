@@ -1,0 +1,19 @@
+<form #newServ="ngForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+      <input type="text" class="form-control" [(ngModel)]="nom" #nomEn="ngModel" name="nomEn">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Descripción</label>
+      <input type="text" class="form-control" [(ngModel)]="des" #desEn="ngModel" name="desEn">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">precio</label>
+        <input type="number" class="form-control" [(ngModel)]="pre" #preEn="ngModel" name="preEn">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">imagenes</label>
+        <input type="number" class="form-control" id="exampleInputPassword1">
+      </div>
+    <button type="submit" class="btn btn-primary" (click)="crearServicio()">Submit</button>
+  </form>

@@ -74,5 +74,22 @@ export class ServicioService {
         );
     }
 
+    postNuevoServicio(nom:string,des:string,pre:Number,id:Number,filesToUpload:FileList):Observable<any>{
+        let url="/Proyecto/CARPETA_PHP/crearservicioPOST.php";
+        let formData:FormData = new FormData();
+       /* for (var i=0 ;i<filesToUpload.length;i++){
+            let file = filesToUpload.item(i);
+            if(file!=null){
+                formData.append('file'+i,file,file.name);
+            }
+        }*/
+        formData.append("nom",nom);
+        formData.append("des",des);
+        formData.append("pre",pre+"");
+        formData.append("id",id+"");
+
+        return this.conexHttp.post(url,formData);
+    }
+
     
 }
