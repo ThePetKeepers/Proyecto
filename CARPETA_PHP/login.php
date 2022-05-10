@@ -3,12 +3,13 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Allow: GET, POST, OPTIONS, PUT, DELETE");
-$host = "localhost";
-$name = "petkeepers";
-$user = "root";
-$password="";
-$port = 3306;
-$db = new mysqli($host,$user,$password,$name);
+$parse = parse_ini_file("./db_config.ini");
+$host = $parse['host'];
+$port = $parse['port'];
+$socket = $parse['socket'];
+$user = $parse['user'];
+$password = $parse['password'];
+$dbname = $parse['bbdd'];
 
 if(!$db){
     echo json_encode("ERROR");
