@@ -7,15 +7,17 @@ public class ConstantsApi {
 	public static final String PASS_CONNECTION = "12341234";
 
 	// TABLAS INTERMEDIAS
-
+	public static final String GET_SERVICIOS_BY_CLIENT_ID = "SELECT id FROM petkeepers.adquirir_servicio WHERE id_cliente = ?";
+	public static final String GET_MASCOTAS_BY_SUSCRIPTOR_ID = "SELECT id FROM petkeepers.adquirir_mascota WHERE id_suscriptor = ?";
+	
 	// SERVICIO
-	public static final String GET_SERVICIOS_BY_CLIENT_ID = "SELECT id FROM petkeepers.servicio WHERE id_suscriptor = ?";
+	public static final String GET_SERVICIOS_BY_SUSCRIPTOR_ID = "SELECT id FROM petkeepers.servicio WHERE id_suscriptor = ?";
 	public static final String GET_SERVICIOS = "SELECT * FROM petkeepers.servicio";
 	public static final String GET_SERVICIO = "SELECT * FROM petkeepers.servicio WHERE id = ?";
 	public static final String POST_SERVICIO = "INSERT INTO petkeepers.servicio (nombre, descripcion, precio, puntuacion, activo, imagenes, id_suscriptor) VALUES (?,?,?,?,?,?,?)";
 	public static final String UPDATE_SERVICIO = "UPDATE petkeepers.servicio SET nombre = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_suscriptor = ? WHERE (id = ?)";
 	public static final String DELETE_SERVICIO = "DELETE FROM petkeepers.servicio WHERE (id = ?)";
-	
+
 	// MASCOTAS
 	public static final String GET_MASCOTAS_BY_CLIENT_ID = "SELECT id FROM petkeepers.mascota WHERE id_cliente = ?";
 	public static final String GET_MASCOTAS = "SELECT * FROM petkeepers.mascota";
@@ -23,7 +25,7 @@ public class ConstantsApi {
 	public static final String POST_MASCOTA = "INSERT INTO petkeepers.mascota (nombre, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente) VALUES (?,?,?,?,?,?,?,?)";
 	public static final String UPDATE_MASCOTA = "UPDATE petkeepers.mascota SET nombre = ?, nombre_mascota = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_cliente = ? WHERE (id = ?)";
 	public static final String DELETE_MASCOTA = "DELETE FROM petkeepers.mascota WHERE (id = ?)";
-	
+
 	// SUSCRIPTOR
 	public static final String GET_SUSCRIPTORES = "SELECT * FROM petkeepers.suscriptor";
 	public static final String GET_SUSCRIPTOR = "SELECT * FROM petkeepers.suscriptor WHERE id = ?";

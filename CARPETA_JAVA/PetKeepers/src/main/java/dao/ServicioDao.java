@@ -28,10 +28,10 @@ public class ServicioDao {
 		}
 	}
 
-	public ArrayList<Integer> getServiciosByClient(int id) throws SQLException, ClassNotFoundException {
+	public ArrayList<Integer> getServiciosBySuscriptor(int id) throws SQLException, ClassNotFoundException {
 		ArrayList<Integer> servicios = new ArrayList<>();
 		
-		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_SERVICIOS_BY_CLIENT_ID);
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_SERVICIOS_BY_SUSCRIPTOR_ID);
 		ps.setInt(1, id);
 		ResultSet rs = ps.executeQuery();
 

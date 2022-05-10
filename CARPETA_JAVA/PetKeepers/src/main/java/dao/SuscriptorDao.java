@@ -50,7 +50,7 @@ public class SuscriptorDao {
 				
 				ServicioDao daoServicio = new ServicioDao();
 				daoServicio.connect();
-				ArrayList<Integer> servicios = daoServicio.getServiciosByClient(rs.getInt("id_cliente"));
+				ArrayList<Integer> servicios = daoServicio.getServiciosBySuscriptor(rs.getInt("id"));
 				daoServicio.disconnect();
 				
 				PagoDao daoPago = new PagoDao();
@@ -106,7 +106,7 @@ public class SuscriptorDao {
 			
 			ServicioDao daoServicio = new ServicioDao();
 			daoServicio.connect();
-			ArrayList<Integer> servicios = daoServicio.getServiciosByClient(rs.getInt("id_cliente"));
+			ArrayList<Integer> servicios = daoServicio.getServiciosBySuscriptor(rs.getInt("id_cliente"));
 			daoServicio.disconnect();
 			
 			PagoDao daoPago = new PagoDao();
