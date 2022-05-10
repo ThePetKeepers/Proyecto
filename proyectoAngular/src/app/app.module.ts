@@ -17,6 +17,7 @@ import { perfilComponent } from './perfilComponent/perfil.component';
 import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
 import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
 import { ServicioService } from './services/servicio.service';
+import { crearservicioComponent } from './crearservicioComponent/crearservicio.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ServicioService } from './services/servicio.service';
     perfilComponent,
     mostrarserviciosComponent,
     PageNotFoundComponent,
+    crearservicioComponent,
     SubscriptionsComponentComponent
   ],
   imports: [
