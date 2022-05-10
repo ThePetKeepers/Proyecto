@@ -1,15 +1,132 @@
-<div>
-<img src="../../assets/missingTexture.png" style="width: 400px;border-radius: 50%;">
-<div>Nombre Apellidos</div>
-<button>Editar perfil</button>
+<div align="center" style="padding-bottom: 5%; padding-top: 5%;">
+    <div class="container" id="card1" align="left">
+        <div class="row">
+            <div class="col-5">
+                <img src="./assets/peque.webp">
+                <div *ngIf="step==1">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">DNI</label>
+                        <input type="text" id="smallInputs" class="form-control" name="dniEn"
+                            placeholder="Inserta tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Ciudad</label>
+                        <select class="form-control" id="smallInputs" name="ciuEn" required>
+                            <option value="" disabled selected>Inserta tu ciudad</option>
+                            <!--<option *ngFor="let country of countries" [value]="country.name">{{country.nm}}</option>-->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Dirección</label>
+                        <input type="number" class="form-control" id="smallInputs" name="dirEn"
+                            placeholder="Inserte tu dirección" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Fotografía</label>
+                        <input id="inputImagen" type="file" id="smallInputs" name="IMGEn" required>
+                    </div>
+                </div>
+                <div id="mapa" align="center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.6395378916245!2d2.1721671153473303!3d41.40363390295096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2dcd83dfb93%3A0x9bd8aac21bc3c950!2sBas%C3%ADlica%20de%20la%20Sagrada%20Fam%C3%ADlia!5e0!3m2!1ses!2ses!4v1648045716802!5m2!1ses!2ses"
+                        width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="col-7">
+                <h2 class="card-title" style="padding-top: 7%;">{{usuario.nombre}} {{usuario.primer_apellido}}
+                    {{usuario.segundo_apellido}} </h2>
+                <div >
+                    <p style="padding-top: 2%;">📩 {{usuario.email}}</p>
 
+                    <p>
+                        📅 {{usuario.nacimiento}}
+                    </p>
+                    <p>
+                        📞 {{usuario.telefono}}
+                    </p>
+                    <p>
+                        🗺️ {{usuario.pais}}
 
-<div>vvvvvvvv Esto en la derecha vvvvvvv</div>
-<div>Información de contacto</div>
-Correo:#########
-Teléfono:#########
-DNI:#########
-Nacimiento:#########
-Ciudad:#########
-Dirección:#########
+                        {{usuario.ciudad}}
+
+                        {{usuario.direccion}}
+                    </p>
+
+                    <p>
+                        {{usuario.foto}}
+                    </p>
+                    <p>
+                        {{usuario.mascotas}}
+                    </p>
+                    <p style="padding-bottom: 2%;">
+                        {{usuario.productos}}
+                    </p>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="step==1" class="card" id="card1">
+                    <h3 class="card-title">Edita tu información</h3>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Nombre</label>
+                        <input type="text" class="form-control" name="nomEn" placeholder="Inserta tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Primer Apellido</label>
+                        <input type="text" class="form-control" name="ape1En" placeholder="Inserta tu primer apellido"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Segundo Apellido</label>
+                        <input type="text" class="form-control" name="ape2En" placeholder="Inserta tu segundo apellido"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Correo Electrónico</label>
+                        <input type="email" class="form-control" name="corEn"
+                            placeholder="Inserta tu correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Fecha nacimiento</label>
+                        <input type="date" class="form-control" name="nacEn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Teléfono</label>
+                        <input type="number" class="form-control" name="telEn" placeholder="Inserta tu teléfono"
+                            required>
+                    </div>
+                </div>
+                <div align="center" style="margin-top: 10px;">
+                    <button class="btn btn-primary" (click)="edit()" id="nextButton">Editar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>

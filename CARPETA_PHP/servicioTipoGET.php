@@ -2,7 +2,7 @@
 $host = "localhost";
 $name = "petkeepers";
 $user = "root";
-$password="12341234";
+$password="";
 $port = 3306;
 $db = new mysqli($host,$user,$password,$name);
 $value=array();

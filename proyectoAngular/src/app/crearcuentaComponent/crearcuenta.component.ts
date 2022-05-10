@@ -47,7 +47,7 @@ export class crearcuentaComponent implements OnInit {
 
             },(error)=>{console.log("error: ",error); }
 
-            )
+        )
 
     }
 

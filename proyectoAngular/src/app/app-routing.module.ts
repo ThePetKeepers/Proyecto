@@ -12,6 +12,7 @@ import { mascotaComponent } from './mascotaComponent/mascota.component';
 import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.component';
 import { perfilComponent } from './perfilComponent/perfil.component';
 import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
+import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
 
 
 const routes: Routes = [
@@ -19,13 +20,16 @@ const routes: Routes = [
   {path:'main',component:mainComponent},
   {path:'login',component:loginComponent},
   {path:'servicio',component:servicioComponent},
+  {path:'suscripciones',component:SubscriptionsComponentComponent},
   {path:'servicio/:tipo',component:servicioComponent},
   {path:'mensajes',component:mensajesComponent},
   {path:'crearcuenta',component:crearcuentaComponent},
   {path:'vistaservicio/:servicio',component:vistaservicioComponent},
   {path:'mascota',component:mascotaComponent},
+  {path:'mascota/:id',component:mascotaComponent},
   {path:'vistamascota/:mascota',component:vistamascotaComponent},
   {path:'perfil',component:perfilComponent},
+  {path:'perfil/:id',component:perfilComponent},
   {path:'servicio',component:mostrarserviciosComponent},
   {path: '**', component:PageNotFoundComponent }
 ];

@@ -10,11 +10,23 @@
 #carouselExampleDark{
     width: 80%;
     margin: auto;
+    margin-top: 20px;
+    padding-bottom: 3%;
 }
 
 .carousel-indicators {
     justify-content: center;
     padding-left: 10%;
+}
+
+#header{
+    background-color: #d2eeec;
+}
+
+#mejorMascotas{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around;
 }
 
 #txt{
@@ -27,19 +39,19 @@
 
 #centro{
     background-color: #39ACA2;
-    height: 2500px;
-    margin-top: 8%;
+    height: 2000px;
 }
 
 h1{
     font-size: 48px;
     margin-bottom: 3%;
     margin-top: 1%;
+    font-weight: bold;
 }
 
 h2{
     font-size: 40px;
-    padding-top: 3%;
+    padding-top: 5%;
     padding-bottom: 3%;
 }
 
@@ -47,7 +59,12 @@ h3{
     text-align: center;
     color: grey;
     font-weight: normal;
-    margin-top: 30px;
+    padding-top: 30px;
+}
+
+#espacio{
+    padding-left: 3%; 
+    display: inline-flex;
 }
 
 #productos{
@@ -55,6 +72,7 @@ h3{
     -moz-border-radius:  20px 20px 20px 20px;
     -webkit-border-radius:  20px 20px 20px 20px;
     border: 0px solid #000000;
+    width: 29rem;
 }
 
 .btn{
@@ -64,9 +82,17 @@ h3{
     border-radius: 15px;
 }
 
+#prueba1{
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius:  20px 20px 20px 20px;
+    -webkit-border-radius:  20px 20px 20px 20px;
+    border: 0px solid #000000;
+    width: 15%;
+    background-color: white;
+}
 
-
-
-/* 
-justify-content: space-around;
-*/
+#buyButton{
+    width: 100px; 
+    height: 30px; 
+    font-size: 13px;
+}

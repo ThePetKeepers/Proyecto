@@ -9,7 +9,8 @@
 
 h1{
     font-size: 40px;
-    padding-top: 2%;
+    padding-top: 5%;
+    padding-bottom: 3%;
     padding-left: 5%;
     width: 300px;
     font-weight: bold;
@@ -17,6 +18,12 @@ h1{
 
 #header{
     display: flex;
+}
+
+#puntuacion{
+    font-size: 15px; 
+    padding-top: 5%; 
+    color:white; 
 }
 
 .btn{
@@ -32,6 +39,15 @@ h1{
     margin-top: 20px;
 }
 
+#mapCont{
+    padding-top: 5%;
+}
+
+#maps{
+    border:0; 
+    margin-bottom: 7%;
+}
+
 .carousel-indicators {
     justify-content: center;
     padding-left: 10%;
@@ -44,7 +60,7 @@ h1{
     border-radius: 20px; 
     margin-left: 90% !important; 
     font-size: 35px; 
-    margin-top: 12%; 
+    margin-top: 45%; 
     width: 60px;
 }
 
@@ -56,14 +72,14 @@ h1{
     width: 120px; 
     height: 40px; 
     font-weight: bold; 
-    margin-top: 2.5%; 
+    margin-top: 5%; 
     margin-left: 15%;
 }
 
 #descriptionText{
     width: 90%; 
     color: white; 
-    font-size: 13px; 
+    font-size: 18px; 
     padding-left: 10%; 
     padding-top: 5%;
 }

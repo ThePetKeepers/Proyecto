@@ -41,8 +41,13 @@ postEntidadAjax(nombre:String,clase:Number,descripcion:String,tipo:String,PKE:St
 
     postNuevaCuenta(nom:string,ape1:string,ape2:string,cor:string,con:string,DNI:string,nac:string,tel:Number,ciu:string,dir:string,filesToUpload:FileList):Observable<any>{
         let url="/Proyecto/CARPETA_PHP/crearcuentaPOST.php";
-        let formData:FormData= new FormData();
-
+        let formData:FormData = new FormData();
+       /* for (var i=0 ;i<filesToUpload.length;i++){
+            let file = filesToUpload.item(i);
+            if(file!=null){
+                formData.append('file'+i,file,file.name);
+            }
+        }*/
         formData.append("nom",nom);
         formData.append("ape1",ape1);
         formData.append("ape2",ape2);
@@ -73,7 +78,7 @@ postEntidadAjax(nombre:String,clase:Number,descripcion:String,tipo:String,PKE:St
          formData.append("nombre",entidad.nombre);
          formData.append("clase",entidad.clase)
         return this.conexHttp.post(
-            "/CARPETA_PHP/entidadesPOST.php",
+            "/Proyecto/CARPETA_PHP/entidadesPOST.php",
             {entidad},{headers:new HttpHeaders(
                 {'Content-Type':'application/json'})
            }
