@@ -18,6 +18,7 @@ import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarse
 import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
 import { ServicioService } from './services/servicio.service';
 import { crearservicioComponent } from './crearservicioComponent/crearservicio.component';
+import { crearmascotaComponent } from './crearmascotaComponent/crearmascota.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { crearservicioComponent } from './crearservicioComponent/crearservicio.c
     mostrarserviciosComponent,
     PageNotFoundComponent,
     crearservicioComponent,
+    crearmascotaComponent,
     SubscriptionsComponentComponent
   ],
   imports: [
