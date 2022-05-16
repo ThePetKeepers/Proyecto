@@ -66,11 +66,7 @@ public class ServicioDao {
 		ResultSet rs = st.executeQuery(select);
 
 		while (rs.next()) {
-			Servicio servicioObtenido = new Servicio(rs.getInt("id"), rs.getString("nombre"),
-					rs.getString("descripcion"), rs.getDouble("precio"), rs.getDouble("puntuacion"),
-					rs.getBoolean("activo"), MyFunctions.stringToArrayList(rs.getString("imagenes")),
-					rs.getInt("id_suscriptor"));
-			servicios.add(servicioObtenido);
+			servicios.add(getServicio(rs.getInt("id")));
 		}
 
 		return servicios;
@@ -153,7 +149,7 @@ public class ServicioDao {
 		return comentarios;
 	}
 	
-	public void crearComentarioServicio(ComentarioServicio comentario) throws SQLException, ClassNotFoundException {
+	public void postComentarioServicio(ComentarioServicio comentario) throws SQLException, ClassNotFoundException {
 		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.POST_COMENTARIO_SERVICIO);
 
 		ps.setString(1, comentario.getComentario());
@@ -163,5 +159,20 @@ public class ServicioDao {
 
 		ps.execute();
 		ps.close();
+	}
+	
+	public ArrayList<Servicio> getServiciosByNombre() throws SQLException, ClassNotFoundException {
+		ArrayList<Servicio> servicios = new ArrayList<>();
+
+		String select = ConstantsApi.GET_SERVICIOS_BY_NOMBRE;
+
+		Statement st = bbddConnection.createStatement();
+		ResultSet rs = st.executeQuery(select);
+
+		while (rs.next()) {
+			servicios.add(getServicio(rs.getInt("id")));
+		}
+
+		return servicios;
 	}
 }

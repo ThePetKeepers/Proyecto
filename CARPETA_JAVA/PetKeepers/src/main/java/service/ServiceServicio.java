@@ -120,7 +120,7 @@ public class ServiceServicio {
 		return comentarios;
 	}
 	
-	public void crearComentarioServicio(ComentarioServicio comentario) throws SQLException, NullPointerException, ClassNotFoundException {
+	public void postComentarioServicio(ComentarioServicio comentario) throws SQLException, NullPointerException, ClassNotFoundException {
 		Dao = new ServicioDao();
 		try {
 			Dao.connect();
@@ -130,7 +130,7 @@ public class ServiceServicio {
 			e.printStackTrace();
 		}
 
-		Dao.crearComentarioServicio(comentario);
+		Dao.postComentarioServicio(comentario);
 		Dao.disconnect();
 	}
 }

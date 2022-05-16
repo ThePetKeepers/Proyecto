@@ -90,9 +90,16 @@ public class ServicioApi {
 	
 	@POST
 	@Path("/comentarios")
-	public Response crearComentarioServicio(ComentarioServicio comentario) throws ClassNotFoundException, SQLException, NullPointerException {
+	public Response postComentarioServicio(ComentarioServicio comentario) throws ClassNotFoundException, SQLException, NullPointerException {
 		service = new ServiceServicio();
-		service.crearComentarioServicio(comentario);
+		service.postComentarioServicio(comentario);
 		return Response.ok("Se ha creado el comentario", MediaType.APPLICATION_JSON).build();
+	}
+	
+	@GET
+	@Path("/nombre={nombre}")
+	public Response getServiciosByNombre(@PathParam("nombre") String nombre)throws ClassNotFoundException, SQLException, NullPointerException {
+		System.out.println(nombre);
+		return Response.ok("ok", MediaType.APPLICATION_JSON).build();
 	}
 }

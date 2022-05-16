@@ -24,6 +24,7 @@ public class ConstantsApi {
 	public static final String GET_SERVICIOS_BY_SUSCRIPTOR_ID = "SELECT id FROM petkeepers.servicio WHERE id_suscriptor = ?";
 	public static final String GET_SERVICIOS = "SELECT * FROM petkeepers.servicio";
 	public static final String GET_SERVICIO = "SELECT * FROM petkeepers.servicio WHERE id = ?";
+	public static final String GET_SERVICIOS_BY_NOMBRE = "SELECT * FROM petkeepers.servicio WHERE nombre = ?";
 	public static final String POST_SERVICIO = "INSERT INTO petkeepers.servicio (nombre, descripcion, precio, puntuacion, activo, imagenes, id_suscriptor) VALUES (?,?,?,?,?,?,?)";
 	public static final String UPDATE_SERVICIO = "UPDATE petkeepers.servicio SET nombre = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_suscriptor = ? WHERE (id = ?)";
 	public static final String DELETE_SERVICIO = "DELETE FROM petkeepers.servicio WHERE (id = ?)";
