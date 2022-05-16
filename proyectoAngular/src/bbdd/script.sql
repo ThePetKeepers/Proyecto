@@ -1,3 +1,5 @@
+-- NOTAS:
+-- SELECT * FROM petkeepers.servicio where nombre LIKE 'paseo%';
 USE petkeepers; 
 DROP DATABASE petkeepers;
 
@@ -244,25 +246,37 @@ INSERT INTO adquirir_servicio
 VALUES
 (1, 1),
 (2, 2),
-(3, 3);
+(3, 3),
+(1, 3),
+(2, 1),
+(3, 1);
 
 INSERT INTO comentar_servicio
 (comentario, id_servicio, id_cliente, fecha)
 VALUES
 ("Excelente servicio, 10/10", 1, 1, "2022-01-17 10:55:58"),
 ("Muy buen chaval, lo recomiendo", 2, 2, "2022-01-01 23:59:59"),
-("Mal, quedamos a una hora y nunca llego :(", 3, 3, "2022-01-01 23:59:59");
+("Mal, quedamos a una hora y nunca llego :(", 3, 3, "2022-01-01 23:59:59"),
+("Muy bien", 1, 3, "2022-01-17 10:55:58"),
+("No se ha aparecido, me quede esperando", 2, 1, "2022-01-01 23:59:59"),
+("10/10", 3, 1, "2022-01-01 23:59:59");
 
 INSERT INTO adquirir_mascota
 (id_mascota, id_suscriptor)
 VALUES
 (1, 1),
 (2, 2),
-(3, 3);
+(3, 3),
+(1, 3),
+(2, 1),
+(3, 1);
 
 INSERT INTO comentar_mascota
 (comentario, id_mascota, id_suscriptor, fecha)
 VALUES
 ("El perro me ha mordido", 1, 1, "2022-01-17 10:55:58"),
 ("Muy buen perro", 2, 2, "2022-01-01 23:59:59"),
-("Todo bien", 3, 3, "2022-01-01 23:59:59");
+("Todo bien", 3, 3, "2022-01-01 23:59:59"),
+("El perro esta endemoniado", 1, 3, "2022-01-17 10:55:58"),
+("El mejor perro del mundo", 2, 1, "2022-01-01 23:59:59"),
+("10/10", 3, 1, "2022-01-01 23:59:59");

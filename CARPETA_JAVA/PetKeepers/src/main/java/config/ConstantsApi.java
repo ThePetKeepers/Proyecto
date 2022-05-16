@@ -2,14 +2,24 @@ package config;
 
 public class ConstantsApi {
 	public static final String CONNECTION = "jdbc:mysql://localhost:3306/" + "petkeepers"
-			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useISSL=false";
+			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 	public static final String USER_CONNECTION = "root";
 	public static final String PASS_CONNECTION = "12341234";
 
-	// TABLAS INTERMEDIAS
-	public static final String GET_SERVICIOS_BY_CLIENT_ID = "SELECT id FROM petkeepers.adquirir_servicio WHERE id_cliente = ?";
-	public static final String GET_MASCOTAS_BY_SUSCRIPTOR_ID = "SELECT id FROM petkeepers.adquirir_mascota WHERE id_suscriptor = ?";
-	
+	// ADQUISISICION DE MASCOTAS Y SERVICIOS
+	public static final String GET_SERVICIOS_BY_CLIENT_ID = "SELECT id_servicio FROM petkeepers.adquirir_servicio WHERE id_cliente = ?";
+	public static final String GET_MASCOTAS_BY_SUSCRIPTOR_ID = "SELECT id_mascota FROM petkeepers.adquirir_mascota WHERE id_suscriptor = ?";
+
+	// COMENTARIOS MASCOTA
+	public static final String GET_COMENTARIOS_MASCOTA = "SELECT * FROM petkeepers.comentar_mascota WHERE id_mascota = ?";
+	public static final String GET_COMENTARIO_MASCOTA = "SELECT * FROM petkeepers.comentar_mascota WHERE id = ?";
+	public static final String POST_COMENTARIO_MASCOTA = "INSERT INTO petkeepers.comentar_mascota (comentario, id_mascota, id_suscriptor, fecha) VALUES (?,?,?,?)";
+
+	// COMENTARIOS SERVICIOS
+	public static final String GET_COMENTARIOS_SERVICIO = "SELECT * FROM petkeepers.comentar_servicio WHERE id_servicio = ?";
+	public static final String GET_COMENTARIO_SERVICIO = "SELECT * FROM petkeepers.comentar_servicio WHERE id = ?";
+	public static final String POST_COMENTARIO_SERVICIO = "INSERT INTO petkeepers.comentar_servicio (comentario, id_servicio, id_cliente, fecha) VALUES (?,?,?,?)";
+
 	// SERVICIO
 	public static final String GET_SERVICIOS_BY_SUSCRIPTOR_ID = "SELECT id FROM petkeepers.servicio WHERE id_suscriptor = ?";
 	public static final String GET_SERVICIOS = "SELECT * FROM petkeepers.servicio";
