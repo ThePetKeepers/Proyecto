@@ -20,16 +20,30 @@ $db = new mysqli($host, $user, $password, $dbname, $port, $socket);
 if(!$db){
     echo json_encode("ERROR");
 }else{
-$usr = json_decode(file_get_contents("php://input"),true);
-$nom = $usr["email"];
-$pas= $usr["password"];
-$update = "INSERT INTO usuarios (usuario,contraseña) VALUES ('$nom','$pas')";
+$nom = $_POST["nom"];
+$des = $_POST["des"];
+$pre = $_POST["pre"];
+$nm = $_POST["nm"];
+$id = $_POST["id"];
+/*var_dump($_FILES);
+foreach ($_FILES as $file) {
+    $nomImg=$file["tmp_name"];
+    $SoloUrl = $file["name"];
+    $UrlImg = $folderUrl.$file["name"]; 
+    move_uploaded_file($nomImg,$UrlImg);
+}
+$SoloUrl= "http://localhost/Proyecto/CARPETA_PHP/imagenes/".$SoloUrl;*/
+
+$precio = intval($pre);
+$identificador = intval($id);
+$update = "INSERT INTO mascota (nombre,nombre_mascota,descripcion,precio,activo,id_cliente) VALUES ('$nom','$nm','$des','$precio',1,'$identificador')";
 if(mysqli_query($db,$update)){
-    echo json_encode("Se ha creado el usuario: ".$nom);
+    echo json_encode("Se ha creado la mascota correctamente");
 }else{
     echo json_encode("Error",mysqli_error($db));
 }
 }
+
 
 
 

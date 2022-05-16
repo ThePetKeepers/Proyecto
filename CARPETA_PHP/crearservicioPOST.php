@@ -3,12 +3,19 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Allow: GET, POST, OPTIONS, PUT, DELETE");
-$host = "localhost";
-$name = "petkeepers";
-$user = "root";
-$password="";
-$port = 3306;
-$db = new mysqli($host,$user,$password,$name);
+//Buscamos las vars de conexion de bbdd en el archivo .ini
+$parse = parse_ini_file("./db_config.ini");
+$error = false;
+$tipo_error = "";
+$host = $parse['host'];
+$port = $parse['port'];
+$socket = $parse['socket'];
+$user = $parse['user'];
+$password = $parse['password'];
+$dbname = $parse['bbdd'];
+
+//Hacemos la conexion 
+$db = new mysqli($host, $user, $password, $dbname, $port, $socket);
 
 if(!$db){
     echo json_encode("ERROR");

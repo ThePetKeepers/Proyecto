@@ -22,7 +22,7 @@
             <ul class="nav">
               <li class="nav-item">
                 <button class="btn btn-primary" aria-current="page"
-                  [routerLink]="['/suscripciones']">Suscripciones</button>
+                  [routerLink]="['/suscripciones',id]">Suscripciones</button>
               </li>
             </ul>
           </div>
@@ -59,14 +59,15 @@
 
           <div class="col">
             <ul class="nav" *ngIf="token==true">
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/mensajes']">Mensajes</button>
-              </li>
+
               <li class="nav-item">
                 <button type="button" class="btn btn-primary" [routerLink]="['/perfil',id]">Perfil</button>
               </li> 
               <li class="nav-item">
                 <button type="button" class="btn btn-primary" [routerLink]="['/crearServicio',id]">Nuevo servicio</button>
+              </li> 
+              <li class="nav-item">
+                <button type="button" class="btn btn-primary" [routerLink]="['/crearMascota',id]">Nueva mascota</button>
               </li> 
 
               <div class="dropdown">

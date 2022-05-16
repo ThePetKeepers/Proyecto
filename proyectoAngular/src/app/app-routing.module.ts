@@ -14,6 +14,8 @@ import { perfilComponent } from './perfilComponent/perfil.component';
 import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
 import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
 import { crearservicioComponent } from './crearservicioComponent/crearservicio.component';
+import { crearmascotaComponent } from './crearmascotaComponent/crearmascota.component';
+import { crearsubscriptionComponent } from './crearsubscriptionComponent/crearsubscription.component';
 
 
 const routes: Routes = [
@@ -21,7 +23,7 @@ const routes: Routes = [
   {path:'main',component:mainComponent},
   {path:'login',component:loginComponent},
   {path:'servicio',component:servicioComponent},
-  {path:'suscripciones',component:SubscriptionsComponentComponent},
+  {path:'suscripciones/:id',component:SubscriptionsComponentComponent},
   {path:'servicio/:tipo',component:servicioComponent},
   {path:'mensajes',component:mensajesComponent},
   {path:'crearcuenta',component:crearcuentaComponent},
@@ -34,6 +36,8 @@ const routes: Routes = [
   {path:'servicio',component:mostrarserviciosComponent},
   {path:'crearServicio',component:crearservicioComponent},
   {path:'crearServicio/:id',component:crearservicioComponent},
+  {path:'crearMascota/:id',component:crearmascotaComponent},
+  {path:'crearSuscripcion/:id',component:crearsubscriptionComponent},
   {path: '**', component:PageNotFoundComponent }
 ];
 

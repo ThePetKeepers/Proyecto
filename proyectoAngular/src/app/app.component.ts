@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EntidadesService } from './services/entidades.service';
+import { TokenService } from './services/token.service';
 import { UsuarioService } from './services/usuario.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers:[EntidadesService,UsuarioService]
+  providers:[TokenService,UsuarioService]
 })
 export class AppComponent {
   title = 'Practica05';
 
-  constructor(private _entidadesService:EntidadesService, private _usuarioService:UsuarioService){
+  constructor(private _tokenService:TokenService, private _usuarioService:UsuarioService){
 
 }
 
@@ -44,7 +44,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     
-      this._entidadesService.getToken().subscribe(
+      this._tokenService.getToken().subscribe(
           (resul)=>{ 
               console.log(resul);
               if(resul["correcte"]==true){
@@ -56,7 +56,7 @@ export class AppComponent {
           }
       )
 
-      this._entidadesService.getUsrToken().subscribe(
+      this._tokenService.getUsrToken().subscribe(
         (resul)=>{ 
             var mail = resul;
             this._usuarioService.getUserByEmail(mail).subscribe(

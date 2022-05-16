@@ -11,6 +11,9 @@ $user = $parse['user'];
 $password = $parse['password'];
 $dbname = $parse['bbdd'];
 
+//Hacemos la conexion 
+$db = new mysqli($host, $user, $password, $dbname, $port, $socket);
+
 if(!$db){
     echo json_encode("ERROR");
 }else{

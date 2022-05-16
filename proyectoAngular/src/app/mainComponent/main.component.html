@@ -249,7 +249,7 @@
         </div>
       </div>
       -->
-      <div *ngIf="token==true">*****MASCOTAS QUE REQUIEREN SERVICIOS*****</div>
+      <div *ngIf="token==true">
       <h2 align="center" style="margin-top:5%;">Mascotas que requieren servicios</h2>
       <div style="display: flex; flex-direction: row; justify-content: space-around;">
         <ng-container *ngFor="let masc of mascotas">
@@ -268,6 +268,7 @@
             </div>
           </div>
         </ng-container>
+      </div>
         <!-- 
         <div id="productos" class="card" style="width: 30rem;">
           <img class="card-img-top" src="./assets/gato.jpeg" alt="Card image cap" style="padding: 5%;">
