@@ -15,13 +15,18 @@ export class crearsubscriptionComponent implements OnInit{
     }
     urlVal="";
     id = 0;
+    type=0;
       ngOnInit(): void {
         this._activRoute.paramMap.subscribe(
           (params) => {
           this.urlVal = params.get("id")+"";    
           this.id = Number(this.urlVal);
+          this.urlVal = params.get("type")+"";
+          this.type = Number(this.urlVal);
       }
       );
-      console.log(this.id);
+      console.log(this.id+" - "+this.type);
+
+      
       }
 }

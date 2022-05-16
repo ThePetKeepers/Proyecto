@@ -37,7 +37,7 @@ const routes: Routes = [
   {path:'crearServicio',component:crearservicioComponent},
   {path:'crearServicio/:id',component:crearservicioComponent},
   {path:'crearMascota/:id',component:crearmascotaComponent},
-  {path:'crearSuscripcion/:id',component:crearsubscriptionComponent},
+  {path:'crearSuscripcion/:id/:type',component:crearsubscriptionComponent},
   {path: '**', component:PageNotFoundComponent }
 ];
 

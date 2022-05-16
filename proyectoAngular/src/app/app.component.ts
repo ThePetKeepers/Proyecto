@@ -10,7 +10,7 @@ import { UsuarioService } from './services/usuario.service';
   providers:[TokenService,UsuarioService]
 })
 export class AppComponent {
-  title = 'Practica05';
+  title = 'Pet Keepers';
 
   constructor(private _tokenService:TokenService, private _usuarioService:UsuarioService){
 
