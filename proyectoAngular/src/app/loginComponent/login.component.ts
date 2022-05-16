@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { Entidades } from "../clases/entidades";
-import { EntidadesService } from "../services/entidades.service";
+
 import { LoginServices } from "../services/login.service";
 
 @Component({
@@ -42,17 +40,8 @@ export class loginComponent implements OnInit{
             },(error)=>{console.log("error: ",error)}
         
         );
-/*
-        this.loginService.postDadesAjax(this.email,this.password)
-        .subscribe(
-            (result) => {
-                console.log(result);
-                localStorage.setItem("token",result.token);
-
-            },(error)=>{console.log("error: ",error)}
-        
-        );*/
     }
+    
     registerUser(){
         
         this.loginService.registrarUsuario(this.email2,this.password2)
@@ -64,7 +53,7 @@ export class loginComponent implements OnInit{
                     (result) => {
                         console.log(result);
                         localStorage.setItem("token",result.token);
-                        document.location.href = 'http://localhost:4200/entidades';
+                        document.location.href = 'http://localhost:4200/';
         
                     },(error)=>{console.log("error: ",error)}
                 

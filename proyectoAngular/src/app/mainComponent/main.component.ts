@@ -3,22 +3,22 @@ import { Component } from '@angular/core';
 import { Mascota } from "../clases/mascota";
 import { Producto } from "../clases/producto";
 import { Servicio } from "../clases/servicio";
-import { EntidadesService } from "../services/entidades.service";
 import { mascotaService } from "../services/mascota.service";
 import { ProductoService } from "../services/producto.service";
 import { ServicioService } from "../services/servicio.service";
+import { TokenService } from "../services/token.service";
 
 @Component({
     selector:'main-comp',
     templateUrl:'main.component.html',
     styleUrls:['main.component.css'],
-    providers:[EntidadesService,ProductoService,ServicioService,mascotaService]
+    providers:[TokenService,ProductoService,ServicioService,mascotaService]
 })
 
 
 
 export class mainComponent implements OnInit{
-  constructor(private _entidadesService:EntidadesService, private _productoService:ProductoService, private _servicioService:ServicioService, private _mascotaService:mascotaService){
+  constructor(private _tokenService:TokenService, private _productoService:ProductoService, private _servicioService:ServicioService, private _mascotaService:mascotaService){
 
   }
     productos: Array<Producto> = [];
@@ -28,7 +28,7 @@ export class mainComponent implements OnInit{
     token=false;
     ngOnInit(): void {
 
-      this._entidadesService.getToken().subscribe(
+      this._tokenService.getToken().subscribe(
         (resul)=>{ 
             console.log(resul);
             if(resul["correcte"]==true){

@@ -1,8 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Entidades } from "../clases/entidades";
-import { EntidadesService } from "../services/entidades.service";
-import { LoginServices } from "../services/login.service";
 import { ServicioService } from "../services/servicio.service";
 
 @Component({

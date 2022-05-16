@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Usuario } from "../clases/usuario";
-import { EntidadesService } from "../services/entidades.service";
 import { UsuarioService } from "../services/usuario.service";
 //import { countries } from "./countries/country-data-store";
 
@@ -9,7 +8,7 @@ import { UsuarioService } from "../services/usuario.service";
     selector:'perfil-comp',
     templateUrl:'perfil.component.html',
     styleUrls:['perfil.component.css'],
-    providers:[EntidadesService,UsuarioService]
+    providers:[UsuarioService]
 })
 
 
