@@ -1,15 +1,15 @@
 export class Suscripcion {
     id: number = -1;
-    tipo: String = "";
+    tiempo: String = "";
     precio: String = "";
     descripcion: String = "";
 
     constructor(
-        id: number = -1, tipo: String = "",
+        id: number = -1, tiempo: String = "",
         descripcion: String = "", precio: String = ""
     ) {
         this.id = id;
-        this.tipo = tipo;
+        this.tiempo = tiempo;
         this.descripcion = descripcion;
         this.precio = precio;
     }

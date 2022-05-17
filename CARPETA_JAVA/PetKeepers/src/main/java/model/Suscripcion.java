@@ -19,8 +19,6 @@ public class Suscripcion {
 
 	@JsonProperty("descripcion")
 	private String descripcion;
-
-	//Notas: @notnull
 	
 	// CONSTRUCTORES
 	@JsonCreator
