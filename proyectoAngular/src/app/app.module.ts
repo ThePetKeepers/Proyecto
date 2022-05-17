@@ -19,6 +19,7 @@ import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscr
 import { ServicioService } from './services/servicio.service';
 import { crearservicioComponent } from './crearservicioComponent/crearservicio.component';
 import { crearmascotaComponent } from './crearmascotaComponent/crearmascota.component';
+import { footerComponent } from './footerComponent/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { crearmascotaComponent } from './crearmascotaComponent/crearmascota.comp
     PageNotFoundComponent,
     crearservicioComponent,
     crearmascotaComponent,
+    footerComponent,
     SubscriptionsComponentComponent
   ],
   imports: [
