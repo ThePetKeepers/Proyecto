@@ -6,11 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
+import java.util.*;
+
 import config.ConstantsApi;
 import model.Servicio;
 import externalLibrary.MyFunctions;
 import model.ComentarioServicio;
+import model.Objeto;
 
 public class ServicioDao {
 	private Connection bbddConnection;
@@ -161,13 +163,13 @@ public class ServicioDao {
 		ps.close();
 	}
 	
-	public ArrayList<Servicio> getServiciosByNombre() throws SQLException, ClassNotFoundException {
+	public ArrayList<Servicio> getServiciosByNombre(String nombre) throws SQLException, ClassNotFoundException {
 		ArrayList<Servicio> servicios = new ArrayList<>();
 
-		String select = ConstantsApi.GET_SERVICIOS_BY_NOMBRE;
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_SERVICIOS_BY_NOMBRE);
+		ps.setString(1, nombre);
 
-		Statement st = bbddConnection.createStatement();
-		ResultSet rs = st.executeQuery(select);
+		ResultSet rs = ps.executeQuery();
 
 		while (rs.next()) {
 			servicios.add(getServicio(rs.getInt("id")));
@@ -175,4 +177,29 @@ public class ServicioDao {
 
 		return servicios;
 	}
+	
+	public ArrayList<Servicio> getTop5() throws SQLException, ClassNotFoundException {
+		ArrayList<Servicio> todos = getServicios();
+		ArrayList<Servicio> servicios = new ArrayList<>();
+
+		Collections.sort(todos, new SortByPuntuacion());
+
+		
+		servicios.add(todos.get(0));
+		servicios.add(todos.get(1));
+		servicios.add(todos.get(2));
+		servicios.add(todos.get(3));
+		servicios.add(todos.get(4));
+
+		return servicios;
+	}
+	
+	static class SortByPuntuacion implements Comparator<Objeto> {
+		@SuppressWarnings("deprecation")
+		@Override
+		public int compare(Objeto o1, Objeto o2) {
+			// TODO Auto-generated method stub
+			return new Integer((int) o2.getPuntuacion()).compareTo(new Integer((int) o1.getPuntuacion()));
+		}
+    }
 }

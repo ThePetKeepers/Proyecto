@@ -100,6 +100,12 @@ public class ServicioApi {
 	@Path("/nombre={nombre}")
 	public Response getServiciosByNombre(@PathParam("nombre") String nombre)throws ClassNotFoundException, SQLException, NullPointerException {
 		System.out.println(nombre);
-		return Response.ok("ok", MediaType.APPLICATION_JSON).build();
+		return Response.ok(service.getServiciosByNombre(nombre), MediaType.APPLICATION_JSON).build();
+	}
+	
+	@GET
+	@Path("/top5")
+	public Response getTop5()throws ClassNotFoundException, SQLException, NullPointerException {
+		return Response.ok(service.getTop5(), MediaType.APPLICATION_JSON).build();
 	}
 }

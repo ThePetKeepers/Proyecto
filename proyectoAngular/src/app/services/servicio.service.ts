@@ -14,6 +14,15 @@ export class ServicioService {
         return this.servicio;
     }
 
+    getServiciosJAVA(): Observable<any> {
+        return this.conexHttp.get(
+            "/api/proveedor/",
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
     getTipoServicio(tipo: String): Servicio {
         var ser = new Servicio;
         for (var i = 0; i < this.servicio.length; i++) {

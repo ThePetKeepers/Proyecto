@@ -7,9 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 import config.ConstantsApi;
 import externalLibrary.MyFunctions;
 import model.Mascota;
+import model.Objeto;
 import model.ComentarioMascota;
 
 public class MascotaDao {
@@ -171,4 +175,29 @@ public class MascotaDao {
 		ps.execute();
 		ps.close();
 	}
+	
+	public ArrayList<Mascota> getTop5() throws SQLException, ClassNotFoundException {
+		ArrayList<Mascota> todos = getMascotas();
+		ArrayList<Mascota> mascotas = new ArrayList<>();
+
+		Collections.sort(todos, new SortByPuntuacion());
+
+		
+		mascotas.add(todos.get(0));
+		mascotas.add(todos.get(1));
+		mascotas.add(todos.get(2));
+		mascotas.add(todos.get(3));
+		mascotas.add(todos.get(4));
+
+		return mascotas;
+	}
+	
+	static class SortByPuntuacion implements Comparator<Objeto> {
+		@SuppressWarnings("deprecation")
+		@Override
+		public int compare(Objeto o1, Objeto o2) {
+			// TODO Auto-generated method stub
+			return new Integer((int) o2.getPuntuacion()).compareTo(new Integer((int) o1.getPuntuacion()));
+		}
+    }
 }

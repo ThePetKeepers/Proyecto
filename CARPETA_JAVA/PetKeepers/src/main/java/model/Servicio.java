@@ -37,5 +37,4 @@ public class Servicio extends Objeto {
 		return suscriptor;
 	}
 	
-	
 }

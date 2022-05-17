@@ -88,12 +88,20 @@ public class MascotaApi {
 		service = new ServiceMascota();
 		return Response.ok(service.getComentariosMascota(id), MediaType.APPLICATION_JSON).build();
 	}
-	
+
 	@POST
 	@Path("/comentarios")
-	public Response postComentarioMascota(ComentarioMascota comentario) throws ClassNotFoundException, SQLException, NullPointerException {
+	public Response postComentarioMascota(ComentarioMascota comentario)
+			throws ClassNotFoundException, SQLException, NullPointerException {
 		service = new ServiceMascota();
 		service.postComentarioMascota(comentario);
 		return Response.ok("Se ha creado el comentario", MediaType.APPLICATION_JSON).build();
+	}
+
+	@GET
+	@Path("/top5")
+	public Response getTop5() throws ClassNotFoundException, SQLException, NullPointerException {
+		service = new ServiceMascota();
+		return Response.ok(service.getTop5(), MediaType.APPLICATION_JSON).build();
 	}
 }
