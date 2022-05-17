@@ -42,6 +42,14 @@ export class servicioComponent implements OnInit {
             this.servicioPedido = params.get("tipo") + "";
         });
 
+        //
+        this._servicioService.getServiciosJAVA()
+                .subscribe(async (resultado) => {
+                    console.log(resultado)
+                }, (error) => {
+                    console.log(error);
+                });
+        //
         if (this.servicioPedido != "null") { //Buscar por nombre:
             this._servicioService.getServiciosByName(this.servicioPedido)
                 .subscribe(async (resultado) => {

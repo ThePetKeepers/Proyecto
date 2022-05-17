@@ -131,4 +131,20 @@ public class ServiceMascota {
 		Dao.postComentarioMascota(comentario);
 		Dao.disconnect();
 	}
+	
+	public ArrayList<Mascota> getTop5() throws SQLException, NullPointerException, ClassNotFoundException {
+		Dao = new MascotaDao();
+		try {
+			Dao.connect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		ArrayList<Mascota> mascotas = Dao.getTop5();
+		Dao.disconnect();
+
+		return mascotas;
+	}
 }

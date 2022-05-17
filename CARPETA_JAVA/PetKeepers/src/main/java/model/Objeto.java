@@ -2,13 +2,15 @@ package model;
 
 //CLASES
 import java.util.ArrayList;
+import java.util.Comparator;
+
 //DEPENDENCIAS
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 //OBJETOS
 
 public class Objeto {
-	//ATRIBUTOS
+	// ATRIBUTOS
 	@JsonProperty("id")
 	private int id;
 
@@ -30,15 +32,11 @@ public class Objeto {
 	@JsonProperty("imagenes")
 	private ArrayList<String> imagenes;
 
-	//CONSTRUCTORES
+	// CONSTRUCTORES
 	@JsonCreator
-	public Objeto(
-			@JsonProperty("id") final int id,
-			@JsonProperty("nombre") final String nombre,
-			@JsonProperty("descripcion") final String descripcion,
-			@JsonProperty("precio") final double precio,
-			@JsonProperty("puntuacion") final double puntuacion,
-			@JsonProperty("activo") final boolean activo,
+	public Objeto(@JsonProperty("id") final int id, @JsonProperty("nombre") final String nombre,
+			@JsonProperty("descripcion") final String descripcion, @JsonProperty("precio") final double precio,
+			@JsonProperty("puntuacion") final double puntuacion, @JsonProperty("activo") final boolean activo,
 			@JsonProperty("imagenes") final ArrayList<String> imagenes) {
 		this.id = id;
 		this.nombre = nombre;
@@ -50,9 +48,10 @@ public class Objeto {
 	}
 
 	@JsonCreator
-	public Objeto() {}
-	
-	//ENCAPSULACION
+	public Objeto() {
+	}
+
+	// ENCAPSULACION
 	@JsonProperty("id")
 	public int getId() {
 		return id;
