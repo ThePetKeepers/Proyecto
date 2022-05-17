@@ -26,4 +26,14 @@ export class SuscriptorService {
             }
         );
     }
+
+    newSuscriptor(id:Number,type:Number,payment:Number): Observable<any>{
+        let url="/Proyecto/CARPETA_PHP/nuevoSuscriptor.php";
+        let formData:FormData = new FormData();
+        formData.append("id",id+"");
+        formData.append("type",type+"");
+        formData.append("payment",payment+"");
+
+        return this.conexHttp.post(url,formData);
+    }
 }
