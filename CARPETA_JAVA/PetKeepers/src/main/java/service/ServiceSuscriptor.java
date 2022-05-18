@@ -2,8 +2,6 @@ package service;
 
 //CLASES
 import java.util.ArrayList;
-
-import model.Suscriptor;
 //DEPENDENCIAS
 //OBJETOS
 import model.Suscriptor;

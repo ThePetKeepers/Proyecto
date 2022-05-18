@@ -13,16 +13,7 @@ export class ServicioService {
     getServicios(): Array<Servicio> {
         return this.servicio;
     }
-
-    getServiciosJAVA(): Observable<any> {
-        return this.conexHttp.get(
-            "/api/proveedor/",
-            {
-                headers: new HttpHeaders(
-                    { 'Content-Type': 'application/json' })
-            }
-        );
-    }
+    
     getTipoServicio(tipo: String): Servicio {
         var ser = new Servicio;
         for (var i = 0; i < this.servicio.length; i++) {
@@ -45,7 +36,7 @@ export class ServicioService {
 
     getAllServicios(): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getAllServicios.php",
+            "/api/servicio/",
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -55,7 +46,7 @@ export class ServicioService {
 
     getTop5Servicios(): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getTop5Servicios.php",
+            "/api/servicio/top5",
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -65,7 +56,7 @@ export class ServicioService {
 
     getServiciosByName(nombre: String): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getServiciosByName.php?nombre=" + nombre,
+            "api/servicio/nombre=" + nombre,
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -75,7 +66,7 @@ export class ServicioService {
 
     getServiciosById(id: Number): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getServicioById.php?id=" + id,
+            "/api/servicio/" + id,
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })

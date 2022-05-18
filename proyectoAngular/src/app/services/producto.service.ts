@@ -20,7 +20,7 @@ export class ProductoService {
 
     getTop5Productos(): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getTop5Productos.php",
+            "/api/producto/top5",
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })

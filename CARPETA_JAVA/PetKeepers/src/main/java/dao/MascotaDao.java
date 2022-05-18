@@ -192,12 +192,11 @@ public class MascotaDao {
 		return mascotas;
 	}
 	
-	static class SortByPuntuacion implements Comparator<Objeto> {
+	static class SortByPuntuacion implements Comparator<Mascota> {
 		@SuppressWarnings("deprecation")
 		@Override
-		public int compare(Objeto o1, Objeto o2) {
-			// TODO Auto-generated method stub
-			return new Integer((int) o2.getPuntuacion()).compareTo(new Integer((int) o1.getPuntuacion()));
+		public int compare(Mascota m1, Mascota m2) {
+			return new Integer((int) m2.getPuntuacion()).compareTo(new Integer((int) m1.getPuntuacion()));
 		}
     }
 }
