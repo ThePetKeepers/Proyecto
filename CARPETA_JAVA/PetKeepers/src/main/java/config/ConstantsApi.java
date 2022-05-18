@@ -37,6 +37,13 @@ public class ConstantsApi {
 	public static final String UPDATE_MASCOTA = "UPDATE petkeepers.mascota SET nombre = ?, nombre_mascota = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_cliente = ? WHERE (id = ?)";
 	public static final String DELETE_MASCOTA = "DELETE FROM petkeepers.mascota WHERE (id = ?)";
 
+	// USUARIO
+	public static final String GET_USUARIOS = "SELECT * FROM petkeepers.cliente";
+	public static final String GET_USUARIO = "SELECT * FROM petkeepers.cliente WHERE id = ?";
+	public static final String POST_USUARIO = "INSERT INTO petkeepers.cliente (nombre, primer_apellido, segundo_apellido, email, password, dni, nacimiento, telefono, ciudad, direccion, foto) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+	public static final String UPDATE_USUARIO = "UPDATE petkeepers.cliente SET nombre = ?, primer_apellido = ?, segundo_apellido = ?, email = ?, password = ?, dni = ?, nacimiento = ?, telefono = ?, ciudad = ?, direccion = ?, foto = ? WHERE (id = ?)";
+	public static final String DELETE_USUARIO = "DELETE FROM petkeepers.cliente WHERE (id = ?)";
+
 	// SUSCRIPTOR
 	public static final String GET_SUSCRIPTORES = "SELECT * FROM petkeepers.suscriptor";
 	public static final String GET_SUSCRIPTOR = "SELECT * FROM petkeepers.suscriptor WHERE id = ?";

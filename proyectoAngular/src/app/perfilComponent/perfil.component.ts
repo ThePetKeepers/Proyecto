@@ -35,7 +35,7 @@ export class perfilComponent implements OnInit{
                     resultado.segundo_apellido,resultado.email,resultado.password,
                     resultado.nacimiento,resultado.telefono,resultado.pais,
                     resultado.ciudad,resultado.direccion,resultado.foto,
-                    resultado.mascotas,resultado.productos
+                    resultado.mascotas
                 )
             })
     }

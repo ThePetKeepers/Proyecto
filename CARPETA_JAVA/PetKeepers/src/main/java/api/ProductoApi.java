@@ -68,5 +68,13 @@ public class ProductoApi {
 		service.deleteProducto(id);
 		return Response.ok("Se ha eliminado el producto", MediaType.APPLICATION_JSON).build();
 	}
+	
+	// Endpoints adicionales:
+	@GET
+	@Path("/top5")
+	public Response getTop5() throws SQLException, ClassNotFoundException {
+		service = new ServiceProducto();
+		return Response.ok(service.getTop5(), MediaType.APPLICATION_JSON).build();
+	}
 
 }

@@ -12,7 +12,6 @@ import config.ConstantsApi;
 import model.Servicio;
 import externalLibrary.MyFunctions;
 import model.ComentarioServicio;
-import model.Objeto;
 
 public class ServicioDao {
 	private Connection bbddConnection;
@@ -194,12 +193,11 @@ public class ServicioDao {
 		return servicios;
 	}
 	
-	static class SortByPuntuacion implements Comparator<Objeto> {
+	static class SortByPuntuacion implements Comparator<Servicio> {
 		@SuppressWarnings("deprecation")
 		@Override
-		public int compare(Objeto o1, Objeto o2) {
-			// TODO Auto-generated method stub
-			return new Integer((int) o2.getPuntuacion()).compareTo(new Integer((int) o1.getPuntuacion()));
+		public int compare(Servicio s1, Servicio s2) {
+			return new Integer((int) s2.getPuntuacion()).compareTo(new Integer((int) s1.getPuntuacion()));
 		}
     }
 }

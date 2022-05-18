@@ -239,9 +239,11 @@ VALUES
 INSERT INTO producto
 (nombre, descripcion, precio, puntuacion, activo, imagenes, id_proveedor)
 VALUES
-("Pelota de tenis", "Especial para la mandibula de tu mascota", 5.50, 4.80, true, "hola.png, adeu.png", 1),
+("Pelota de tenis", "Especial para la mandibula de tu mascota", 5.50, 2.80, true, "hola.png, adeu.png", 1),
 ("Traje de Santa", "Perfecto para navidades", 8.50, 5, true, "a.png, e.png", 2),
-("Collar Rosado", "Collar talla M", 7.50, 4.80, true, "q.png, k.png", 3);
+("Collar Rosado", "Collar talla M para perros", 7.50, 3.80, true, "q.png, k.png", 3),
+("Cepillo de dientes", "Tu mascota nunca tendra caries", 5.50, 5, true, "hola.png, adeu.png", 1),
+("Botas para la nieve", "Tu perro no tendra frio, al dar un paseo de invierno", 8.50, 3.5, true, "a.png, e.png", 2);
 
 INSERT INTO adquirir_servicio
 (id_servicio, id_cliente)

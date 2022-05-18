@@ -7,9 +7,9 @@ import { Suscriptor } from "../clases/suscriptor";
 export class SuscriptorService {
     constructor(private conexHttp: HttpClient) { }
 
-    getSuscriptor(id: number): Observable<any> {
+    getSuscriptorById(id: number): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getSuscriptor.php?id=" + id,
+            "/api/suscriptor/" + id,
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
