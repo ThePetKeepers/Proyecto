@@ -6,7 +6,6 @@ import { Producto } from "./producto";
 
 export class Suscriptor extends Usuario {
     id_cliente: number = -1;
-    tipo_usuario: number = -1;
     pago: Pago = new Pago();
     suscripcion: Suscripcion = new Suscripcion();
     servicios: Array<number> = [];
@@ -28,10 +27,9 @@ export class Suscriptor extends Usuario {
             (
                 id, nombre, primer_apellido, segundo_apellido,
                 email, password, dni, nacimiento, 
-                telefono, ciudad, direccion, foto, mascotas
+                telefono, ciudad, direccion, foto, tipo_usuario, mascotas
             );
         this.id_cliente = id_cliente;
-        this.tipo_usuario = tipo_usuario;
         this.pago = pago;
         this.suscripcion = suscripcion;
         this.servicios = servicios;

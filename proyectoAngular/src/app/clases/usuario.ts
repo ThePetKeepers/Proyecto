@@ -14,6 +14,7 @@ export class Usuario {
     ciudad: String = "";
 	direccion: String = "";
 	foto: String = "";
+    tipo_usuario: number = -1;
     mascotas:Array<Mascota> = [];
 
     constructor(
@@ -23,7 +24,7 @@ export class Usuario {
         dni: String = "", nacimiento: String = "",
         telefono: String = "", ciudad: String = "",
         direccion: String = "", foto: String = "",
-        mascotas:Array<Mascota> = [],
+        tipo_usuario: number = -1, mascotas:Array<Mascota> = [],
     ) {
         this.id = id;
         this.nombre = nombre;
@@ -37,6 +38,7 @@ export class Usuario {
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.foto = foto;
+        this.tipo_usuario = tipo_usuario;
         this.mascotas = mascotas;
     }
 }

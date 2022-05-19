@@ -74,6 +74,7 @@ public class UsuarioDao {
 					rs.getString("ciudad"),
 					rs.getString("direccion"),
 					rs.getString("foto"),
+					rs.getInt("tipo_usuario"),
 					mascotas
 			);
 		}
@@ -95,6 +96,7 @@ public class UsuarioDao {
 		ps.setString(9, usuario.getCiudad());
 		ps.setString(10, usuario.getDireccion());
 		ps.setString(11, usuario.getFoto());
+		ps.setInt(12, usuario.getTipo_usuario());
 
 		ps.execute();
 		ps.close();
@@ -114,6 +116,7 @@ public class UsuarioDao {
 		ps.setString(9, usuario.getCiudad());
 		ps.setString(10, usuario.getDireccion());
 		ps.setString(11, usuario.getFoto());
+		ps.setInt(13, usuario.getTipo_usuario());
 		ps.setInt(12, id);
 
 		ps.execute();

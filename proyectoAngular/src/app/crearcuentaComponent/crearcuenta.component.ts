@@ -33,6 +33,7 @@ export class crearcuentaComponent implements OnInit {
     ciudad = "";
     direccion = "";
     foto = "";
+    tipo_usuario = 2;
     mascotas: Array<Mascota> = [];
     filesToUpload: any;
 
@@ -50,7 +51,7 @@ export class crearcuentaComponent implements OnInit {
             this.dni, this.nacimiento,
             String(this.telefono), this.ciudad,
             this.direccion, this.foto,
-            this.mascotas
+             this.tipo_usuario, this.mascotas
         );
 
         this._registrar.postUsuario(this.usuario).subscribe((result) => {

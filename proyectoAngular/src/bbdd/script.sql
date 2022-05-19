@@ -30,7 +30,11 @@ nacimiento DATE,
 telefono CHAR(9),
 ciudad VARCHAR(255),
 direccion VARCHAR(255),
-foto VARCHAR(255));
+foto VARCHAR(255),
+tipo_usuario INT NOT NULL,
+FOREIGN KEY (tipo_usuario) 
+	REFERENCES tipo_usuario (id) 
+    ON DELETE CASCADE ON UPDATE CASCADE);
 
 CREATE TABLE suscriptor(
 id INT PRIMARY KEY AUTO_INCREMENT,
@@ -45,8 +49,7 @@ ciudad VARCHAR(255),
 direccion VARCHAR(255),
 foto VARCHAR(255),
 password VARCHAR(255),
--- Id que tiene en la tabla cliente:
-id_cliente INT NOT NULL,
+id_cliente INT NOT NULL, -- Id que tiene en la tabla cliente
 tipo_usuario INT NOT NULL,
 metodo_de_pago INT NOT NULL,
 id_suscripcion INT NOT NULL,
@@ -177,23 +180,24 @@ INSERT INTO tipo_usuario
 (tipo)
 VALUES
 ("ADMIN"),
-("CLIENTE");
+("CLIENTE"),
+("SUSCRIPTOR");
 
 INSERT INTO cliente
-(nombre, primer_apellido, email, password, dni, nacimiento, telefono, ciudad, direccion)
+(nombre, primer_apellido, email, password, dni, nacimiento, telefono, ciudad, direccion, tipo_usuario)
 VALUES
 -- ADMINS:
-("Juan", "Mata", "juan@gmail.com", "1234", "", null, "", "", ""),
-("Cristian", "Ayala", "cristian@gmail.com", "1234", "", null, "", "", ""),
-("Diego", "Catanyo", "diego@gmail.com", "1234", "", null, "", "", ""),
+("Juan", "Mata", "juan@gmail.com", "1234", "", null, "", "", "", 1),
+("Cristian", "Ayala", "cristian@gmail.com", "1234", "", null, "", "", "", 1),
+("Diego", "Catanyo", "diego@gmail.com", "1234", "", null, "", "", "", 1),
 -- SUSCRIPTORES
-("Cristiano", "Ronaldo", "a@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8"),
-("Leo", "Messi", "f@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8"),
-("Lebron", "James", "c@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8"),
+("Cristiano", "Ronaldo", "a@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
+("Leo", "Messi", "f@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
+("Lebron", "James", "c@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
 -- SOLO CLIENTES:
-("Zoya", "Aleksanyan", "zoya.aleksanyan@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8"),
-("Javier", "Perea", "pedro.penya@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Spain", "Pelai, 8"),
-("Cristian", "Catalan", "cristian.catalan@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8");
+("Zoya", "Aleksanyan", "zoya.aleksanyan@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 2),
+("Javier", "Perea", "pedro.penya@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Spain", "Pelai, 8", 2),
+("Cristian", "Catalan", "cristian.catalan@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 2);
 
 -- ADMINS:
 INSERT INTO suscriptor
@@ -207,9 +211,9 @@ VALUES
 INSERT INTO suscriptor
 (nombre, email, dni, nacimiento, telefono, ciudad, direccion, password, id_cliente, tipo_usuario, metodo_de_pago, id_suscripcion)
 VALUES
-("Cristiano", "a@gmail.com", "888888888", "2001-06-01", "651314988", "Barcelona", "Pelai, 8", "1234", 4, 2, 1, 2),
-("Leo", "f@gmail.com", "888888888", "2001-001-01", "666666666", "Barcelona", "Pelai, 8", "1234", 5, 2, 2, 3),
-("Lebron", "c@gmail.com", "888888888", "2001-001-01", "666666666", "Barcelona", "Pelai, 8", "1234", 6, 2, 2, 3);
+("Cristiano", "a@gmail.com", "888888888", "2001-06-01", "651314988", "Barcelona", "Pelai, 8", "1234", 4, 3, 1, 2),
+("Leo", "f@gmail.com", "888888888", "2001-001-01", "666666666", "Barcelona", "Pelai, 8", "1234", 5, 3, 2, 3),
+("Lebron", "c@gmail.com", "888888888", "2001-001-01", "666666666", "Barcelona", "Pelai, 8", "1234", 6, 3, 2, 3);
 
 INSERT INTO servicio
 (nombre, descripcion, precio, puntuacion, activo, imagenes, id_suscriptor)
