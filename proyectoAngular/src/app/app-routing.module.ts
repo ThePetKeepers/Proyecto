@@ -16,6 +16,11 @@ import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscr
 import { crearservicioComponent } from './crearservicioComponent/crearservicio.component';
 import { crearmascotaComponent } from './crearmascotaComponent/crearmascota.component';
 import { crearsubscriptionComponent } from './crearsubscriptionComponent/crearsubscription.component';
+import { nosotrosComponent } from './nosotrosComponent/nosotros.component';
+import { funcionamientoComponent } from './funcionamientoComponent/funcionamiento.component';
+import { preguntasComponent } from './preguntasComponent/soporte.component';
+import { condicionesComponent } from './condicionesComponent/condiciones.component';
+import { cookiesComponent } from './cookiesComponent/cookies.component';
 
 
 const routes: Routes = [
@@ -38,6 +43,11 @@ const routes: Routes = [
   {path:'crearServicio/:id',component:crearservicioComponent},
   {path:'crearMascota/:id',component:crearmascotaComponent},
   {path:'crearSuscripcion/:id/:type',component:crearsubscriptionComponent},
+  {path:'quienesSomos',component:nosotrosComponent},
+  {path:'comoFunciona',component:funcionamientoComponent},
+  {path:'preguntasFrecuentes',component:preguntasComponent},
+  {path:'condicionesDeUso',component:condicionesComponent},
+  {path:'cookies',component:cookiesComponent},
   {path: '**', component:PageNotFoundComponent }
 ];
 

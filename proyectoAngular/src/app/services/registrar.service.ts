@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Entidades } from '../clases/entidades';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
+//import { analyzeAndValidateNgModules } from '@angular/compiler';
 @Injectable()
 export class RegistrarServices{
 
