@@ -2,46 +2,56 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { LoginServices } from "../services/login.service";
 import { mascotaService } from "../services/mascota.service";
+import { Mascota } from "../clases/mascota";
+import { Servicio } from "../clases/servicio";
 
 @Component({
-    selector:'crearmascota-comp',
-    templateUrl:'crearmascota.component.html',
-    styleUrls:['crearmascota.component.css'],
-    providers:[mascotaService]
+    selector: 'crearmascota-comp',
+    templateUrl: 'crearmascota.component.html',
+    styleUrls: ['crearmascota.component.css'],
+    providers: [mascotaService]
 })
 
-export class crearmascotaComponent implements OnInit{
-    nm="";
-    nom="";
-    des="";
-    pre=0;
+export class crearmascotaComponent implements OnInit {
+    nombreMascota = "";
+    nombre = "";
+    descripcion = "";
+    precio = 0;
     filesToUpload: any;
-    constructor(private _mascota: mascotaService,private _activRoute:ActivatedRoute) {
+    imagenes: Array<String> = [];
+    mascota = new Mascota();
+    servicio = new Servicio();
+
+    usuario: number = 1;
+
+    constructor(private _mascota: mascotaService, private _activRoute: ActivatedRoute) {
 
     }
-    urlVal="";
+    urlVal = "";
     id = 0;
     ngOnInit(): void {
         this._activRoute.paramMap.subscribe(
             (params) => {
-            this.urlVal = params.get("id")+"";    
-            this.id = Number(this.urlVal);
-        }
+                this.urlVal = params.get("id") + "";
+                this.id = Number(this.urlVal);
+            }
         );
         console.log(this.id);
     }
 
-    crearMascota(){
-        this._mascota.postNuevaMascota(this.nom,this.nm,this.des,this.pre,this.id,this.filesToUpload)
-        .subscribe(
-            (result) => {
-                alert(result);
+    crearMascota() {
+        this.mascota = new Mascota(
+            -1, this.nombre, this.descripcion, this.precio,
+            0, true, this.imagenes, this.usuario,
+            this.nombreMascota
+        );
 
-            },(error)=>{console.log("error: ",error); }
-
-        )
+        this._mascota.postNuevaMascota(this.mascota).subscribe((result) => {
+            console.log(result);
+        });
+        document.location.href = 'http://localhost:4200/';
     }
 
 
-    
+
 }

@@ -38,6 +38,7 @@ public class UsuarioDao {
 		Statement st = bbddConnection.createStatement();
 		ResultSet rs = st.executeQuery(select);
 
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		while (rs.next()) {			
 			Usuario usuarioObtenido = getUsuario(rs.getInt("id"));
 			usuarios.add(usuarioObtenido);
@@ -127,4 +128,25 @@ public class UsuarioDao {
 		ps.close();
 
 	}
+	
+	// Endpoints adicionales:
+	public int getUsarioIdByLogin(String user, String password) throws SQLException, ClassNotFoundException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_USUARIO_BY_LOGIN);
+
+		ps.setString(1, user);
+		ps.setString(2, password);
+
+		System.out.println(ps);
+
+		ResultSet rs = ps.executeQuery();
+
+		System.out.println(rs.next());
+		System.out.println(rs.getInt("id"));
+
+		if (rs.getInt("id") != -1)
+			return rs.getInt("id");
+
+		return -1;
+	}
+	
 }

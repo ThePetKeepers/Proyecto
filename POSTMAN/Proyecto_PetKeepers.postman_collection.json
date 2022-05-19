@@ -554,6 +554,37 @@
 					"response": []
 				},
 				{
+					"name": "USUARIO_GET_ID_BY_LOGIN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario?user=juan@gmail.com&password=1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "juan@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Usuario_GET_ONE",
 					"request": {
 						"method": "GET",

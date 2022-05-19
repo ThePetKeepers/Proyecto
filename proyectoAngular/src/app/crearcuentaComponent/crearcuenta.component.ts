@@ -55,8 +55,8 @@ export class crearcuentaComponent implements OnInit {
 
         this._registrar.postUsuario(this.usuario).subscribe((result) => {
             console.log(result);
-            this.router.navigate(['login']);
         });
+        document.location.href = 'http://localhost:4200/';
 
     }
 
