@@ -1,13 +1,8 @@
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-import { Entidades } from '../clases/entidades';
-//import { analyzeAndValidateNgModules } from '@angular/compiler';
-=======
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Usuario } from '../clases/usuario';
->>>>>>> 745a5ad976f29cc6b216a4b3b01720acb8a88704
 @Injectable()
 export class RegistrarServices {
 
