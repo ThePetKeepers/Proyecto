@@ -3,15 +3,14 @@ export class Proveedor {
     nombre: String = "";
     cif: String = "";
     email: String = "";
-    telefono: number = -1;
-    pais: String = "";
+    telefono: String = "";
     ciudad: String = "";
     direccion: String = "";
 
     constructor(
         id: number = -1, nombre: String = "",
         cif: String = "", email: String = "",
-        telefono: number = -1, pais: String = "",
+        telefono: String = "", pais: String = "",
         ciudad: String = "", direccion: String = ""
     ) {
         this.id = id;
@@ -19,7 +18,6 @@ export class Proveedor {
         this.cif = cif;
         this.email = email;
         this.telefono = telefono;
-        this.pais = pais;
         this.ciudad = ciudad;
         this.direccion = direccion;
     }

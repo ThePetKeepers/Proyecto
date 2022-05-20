@@ -4,14 +4,14 @@ export class Objeto {
     descripcion: String = "";
     precio: number = -1;
     puntuacion: number = -1;
-    activo: boolean;
-    imagenes: Array<String>;
+    activo: boolean = true;
+    imagenes: Array<String> = [];
 
     constructor
         (
             id: number = -1, nombre: String = "",
             descripcion: String = "", precio: number = -1,
-            puntuacion: number = -1, activo: boolean = false,
+            puntuacion: number = -1, activo: boolean = true,
             imagenes: Array<String> = []
         ) {
         this.id = id;

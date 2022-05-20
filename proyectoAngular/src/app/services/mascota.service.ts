@@ -21,7 +21,7 @@ export class mascotaService {
 
     getTop5Mascotas(): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getTop5Mascotas.php",
+            "/api/mascota/top5",
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -29,21 +29,14 @@ export class mascotaService {
         );
     }
 
-    postNuevaMascota(nom:string,nm:string,des:string,pre:Number,id:Number,filesToUpload:FileList):Observable<any>{
-        let url="/Proyecto/CARPETA_PHP/crearmascotaPOST.php";
-        let formData:FormData = new FormData();
-       /* for (var i=0 ;i<filesToUpload.length;i++){
-            let file = filesToUpload.item(i);
-            if(file!=null){
-                formData.append('file'+i,file,file.name);
+    postNuevaMascota(mascota: Mascota): Observable<any> {
+        return this.conexHttp.post(
+            "/api/mascota", mascota,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
             }
-        }*/
-        formData.append("nom",nom);
-        formData.append("nm",nm);
-        formData.append("des",des);
-        formData.append("pre",pre+"");
-        formData.append("id",id+"");
-        return this.conexHttp.post(url,formData);
+        );
     }
 
 }

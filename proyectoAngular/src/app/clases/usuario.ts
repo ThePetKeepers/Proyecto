@@ -8,23 +8,23 @@ export class Usuario {
     segundo_apellido: String = "";
     email: String = "";
     password: String = "";
-    nacimiento: String = "";
-    telefono: String = "";
-    pais: String = "";
+    dni: String = "";
+	nacimiento: String = "";
+	telefono: String = "";
     ciudad: String = "";
-    direccion: String = "";
-    foto: String = "";
+	direccion: String = "";
+	foto: String = "";
+    tipo_usuario: number = -1;
     mascotas:Array<Mascota> = [];
-    productos:Array<Producto> = [];
 
     constructor(
         id: number = -1, nombre: String = "",
         primer_apellido: String = "", segundo_apellido: String = "",
         email: String = "", password: String = "",
-        nacimiento: String = "", telefono: String = "",
-        pais: String = "", ciudad: String = "",
+        dni: String = "", nacimiento: String = "",
+        telefono: String = "", ciudad: String = "",
         direccion: String = "", foto: String = "",
-        mascotas:Array<Mascota> = [], productos:Array<Producto> = []
+        tipo_usuario: number = -1, mascotas:Array<Mascota> = [],
     ) {
         this.id = id;
         this.nombre = nombre;
@@ -32,13 +32,13 @@ export class Usuario {
         this.segundo_apellido = segundo_apellido;
         this.email = email;
         this.password = password;
+        this.dni = dni;
         this.nacimiento = nacimiento;
         this.telefono = telefono;
-        this.pais = pais;
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.foto = foto;
+        this.tipo_usuario = tipo_usuario;
         this.mascotas = mascotas;
-        this.productos = productos;
     }
 }

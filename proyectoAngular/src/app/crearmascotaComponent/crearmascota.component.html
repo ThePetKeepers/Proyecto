@@ -1,23 +1,24 @@
 <form #newServ="ngForm">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Nombre</label>
-      <input type="text" class="form-control" [(ngModel)]="nom" #nomEn="ngModel" name="nomEn">
+      <input type="text" class="form-control" [(ngModel)]="nombre" #nomEn="ngModel" name="nomEn">
     </div>
     <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Nombre de la mascota</label>
-        <input type="text" class="form-control" [(ngModel)]="nm" #nomm="ngModel" name="nm">
+        <input type="text" class="form-control" [(ngModel)]="nombreMascota" #nomm="ngModel" name="nm">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Descripción</label>
+        <br>
+        <textarea [(ngModel)]="descripcion" #desEn="ngModel" name="desEn" cols="30" rows="10"></textarea>
       </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Descripción</label>
-      <input type="text" class="form-control" [(ngModel)]="des" #desEn="ngModel" name="desEn">
-    </div>
-    <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">precio</label>
-        <input type="number" class="form-control" [(ngModel)]="pre" #preEn="ngModel" name="preEn">
+        <input type="number" class="form-control" [(ngModel)]="precio" #preEn="ngModel" name="preEn">
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">imagenes</label>
-        <input type="number" class="form-control" id="exampleInputPassword1">
+        <input type="file" class="form-control">
       </div>
     <button type="submit" class="btn btn-primary" (click)="crearMascota()">Submit</button>
   </form>

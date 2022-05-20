@@ -1,37 +1,35 @@
 import { Usuario } from "./usuario";
 import { Pago } from "./pago";
 import { Suscripcion } from "./suscripcion";
-import { Servicio } from "./servicio";
 import { Mascota } from "./mascota";
 import { Producto } from "./producto";
 
 export class Suscriptor extends Usuario {
-    id_tipo_usuario: String = "";
+    id_cliente: number = -1;
     pago: Pago = new Pago();
     suscripcion: Suscripcion = new Suscripcion();
-    servicios:Array<Servicio> = [];
+    servicios: Array<number> = [];
 
     constructor
         (
             id: number = -1, nombre: String = "",
             primer_apellido: String = "", segundo_apellido: String = "",
             email: String = "", password: String = "",
-            nacimiento: String = "", telefono: String = "",
-            pais: String = "", ciudad: String = "",
+            dni: String = "", nacimiento: String = "",
+            telefono: String = "", ciudad: String = "",
             direccion: String = "", foto: String = "",
-            mascotas:Array<Mascota> = [], productos:Array<Producto> = [],
-            id_tipo_usuario: String = "", pago: Pago = new Pago(),
-            suscripcion: Suscripcion = new Suscripcion(), 
-            servicios:Array<Servicio> = []
-        ) {
+            mascotas: Array<Mascota> = [], id_cliente: number = -1,
+            tipo_usuario: number = -1, pago: Pago = new Pago(),
+            suscripcion: Suscripcion = new Suscripcion(),
+            servicios: Array<number> = [],
+    ) {
         super
             (
                 id, nombre, primer_apellido, segundo_apellido,
-                email, password, nacimiento, telefono,
-                pais, ciudad, direccion, foto, 
-                mascotas, productos
+                email, password, dni, nacimiento, 
+                telefono, ciudad, direccion, foto, tipo_usuario, mascotas
             );
-        this.id_tipo_usuario = id_tipo_usuario;
+        this.id_cliente = id_cliente;
         this.pago = pago;
         this.suscripcion = suscripcion;
         this.servicios = servicios;

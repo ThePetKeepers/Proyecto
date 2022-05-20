@@ -297,7 +297,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/suscriptor/7",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/suscriptor/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -307,7 +307,7 @@
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
 								"suscriptor",
-								"7"
+								"1"
 							]
 						}
 					},
@@ -350,7 +350,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"\",\r\n    \"cif\": \"\",\r\n    \"email\": \"\",\r\n    \"telefono\": \"\",\r\n    \"ciudad\": \"\",\r\n    \"direccion\": \"\"\r\n}",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"antonio\",\r\n    \"primer_apellido\": \"Antonio\",\r\n    \"segundo_apellido\": \"Martinez\",\r\n    \"email\": \"bb@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"dni\": \"777777777\",\r\n    \"nacimiento\": \"2001-06-01\",\r\n    \"telefono\": \"888888888\",\r\n    \"ciudad\": \"Madrid\",\r\n    \"direccion\": \"Gran Via, 5\",\r\n    \"foto\": null,\r\n    \"mascotas\": [],\r\n    \"tipo_usuario\": 1,\r\n    \"id_cliente\": 1,\r\n    \"pago\": {\r\n        \"id\": 1,\r\n        \"tipo\": \"tarjeta\"\r\n    },\r\n    \"suscripcion\": {\r\n        \"id\": 3,\r\n        \"tiempo\": \"12 meses\",\r\n        \"precio\": \"59.99\",\r\n        \"descripcion\": \"Amas mas a los animales que a las personas\"\r\n    },\r\n    \"servicios\": []\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -358,7 +358,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/proveedor/4",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/suscriptor/7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -367,8 +367,8 @@
 							"path": [
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
-								"proveedor",
-								"4"
+								"suscriptor",
+								"7"
 							]
 						}
 					},
@@ -530,6 +530,168 @@
 			]
 		},
 		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Usuario_GET_ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USUARIO_GET_ID_BY_LOGIN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario?user=juan@gmail.com&password=1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"usuario"
+							],
+							"query": [
+								{
+									"key": "user",
+									"value": "juan@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario_GET_ONE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario_DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"usuario",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario_POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": -1,\r\n    \"nombre\": \"Alberto\",\r\n    \"primer_apellido\": \"miliani\",\r\n    \"segundo_apellido\": \"nose\",\r\n    \"email\": \"juasssssn@gmail.com\",\r\n    \"password\": \"12sss34\",\r\n    \"dni\": \"sssssssss\",\r\n    \"nacimiento\": null,\r\n    \"telefono\": \"696696699\",\r\n    \"ciudad\": \"aaaass\",\r\n    \"direccion\": \"ssssss\",\r\n    \"foto\": null,\r\n    \"tipo_usuario\": 1,\r\n    \"mascotas\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario_UPDATE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": -1,\r\n    \"nombre\": \"\",\r\n    \"primer_apellido\": \"\",\r\n    \"segundo_apellido\": \"\",\r\n    \"email\": \"\",\r\n    \"password\": \"\",\r\n    \"dni\": \"\",\r\n    \"nacimiento\": null,\r\n    \"telefono\": \"\",\r\n    \"ciudad\": \"\",\r\n    \"direccion\": \"\",\r\n    \"foto\": \"\",\r\n    \"tipo_usuario\": 1,\r\n    \"mascotas\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Producto",
 			"item": [
 				{
@@ -548,6 +710,28 @@
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
 								"producto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto_GET_TOP_5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/producto/top5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"producto",
+								"top5"
 							]
 						}
 					},
@@ -686,6 +870,51 @@
 					"response": []
 				},
 				{
+					"name": "Servicio_GET_TOP_5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/servicio/top5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"servicio",
+								"top5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Servicio_GET_BY_CLIENTE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/servicio/cliente/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"servicio",
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Servicio_GET_ONE",
 					"request": {
 						"method": "GET",
@@ -701,6 +930,51 @@
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
 								"servicio",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Servicio_GET_BY_NOMBRE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/servicio/nombre=paseo%20de%20perros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"servicio",
+								"nombre=paseo%20de%20perros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Servicios_GET_COMENTARIOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/servicio/comentarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"servicio",
+								"comentarios",
 								"1"
 							]
 						}
@@ -738,7 +1012,38 @@
 					"response": []
 				},
 				{
-					"name": "Producto_UPDATE Copy",
+					"name": "Servicio_POST_COMENTARIOS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"comentario\": \"Me ha gustado\",\r\n        \"id_servicio\": 1,\r\n        \"id_usuario\": 1,\r\n        \"fecha\": \"2022-06-01 10:55:58\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/servicio/comentarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"servicio",
+								"comentarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Servicio_UPDATE",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -752,7 +1057,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/servicio/5",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/servicio/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -762,7 +1067,7 @@
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
 								"servicio",
-								"5"
+								"4"
 							]
 						}
 					},
@@ -796,6 +1101,73 @@
 			"name": "Mascota",
 			"item": [
 				{
+					"name": "Mascota_GET_ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"mascota",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mascota_GET_TOP_5",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/top5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"mascota",
+								"top5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mascota_GET_BY_SUSCRIPTOR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/suscriptor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"mascota",
+								"suscriptor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Mascota_GET_ONE",
 					"request": {
 						"method": "GET",
@@ -818,12 +1190,12 @@
 					"response": []
 				},
 				{
-					"name": "Mascota_GET_ALL",
+					"name": "Mascota_GET_COMENTARIOS",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/comentarios/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -833,7 +1205,8 @@
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
 								"mascota",
-								""
+								"comentarios",
+								"1"
 							]
 						}
 					},
@@ -884,7 +1257,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/5",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -894,7 +1267,38 @@
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
 								"mascota",
-								"5"
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mascota_POST_COMENTARIOS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"comentario\": \"Me ha gustado\",\r\n        \"id_mascota\": 1,\r\n        \"id_suscriptor\": 1,\r\n        \"fecha\": \"2022-06-01 10:55:58\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/comentarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"mascota",
+								"comentarios"
 							]
 						}
 					},

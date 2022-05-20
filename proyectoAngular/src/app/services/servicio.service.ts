@@ -36,7 +36,7 @@ export class ServicioService {
 
     getAllServicios(): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getAllServicios.php",
+            "/api/servicio/",
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -46,7 +46,7 @@ export class ServicioService {
 
     getTop5Servicios(): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getTop5Servicios.php",
+            "/api/servicio/top5",
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -56,7 +56,7 @@ export class ServicioService {
 
     getServiciosByName(nombre: String): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getServiciosByName.php?nombre=" + nombre,
+            "api/servicio/nombre=" + nombre,
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -66,7 +66,7 @@ export class ServicioService {
 
     getServiciosById(id: Number): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getServicioById.php?id=" + id,
+            "/api/servicio/" + id,
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -74,22 +74,15 @@ export class ServicioService {
         );
     }
 
-    postNuevoServicio(nom:string,des:string,pre:Number,id:Number,filesToUpload:FileList):Observable<any>{
-        let url="/Proyecto/CARPETA_PHP/crearservicioPOST.php";
-        let formData:FormData = new FormData();
-       /* for (var i=0 ;i<filesToUpload.length;i++){
-            let file = filesToUpload.item(i);
-            if(file!=null){
-                formData.append('file'+i,file,file.name);
+    postNuevoServicio(servicio: Servicio): Observable<any> {
+        return this.conexHttp.post(
+            "/api/servicio", servicio,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
             }
-        }*/
-        formData.append("nom",nom);
-        formData.append("des",des);
-        formData.append("pre",pre+"");
-        formData.append("id",id+"");
-
-        return this.conexHttp.post(url,formData);
+        );
     }
 
-    
+
 }

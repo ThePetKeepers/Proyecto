@@ -11,7 +11,7 @@
 
   <ul id="buscador" class="navbar-nav me-auto mb-2 mb-lg-0">
     <li class="nav-item">
-      <input type="text" placeholder="Buscar en todas las categorías..." (keyup.enter)="sendit()"
+      <input type="text" placeholder="Buscar servicios" (keyup.enter)="sendit()"
         [(ngModel)]="search"><a id="lens" [routerLink]="['/servicio']"></a>
     </li>
     <!-- 
@@ -27,7 +27,7 @@
 </div>
 <div style="margin-top: 13%; margin-left: 13%;">
   <h2>Novedades</h2>
-  <p id="anuncios">624 anuncios para ti</p>
+  <p id="anuncios">{{cantidadServicios}} servicios encontrados</p>
   <ul>
     <ng-container *ngFor="let servicio of servicios">
       <li style="display: inline-block;  padding-top: 2%; margin-right: 2%;">
@@ -35,8 +35,12 @@
           <img class="card-img-top" src="./../../assets/dog.png" style="margin-top: 5%; padding: 5%"
             alt="Card image cap">
           <div class="card-body">
+            <h3 class="card-text"><b>{{servicio.nombre}}</b></h3>
             <h5 class="card-text">{{servicio.descripcion}}</h5>
+            <!--
+              FALTA HACER LLAMADA A JAVA PARA MOSTRAR ESTO:
             <h5 class="card-text">{{servicio.suscriptor.nombre}}</h5>
+            -->
           </div>
         </div>
       </li>
