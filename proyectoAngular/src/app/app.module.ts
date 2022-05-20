@@ -19,6 +19,11 @@ import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscr
 import { crearservicioComponent } from './crearservicioComponent/crearservicio.component';
 import { crearmascotaComponent } from './crearmascotaComponent/crearmascota.component';
 import { footerComponent } from './footerComponent/footer.component';
+import { nosotrosComponent } from './nosotrosComponent/nosotros.component';
+import { funcionamientoComponent } from './funcionamientoComponent/funcionamiento.component';
+import { preguntasComponent } from './preguntasComponent/soporte.component';
+import { condicionesComponent } from './condicionesComponent/condiciones.component';
+import { cookiesComponent } from './cookiesComponent/cookies.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +42,11 @@ import { footerComponent } from './footerComponent/footer.component';
     crearservicioComponent,
     crearmascotaComponent,
     footerComponent,
+    nosotrosComponent,
+    funcionamientoComponent,
+    preguntasComponent,
+    condicionesComponent,
+    cookiesComponent,
     SubscriptionsComponentComponent
   ],
   imports: [
