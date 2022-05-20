@@ -1,7 +1,6 @@
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Usuario } from '../clases/usuario';
 @Injectable()
 export class RegistrarServices {

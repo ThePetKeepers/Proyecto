@@ -5,10 +5,10 @@ public class ConstantsApi {
 			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 	public static final String USER_CONNECTION = "root";
 	//Juan
-	//public static final String PASS_CONNECTION = "12341234";
+	public static final String PASS_CONNECTION = "12341234";
 	
 	//Diego
-	public static final String PASS_CONNECTION = "";
+	//public static final String PASS_CONNECTION = "";
 	
 	
 	// ADQUISISICION DE MASCOTAS Y SERVICIOS
