@@ -9,7 +9,7 @@
           <div class="col-11">
             <ul>
               <li class="nav-item">
-                <input type="text" placeholder="Buscar en todas las categorías..." (keyup.enter)="sendit()"
+                <input type="text" placeholder="Buscar servicios..." (keyup.enter)="sendit()"
                   [(ngModel)]="search"> <a id="lens" [routerLink]="['/servicio']">🔎</a>
               </li>
             </ul>
@@ -35,7 +35,7 @@
                 <button class="btn btn-primary" aria-current="page" [routerLink]="['/crearcuenta']"
                   style="margin-left: 60%;">Registrarse</button>
               </li>
-            
+
             </ul>
             <!--<ul class="col">
               <li class="nav-item">
@@ -58,24 +58,40 @@
           </div>
 
           <div class="col">
-            <ul class="nav" *ngIf="token==true">
-
+            <!--<ul class="nav" *ngIf="token==true">-->
+            <ul class="nav">
+              <!--
               <li class="nav-item">
                 <button type="button" class="btn btn-primary" [routerLink]="['/perfil',id]">Perfil</button>
-              </li> 
+              </li>
               <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/crearServicio',id]">Nuevo servicio</button>
-              </li> 
+                <button type="button" class="btn btn-primary" [routerLink]="['/crearServicio',id]">
+                  Nuevo servicio
+                </button>
+              </li>
               <li class="nav-item">
                 <button type="button" class="btn btn-primary" [routerLink]="['/crearMascota',id]">Nueva mascota</button>
-              </li> 
-
+              </li>
+              -->
               <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">≡
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a [routerLink]="['/perfil']">PERFIL</a></li>
-                  <li><button class="btn btn-primary" aria-current="page" (click)="logout()">Cerrar Sesión</button>
+                  <li>
+                    <button type="button" class="btn btn-primary" [routerLink]="['/perfil',id]">Perfil</button>
+                  </li>
+                  <li>
+                    <button type="button" class="btn btn-primary" [routerLink]="['/crearServicio',id]">
+                      Nuevo servicio
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="btn btn-primary" [routerLink]="['/crearMascota',id]">
+                      Nueva mascota
+                    </button>
+                  </li>
+                  <li>
+                    <button class="btn btn-primary" aria-current="page" (click)="logout()">Cerrar Sesión</button>
                   </li>
                 </ul>
               </div>

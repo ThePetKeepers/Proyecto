@@ -49,6 +49,7 @@ export class RegistrarServices {
             }
         );
     }
+    
     /*
          postFiles(filesToUpload:FileList):Observable<any>{
              let url="postFiles.php";

@@ -85,4 +85,21 @@ public class ServiceUsuario {
 		
 		Dao.disconnect();
 	}
+	
+	// Endpoints adicionales:
+	public int getUsarioIdByLogin(String user, String password) throws SQLException, ClassNotFoundException {
+		Dao = new UsuarioDao();
+		try {
+			Dao.connect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		int id = Dao.getUsarioIdByLogin(user, password);
+		Dao.disconnect();
+
+		return id;
+	}
 }

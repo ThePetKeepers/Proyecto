@@ -43,49 +43,8 @@ public class SuscriptorDao {
 			ResultSet rs = st.executeQuery(select);
 
 			while (rs.next()) {
-				MascotaDao daoMascota = new MascotaDao();
-				daoMascota.connect();
-				ArrayList<Integer> mascotas = daoMascota.getMascotasByClient(rs.getInt("id_cliente"));
-				daoMascota.disconnect();
-				
-				ServicioDao daoServicio = new ServicioDao();
-				daoServicio.connect();
-				ArrayList<Integer> servicios = daoServicio.getServiciosBySuscriptor(rs.getInt("id"));
-				daoServicio.disconnect();
-				
-				PagoDao daoPago = new PagoDao();
-				daoPago.connect();
-				Pago pago = daoPago.getPago(rs.getInt("metodo_de_pago"));
-				daoPago.disconnect();
-				
-				SuscripcionDao daoSuscripcion = new SuscripcionDao();
-				daoSuscripcion.connect();
-				Suscripcion suscripcion = daoSuscripcion.getSuscripcion(rs.getInt("id_suscripcion"));
-				daoSuscripcion.disconnect();
-
-				
-				Suscriptor suscriptorObtenido = new Suscriptor(
-						rs.getInt("id"),
-						rs.getString("nombre"),
-						rs.getString("primer_apellido"),
-						rs.getString("segundo_apellido"),
-						rs.getString("email"),
-						rs.getString("password"),
-						rs.getString("dni"),
-						rs.getString("nacimiento"),
-						rs.getString("telefono"),
-						rs.getString("ciudad"),
-						rs.getString("direccion"),
-						rs.getString("foto"),
-						mascotas,
-						rs.getInt("tipo_usuario"),
-						rs.getInt("id_cliente"),
-						pago,
-						suscripcion,
-						servicios
-				);
+				Suscriptor suscriptorObtenido = getSuscriptor(rs.getInt("id"));
 				suscriptores.add(suscriptorObtenido);
-
 			}
 
 			return suscriptores;
@@ -133,8 +92,8 @@ public class SuscriptorDao {
 					rs.getString("ciudad"),
 					rs.getString("direccion"),
 					rs.getString("foto"),
-					mascotas,
 					rs.getInt("tipo_usuario"),
+					mascotas,
 					rs.getInt("id_cliente"),
 					pago,
 					suscripcion,

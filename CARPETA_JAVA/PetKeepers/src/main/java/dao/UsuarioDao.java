@@ -38,6 +38,7 @@ public class UsuarioDao {
 		Statement st = bbddConnection.createStatement();
 		ResultSet rs = st.executeQuery(select);
 
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		while (rs.next()) {			
 			Usuario usuarioObtenido = getUsuario(rs.getInt("id"));
 			usuarios.add(usuarioObtenido);
@@ -73,6 +74,7 @@ public class UsuarioDao {
 					rs.getString("ciudad"),
 					rs.getString("direccion"),
 					rs.getString("foto"),
+					rs.getInt("tipo_usuario"),
 					mascotas
 			);
 		}
@@ -94,6 +96,7 @@ public class UsuarioDao {
 		ps.setString(9, usuario.getCiudad());
 		ps.setString(10, usuario.getDireccion());
 		ps.setString(11, usuario.getFoto());
+		ps.setInt(12, usuario.getTipo_usuario());
 
 		ps.execute();
 		ps.close();
@@ -113,6 +116,7 @@ public class UsuarioDao {
 		ps.setString(9, usuario.getCiudad());
 		ps.setString(10, usuario.getDireccion());
 		ps.setString(11, usuario.getFoto());
+		ps.setInt(13, usuario.getTipo_usuario());
 		ps.setInt(12, id);
 
 		ps.execute();
@@ -127,4 +131,25 @@ public class UsuarioDao {
 		ps.close();
 
 	}
+	
+	// Endpoints adicionales:
+	public int getUsarioIdByLogin(String user, String password) throws SQLException, ClassNotFoundException {
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_USUARIO_BY_LOGIN);
+
+		ps.setString(1, user);
+		ps.setString(2, password);
+
+		System.out.println(ps);
+
+		ResultSet rs = ps.executeQuery();
+
+		System.out.println(rs.next());
+		System.out.println(rs.getInt("id"));
+
+		if (rs.getInt("id") != -1)
+			return rs.getInt("id");
+
+		return -1;
+	}
+	
 }

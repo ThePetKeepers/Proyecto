@@ -11,9 +11,6 @@ public class Suscriptor extends Usuario {
 	//ATRIBUTOS
 	@JsonProperty("id_cliente")
 	private int id_cliente;
-	
-	@JsonProperty("tipo_usuario")
-	private int tipo_usuario;
 
 	@JsonProperty("pago")
 	private Pago pago;
@@ -39,8 +36,8 @@ public class Suscriptor extends Usuario {
 			@JsonProperty("ciudad") final String ciudad,
 			@JsonProperty("direccion") final String direccion,
 			@JsonProperty("foto") final String foto,
-			@JsonProperty("mascotas") final ArrayList<Integer> mascotas,
 			@JsonProperty("tipo_usuario") final int tipo_usuario,
+			@JsonProperty("mascotas") final ArrayList<Integer> mascotas,
 			@JsonProperty("id_cliente") final int id_cliente,
 			@JsonProperty("pago") final Pago pago,
 			@JsonProperty("suscripcion") final Suscripcion suscripcion,
@@ -49,9 +46,8 @@ public class Suscriptor extends Usuario {
 			id, nombre, primer_apellido,
 			segundo_apellido, email, password, 
 			dni, nacimiento, telefono, ciudad, direccion, 
-			foto, mascotas);
+			foto, tipo_usuario, mascotas);
 		this.id_cliente = id_cliente;
-		this.tipo_usuario = tipo_usuario;
 		this.pago = pago;
 		this.suscripcion = suscripcion;
 		this.servicios = servicios;
@@ -66,11 +62,6 @@ public class Suscriptor extends Usuario {
 	@JsonProperty("id_cliente")
 	public int getId_cliente() {
 		return id_cliente;
-	}
-	
-	@JsonProperty("tipo_usuario")
-	public int getTipo_usuario() {
-		return tipo_usuario;
 	}
 
 	@JsonProperty("pago")

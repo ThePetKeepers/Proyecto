@@ -24,7 +24,7 @@ export class servicioComponent implements OnInit {
     ) { }
     servicios: Array<Servicio> = [];
     servicioPedido = "";
-
+    cantidadServicios: number = 0;
     limit = true;
     search = '';
 
@@ -51,6 +51,8 @@ export class servicioComponent implements OnInit {
                             i['precio'], i['puntuacion'], i['activo'],
                             i['imagenes'], i['suscriptor']
                         );
+                        this.cantidadServicios = ++this.cantidadServicios;
+                        console.log(this.cantidadServicios);
                         this.servicios.push(servicio);
                     }
                     console.log(this.servicios);
@@ -68,6 +70,8 @@ export class servicioComponent implements OnInit {
                             i['precio'], i['puntuacion'], i['activo'],
                             i['imagenes'], i['suscriptor']
                         );
+                        this.cantidadServicios = ++this.cantidadServicios;
+                        console.log(this.cantidadServicios);
                         this.servicios.push(servicio);
                     }
                     console.log(this.servicios);
