@@ -4,10 +4,11 @@ public class ConstantsApi {
 	public static final String CONNECTION = "jdbc:mysql://localhost:3306/" + "petkeepers"
 			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 	public static final String USER_CONNECTION = "root";
-	//Juan
+	//JUAN:
 	public static final String PASS_CONNECTION = "12341234";
-	
-	//Diego
+	//DIEGO:
+	//public static final String PASS_CONNECTION = "";
+	//CRISTIAN:
 	//public static final String PASS_CONNECTION = "";
 	
 	
