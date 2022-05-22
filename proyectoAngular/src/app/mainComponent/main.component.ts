@@ -44,7 +44,6 @@ export class mainComponent implements OnInit {
     this._productoService.getTop5Productos()
       .subscribe(async (resultado) => {
         this.productos = resultado;
-        console.log(this.productos);
       }, (error) => {
         console.log("Error: " + error);
       })
@@ -52,7 +51,6 @@ export class mainComponent implements OnInit {
     this._servicioService.getTop5Servicios()
       .subscribe(async (resultado) => {
         this.servicios = resultado;
-        console.log(this.servicios);
       }, (error) => {
         console.log("Error: " + error);
       })
@@ -60,7 +58,6 @@ export class mainComponent implements OnInit {
     this._mascotaService.getTop5Mascotas()
       .subscribe(async (resultado) => {
         this.mascotas = resultado;
-        console.log(this.mascotas);
       }, (error) => {
         console.log("Error: " + error);
       })

@@ -67,7 +67,7 @@ public class UsuarioApi {
 	
 	// Endpoints adicionales:
 	@GET
-	@Path("?user={user}&password={password}")
+	@Path("/login?user={user}&password={password}")
 	public Response getUsarioIdByLogin(@PathParam("usuario") String usuario, @PathParam("password") String password) throws SQLException, ClassNotFoundException {
 		service = new ServiceUsuario();
 		return Response.ok(service.getUsarioIdByLogin(usuario, password), MediaType.APPLICATION_JSON).build();

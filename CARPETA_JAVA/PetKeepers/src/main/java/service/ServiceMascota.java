@@ -147,4 +147,20 @@ public class ServiceMascota {
 
 		return mascotas;
 	}
+	
+	public ArrayList<Mascota> getMascotasByTipo(String tipo) throws SQLException, ClassNotFoundException {
+		Dao = new MascotaDao();
+		try {
+			Dao.connect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		ArrayList<Mascota> mascotas = Dao.getMascotasByTipo(tipo);
+		Dao.disconnect();
+
+		return mascotas;
+	}
 }

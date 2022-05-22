@@ -102,5 +102,21 @@ public class ServiceProducto {
 		
 		return productos;
 	}
+	
+	public ArrayList<Producto> getgetProductosByNombreroductos(String nombre) throws SQLException, ClassNotFoundException {
+		Dao = new ProductoDao();
+		try {
+			Dao.connect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		ArrayList<Producto> productos = Dao.getProductosByNombre(nombre);
+		Dao.disconnect();
+		
+		return productos;
+	}
 
 }

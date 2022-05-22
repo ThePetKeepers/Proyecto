@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
-
 //DEPENDENCIAS
 import org.json.JSONObject;
 import org.json.JSONException;
@@ -25,7 +24,6 @@ import config.ConstantsApi;
 import dao.ServicioDao.SortByPuntuacion;
 import model.Objeto;
 import model.Producto;
-import model.Servicio;
 import externalLibrary.MyFunctions;
 //ECEPCIONES
 import java.sql.SQLException;
@@ -157,6 +155,21 @@ public class ProductoDao {
 		productos.add(todos.get(2));
 		productos.add(todos.get(3));
 		productos.add(todos.get(4));
+
+		return productos;
+	}
+	
+	public ArrayList<Producto> getProductosByNombre(String nombre) throws SQLException, ClassNotFoundException {
+		ArrayList<Producto> productos = new ArrayList<>();
+
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_PRODUCTOS_BY_NOMBRE);
+		ps.setString(1, nombre);
+
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			productos.add(getProducto(rs.getInt("id")));
+		}
 
 		return productos;
 	}

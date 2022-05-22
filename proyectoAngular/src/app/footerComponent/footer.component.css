@@ -33,3 +33,12 @@
   background: #f40083;
   color: white;
 }
+
+.cursor-hover{
+  text-decoration: underline;
+}
+
+.cursor-hover:hover{
+  color: #3B5998;
+  cursor: pointer;
+}

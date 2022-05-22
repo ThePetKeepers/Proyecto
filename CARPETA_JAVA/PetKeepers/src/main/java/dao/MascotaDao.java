@@ -53,8 +53,14 @@ public class MascotaDao {
 		ResultSet rs = ps.executeQuery();
 
 		while (rs.next()) {
-			mascotaObtenida = new Mascota(rs.getInt("id"), rs.getString("nombre"), rs.getString("descripcion"),
-					rs.getDouble("precio"), rs.getDouble("puntuacion"), rs.getBoolean("activo"),
+			mascotaObtenida = new Mascota(
+					rs.getInt("id"), 
+					rs.getString("nombre"), 
+					rs.getString("tipo"), 
+					rs.getString("descripcion"),
+					rs.getDouble("precio"), 
+					rs.getDouble("puntuacion"), 
+					rs.getBoolean("activo"),
 					MyFunctions.stringToArrayList(rs.getString("imagenes")), rs.getInt("id_cliente"),
 					rs.getString("nombre_mascota"));
 
@@ -72,10 +78,7 @@ public class MascotaDao {
 		ResultSet rs = st.executeQuery(select);
 
 		while (rs.next()) {
-			Mascota mascotaObtenida = new Mascota(rs.getInt("id"), rs.getString("nombre"), rs.getString("descripcion"),
-					rs.getDouble("precio"), rs.getDouble("puntuacion"), rs.getBoolean("activo"),
-					MyFunctions.stringToArrayList(rs.getString("imagenes")), rs.getInt("id_cliente"),
-					rs.getString("nombre_mascota"));
+			Mascota mascotaObtenida = getMascota(rs.getInt("id"));
 			mascotas.add(mascotaObtenida);
 		}
 
@@ -86,13 +89,14 @@ public class MascotaDao {
 		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.POST_MASCOTA);
 
 		ps.setString(1, mascota.getNombre());
-		ps.setString(2, mascota.getNombre_mascota());
-		ps.setString(3, mascota.getDescripcion());
-		ps.setDouble(4, mascota.getPrecio());
-		ps.setDouble(5, mascota.getPuntuacion());
-		ps.setBoolean(6, mascota.isActivo());
-		ps.setString(7, MyFunctions.arrayListToString(mascota.getImagenes()));
-		ps.setInt(8, mascota.getUsuario());
+		ps.setString(2, mascota.getTipo());
+		ps.setString(3, mascota.getNombre_mascota());
+		ps.setString(4, mascota.getDescripcion());
+		ps.setDouble(5, mascota.getPrecio());
+		ps.setDouble(6, mascota.getPuntuacion());
+		ps.setBoolean(7, mascota.isActivo());
+		ps.setString(8, MyFunctions.arrayListToString(mascota.getImagenes()));
+		ps.setInt(9, mascota.getUsuario());
 
 		ps.execute();
 		ps.close();
@@ -102,14 +106,15 @@ public class MascotaDao {
 		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.UPDATE_MASCOTA);
 
 		ps.setString(1, mascota.getNombre());
-		ps.setString(2, mascota.getNombre_mascota());
-		ps.setString(3, mascota.getDescripcion());
-		ps.setDouble(4, mascota.getPrecio());
-		ps.setDouble(5, mascota.getPuntuacion());
-		ps.setBoolean(6, mascota.isActivo());
-		ps.setString(7, MyFunctions.arrayListToString(mascota.getImagenes()));
-		ps.setInt(8, mascota.getUsuario());
-		ps.setInt(9, id);
+		ps.setString(2, mascota.getTipo());
+		ps.setString(3, mascota.getNombre_mascota());
+		ps.setString(4, mascota.getDescripcion());
+		ps.setDouble(5, mascota.getPrecio());
+		ps.setDouble(6, mascota.getPuntuacion());
+		ps.setBoolean(7, mascota.isActivo());
+		ps.setString(8, MyFunctions.arrayListToString(mascota.getImagenes()));
+		ps.setInt(9, mascota.getUsuario());
+		ps.setInt(10, id);
 
 		ps.execute();
 		ps.close();
@@ -188,6 +193,21 @@ public class MascotaDao {
 		mascotas.add(todos.get(2));
 		mascotas.add(todos.get(3));
 		mascotas.add(todos.get(4));
+
+		return mascotas;
+	}
+	
+	public ArrayList<Mascota> getMascotasByTipo(String tipo) throws SQLException, ClassNotFoundException {
+		ArrayList<Mascota> mascotas = new ArrayList<>();
+
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_MASCOTAS_BY_TIPO);
+		ps.setString(1, tipo);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			Mascota mascotaObtenida = getMascota(rs.getInt("id"));
+			mascotas.add(mascotaObtenida);
+		}
 
 		return mascotas;
 	}

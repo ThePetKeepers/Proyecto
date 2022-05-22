@@ -15,6 +15,7 @@ import { Servicio } from "../clases/servicio";
 export class crearmascotaComponent implements OnInit {
     nombreMascota = "";
     nombre = "";
+    tipo = "";
     descripcion = "";
     precio = 0;
     filesToUpload: any;
@@ -41,7 +42,7 @@ export class crearmascotaComponent implements OnInit {
 
     crearMascota() {
         this.mascota = new Mascota(
-            -1, this.nombre, this.descripcion, this.precio,
+            -1, this.nombre, this.tipo, this.descripcion, this.precio,
             0, true, this.imagenes, this.usuario,
             this.nombreMascota
         );
