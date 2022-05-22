@@ -8,9 +8,9 @@ export class mascotaService {
     mascotas: Array<Mascota> = [];
     constructor(private conexHttp: HttpClient) { }
 
-    getMascotasAjax(): Observable<any> {
+    getMascotaById(id: Number): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/mascotasGET.php",
+            "/api/mascota/" + id,
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })

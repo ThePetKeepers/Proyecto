@@ -11,7 +11,6 @@ import { servicioComponent } from './servicioComponent/servicio.component';
 import { mensajesComponent } from './mensajesComponent/mensajes.component';
 import { crearcuentaComponent } from './crearcuentaComponent/crearcuenta.component';
 import { vistaservicioComponent } from './vistaservicioComponent/vistaservicio.component';
-import { mascotaComponent } from './mascotaComponent/mascota.component';
 import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.component';
 import { perfilComponent } from './perfilComponent/perfil.component';
 import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
@@ -35,7 +34,6 @@ import { ListadoMascotasComponent } from './listado-mascotas/listado-mascotas.co
     mensajesComponent,
     crearcuentaComponent,
     vistaservicioComponent,
-    mascotaComponent,
     vistamascotaComponent,
     perfilComponent,
     PageNotFoundComponent,

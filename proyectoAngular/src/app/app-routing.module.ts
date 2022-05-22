@@ -8,7 +8,6 @@ import { servicioComponent } from './servicioComponent/servicio.component';
 import { mensajesComponent } from './mensajesComponent/mensajes.component';
 import { crearcuentaComponent } from './crearcuentaComponent/crearcuenta.component';
 import { vistaservicioComponent } from './vistaservicioComponent/vistaservicio.component';
-import { mascotaComponent } from './mascotaComponent/mascota.component';
 import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.component';
 import { perfilComponent } from './perfilComponent/perfil.component';
 import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
@@ -36,8 +35,6 @@ const routes: Routes = [
   {path:'mensajes',component:mensajesComponent},
   {path:'crearcuenta',component:crearcuentaComponent},
   {path:'vistaservicio/:servicio',component:vistaservicioComponent},
-  {path:'mascota',component:mascotaComponent},
-  {path:'mascota/:id',component:mascotaComponent},
   {path:'vistamascota/:mascota',component:vistamascotaComponent},
   {path:'perfil',component:perfilComponent},
   {path:'perfil/:id',component:perfilComponent},

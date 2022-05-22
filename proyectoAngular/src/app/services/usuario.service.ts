@@ -17,9 +17,9 @@ export class UsuarioService {
     }
 
 
-    getUserById(id:Number): Observable<any> {
+    getUsuarioById(id: Number): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getUserById.php?id=" + id,
+            "/api/usuario/" + id,
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })

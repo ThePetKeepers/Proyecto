@@ -28,7 +28,7 @@ export class perfilComponent implements OnInit{
         );
         console.log(this.id);
 
-        this._usuarioService.getUserById(this.id)
+        this._usuarioService.getUsuarioById(this.id)
             .subscribe(async (resultado) =>{
                 this.usuario = new Usuario(
                     resultado.id,resultado.nombre,resultado.primer_apellido,

@@ -188,9 +188,9 @@ INSERT INTO cliente
 (nombre, primer_apellido, email, password, dni, nacimiento, telefono, ciudad, direccion, tipo_usuario)
 VALUES
 -- ADMINS:
-("Juan", "Mata", "juan@gmail.com", "1234", "", null, "", "", "", 1),
-("Cristian", "Ayala", "cristian@gmail.com", "1234", "", null, "", "", "", 1),
-("Diego", "Catanyo", "diego@gmail.com", "1234", "", null, "", "", "", 1),
+("Juan", "Mata", "juan@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
+("Cristian", "Ayala", "cristian@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
+("Diego", "Catanyo", "diego@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
 -- SUSCRIPTORES
 ("Cristiano", "Ronaldo", "a@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
 ("Leo", "Messi", "f@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),

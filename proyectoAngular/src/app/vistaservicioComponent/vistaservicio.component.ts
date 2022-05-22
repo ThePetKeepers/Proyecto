@@ -29,7 +29,7 @@ export class vistaservicioComponent implements OnInit {
                 this.id = Number(this.urlVal);
             }
         );
-        this._servicioService.getServiciosById(this.id).subscribe((response) => {
+        this._servicioService.getServicioById(this.id).subscribe((response) => {
             this.servicio = response;
             console.log(this.servicio);
             this._suscriptorService.getSuscriptorById(this.servicio.suscriptor)

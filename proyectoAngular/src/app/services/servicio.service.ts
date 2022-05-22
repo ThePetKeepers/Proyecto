@@ -64,7 +64,7 @@ export class ServicioService {
         );
     }
 
-    getServiciosById(id: Number): Observable<any> {
+    getServicioById(id: Number): Observable<any> {
         return this.conexHttp.get(
             "/api/servicio/" + id,
             {
