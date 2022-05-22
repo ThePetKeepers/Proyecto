@@ -11,7 +11,6 @@ import { vistaservicioComponent } from './vistaservicioComponent/vistaservicio.c
 import { mascotaComponent } from './mascotaComponent/mascota.component';
 import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.component';
 import { perfilComponent } from './perfilComponent/perfil.component';
-import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
 import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
 import { crearservicioComponent } from './crearservicioComponent/crearservicio.component';
 import { crearmascotaComponent } from './crearmascotaComponent/crearmascota.component';
@@ -21,13 +20,17 @@ import { funcionamientoComponent } from './funcionamientoComponent/funcionamient
 import { preguntasComponent } from './preguntasComponent/soporte.component';
 import { condicionesComponent } from './condicionesComponent/condiciones.component';
 import { cookiesComponent } from './cookiesComponent/cookies.component';
-
-
+import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
+import { ListadoMascotasComponent } from './listado-mascotas/listado-mascotas.component';
 const routes: Routes = [
   {path:'',component:mainComponent},
   {path:'main',component:mainComponent},
   {path:'login',component:loginComponent},
   {path:'servicio',component:servicioComponent},
+  {path:'productos',component:ListadoProductosComponent},
+  {path:'productos/:tipo',component:ListadoProductosComponent},
+  {path:'mascotas',component:ListadoMascotasComponent},
+  {path:'mascotas/:tipo',component:ListadoMascotasComponent},
   {path:'suscripciones/:id',component:SubscriptionsComponentComponent},
   {path:'servicio/:tipo',component:servicioComponent},
   {path:'mensajes',component:mensajesComponent},
@@ -38,7 +41,6 @@ const routes: Routes = [
   {path:'vistamascota/:mascota',component:vistamascotaComponent},
   {path:'perfil',component:perfilComponent},
   {path:'perfil/:id',component:perfilComponent},
-  {path:'servicio',component:mostrarserviciosComponent},
   {path:'crearServicio',component:crearservicioComponent},
   {path:'crearServicio/:id',component:crearservicioComponent},
   {path:'crearMascota/:id',component:crearmascotaComponent},

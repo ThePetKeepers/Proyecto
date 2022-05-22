@@ -7,95 +7,58 @@
             <img [src]="'/assets/logoSinFondo.png'" id="logo" href="#" [routerLink]="['/']">
           </div>
           <div class="col-11">
-            <ul>
-              <li class="nav-item">
-                <input type="text" placeholder="Buscar servicios..." (keyup.enter)="sendit()"
-                  [(ngModel)]="search"> <a id="lens" [routerLink]="['/servicio']">🔎</a>
-              </li>
-            </ul>
+            <input type="text" placeholder="Buscar servicios..." (keyup.enter)="sendit()" [(ngModel)]="search">
           </div>
+          <button style="margin:0px" class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/servicio']">
+            Servicios
+          </button>
+          <button style="margin:0px" class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/productos']">
+            Productos
+          </button>
+          <button style="margin:0px" class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/mascotas']">
+            Mascotas
+          </button>
         </div>
       </div>
       <div class="col-5">
         <div class="row">
           <div class="col">
-            <ul class="nav">
-              <li class="nav-item">
-                <button class="btn btn-primary" aria-current="page"
-                  [routerLink]="['/suscripciones',id]">Suscripciones</button>
-              </li>
-            </ul>
+            <button class="btn btn-primary" aria-current="page" [routerLink]="['/suscripciones',id]">
+              Suscripciones
+            </button>
           </div>
+
           <div class="col">
-            <ul *ngIf="token==false" class="nav">
-              <li class="nav-item">
-                <button class="btn btn-primary" aria-current="page" [routerLink]="['/login']">Iniciar sesión</button>
-              </li>
-              <li class="nav-item">
-                <button class="btn btn-primary" aria-current="page" [routerLink]="['/crearcuenta']"
-                  style="margin-left: 60%;">Registrarse</button>
-              </li>
+            <button *ngIf="token==false" class="btn btn-primary" aria-current="page" [routerLink]="['/login']">
+              Iniciar sesión
+            </button>
+            <button *ngIf="token==false" class="btn btn-primary" aria-current="page" [routerLink]="['/crearcuenta']">
+              Registrarse
+            </button>
+          </div>
 
-            </ul>
-            <!--<ul class="col">
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/mensajes']">Mensajes</button>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/perfil']">Perfil</button>
-              </li>
-
-              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">≡
+          <div class="col">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                ≡
+              </button>
+              <div class="dropdown-menu" style="padding: 10px; border-radius: 10px 10px 10px 10px;">
+                <button class="dropdown-item" type="button" [routerLink]="['/perfil',id]">
+                  Perfil
                 </button>
-                <ul class="dropdown-menu">
-                  <li><a [routerLink]="['/perfil']">PERFIL</a></li>
-                  <li><button class="btn btn-primary" aria-current="page" (click)="logout()">Cerrar Sesión</button>
-                  </li>
-                </ul>
-              </div>
-            </ul>-->
-          </div>
-
-          <div class="col">
-            <!--<ul class="nav" *ngIf="token==true">-->
-            <ul class="nav">
-              <!--
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/perfil',id]">Perfil</button>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/crearServicio',id]">
+                <button class="dropdown-item" type="button" [routerLink]="['/crearServicio',id]">
                   Nuevo servicio
                 </button>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="btn btn-primary" [routerLink]="['/crearMascota',id]">Nueva mascota</button>
-              </li>
-              -->
-              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">≡
+                <button class="dropdown-item" type="button" [routerLink]="['/crearMascota',id]">
+                  Nueva mascota
                 </button>
-                <ul class="dropdown-menu" style="padding: 10px; border-radius: 10px 10px 10px 10px;">
-                  <li>
-                    <button type="button" class="btn btn-primary" [routerLink]="['/perfil',id]">Perfil</button>
-                  </li>
-                  <li>
-                    <button type="button" class="btn btn-primary" [routerLink]="['/crearServicio',id]">
-                      Nuevo servicio
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" class="btn btn-primary" [routerLink]="['/crearMascota',id]">
-                      Nueva mascota
-                    </button>
-                  </li>
-                  <li>
-                    <button class="btn btn-primary" aria-current="page" (click)="logout()">Cerrar Sesión</button>
-                  </li>
-                </ul>
+                <button class="btn btn-primary" aria-current="page" (click)="logout()">
+                  Cerrar Sesión
+                </button>
               </div>
-            </ul>
+            </div>
+
           </div>
         </div>
       </div>

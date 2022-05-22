@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "2f08a461-1c8c-44a7-bf46-2aee4b4b457c",
 		"name": "Proyecto_PetKeepers",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17588106"
 	},
 	"item": [
 		{
@@ -559,7 +560,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario?user=juan@gmail.com&password=1234",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario/login?user=juan@gmail.com&password=1234",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -568,7 +569,8 @@
 							"path": [
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
-								"usuario"
+								"usuario",
+								"login"
 							],
 							"query": [
 								{
@@ -754,6 +756,28 @@
 								"api",
 								"producto",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto_GET_BY_NOMBRE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/producto/nombre=pelota%20de%20tenis",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"producto",
+								"nombre=pelota%20de%20tenis"
 							]
 						}
 					},
@@ -1162,6 +1186,28 @@
 								"mascota",
 								"suscriptor",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MASCOTA_GET_BY_TIPO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/tipo=Pez",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"mascota",
+								"tipo=Pez"
 							]
 						}
 					},

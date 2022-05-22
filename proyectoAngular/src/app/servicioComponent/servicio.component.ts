@@ -52,18 +52,14 @@ export class servicioComponent implements OnInit {
                             i['imagenes'], i['suscriptor']
                         );
                         this.cantidadServicios = ++this.cantidadServicios;
-                        console.log(this.cantidadServicios);
                         this.servicios.push(servicio);
                     }
-                    console.log(this.servicios);
                 }, (error) => {
                     console.log(error);
                 });
         } else { //Buscar todos:
-            console.log("Nada");
             this._servicioService.getAllServicios()
                 .subscribe((resultado) => {
-                    //console.log(resultado)
                     for (let i of resultado) {
                         let servicio = new Servicio(
                             i['id'], i['nombre'], i['descripcion'],

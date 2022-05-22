@@ -14,7 +14,6 @@ import { vistaservicioComponent } from './vistaservicioComponent/vistaservicio.c
 import { mascotaComponent } from './mascotaComponent/mascota.component';
 import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.component';
 import { perfilComponent } from './perfilComponent/perfil.component';
-import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
 import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
 import { crearservicioComponent } from './crearservicioComponent/crearservicio.component';
 import { crearmascotaComponent } from './crearmascotaComponent/crearmascota.component';
@@ -24,6 +23,8 @@ import { funcionamientoComponent } from './funcionamientoComponent/funcionamient
 import { preguntasComponent } from './preguntasComponent/soporte.component';
 import { condicionesComponent } from './condicionesComponent/condiciones.component';
 import { cookiesComponent } from './cookiesComponent/cookies.component';
+import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
+import { ListadoMascotasComponent } from './listado-mascotas/listado-mascotas.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,6 @@ import { cookiesComponent } from './cookiesComponent/cookies.component';
     mascotaComponent,
     vistamascotaComponent,
     perfilComponent,
-    mostrarserviciosComponent,
     PageNotFoundComponent,
     crearservicioComponent,
     crearmascotaComponent,
@@ -47,7 +47,9 @@ import { cookiesComponent } from './cookiesComponent/cookies.component';
     preguntasComponent,
     condicionesComponent,
     cookiesComponent,
-    SubscriptionsComponentComponent
+    SubscriptionsComponentComponent,
+    ListadoProductosComponent,
+    ListadoMascotasComponent
   ],
   imports: [
     BrowserModule,

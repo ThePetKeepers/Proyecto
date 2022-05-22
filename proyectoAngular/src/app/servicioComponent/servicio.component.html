@@ -2,7 +2,7 @@
   <img [src]="'/assets/logoSinFondo.png'" id="logo" href="#" [routerLink]="['/']">
   <h1>
     <ng-container *ngIf="servicioPedido=='null'">
-      Todos los servicios
+      TODOS LOS SERVICIOS
     </ng-container>
     <ng-container *ngIf="servicioPedido!='null'">
       {{ servicioPedido.toUpperCase() }}
@@ -26,7 +26,7 @@
   <a style="margin-left: 17%; margin-top: 0.5%;" href="#" class="btn btn-primary">Profundizar busqueda</a>
 </div>
 <div style="margin-top: 13%; margin-left: 13%;">
-  <h2>Novedades</h2>
+  <h2>Servicios:</h2>
   <p id="anuncios">{{cantidadServicios}} servicios encontrados</p>
   <ul>
     <ng-container *ngFor="let servicio of servicios">
@@ -37,10 +37,6 @@
           <div class="card-body">
             <h3 class="card-text"><b>{{servicio.nombre}}</b></h3>
             <h5 class="card-text">{{servicio.descripcion}}</h5>
-            <!--
-              FALTA HACER LLAMADA A JAVA PARA MOSTRAR ESTO:
-            <h5 class="card-text">{{servicio.suscriptor.nombre}}</h5>
-            -->
           </div>
         </div>
       </li>

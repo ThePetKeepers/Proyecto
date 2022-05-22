@@ -18,6 +18,15 @@ export class mascotaService {
         );
     }
 
+    getAllMascotas(): Observable<any> {
+        return this.conexHttp.get(
+            "/api/mascota",
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
 
     getTop5Mascotas(): Observable<any> {
         return this.conexHttp.get(
@@ -39,4 +48,13 @@ export class mascotaService {
         );
     }
 
+    getMascotasByTipo(tipo: String): Observable<any> {
+        return this.conexHttp.get(
+            "api/mascota/tipo=" + tipo,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
 }

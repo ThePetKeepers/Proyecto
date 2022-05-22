@@ -82,6 +82,7 @@ FOREIGN KEY (id_suscriptor)
 CREATE TABLE mascota(
 id INT PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(255),
+tipo VARCHAR(255),
 nombre_mascota VARCHAR(255),
 descripcion TEXT,
 precio DOUBLE,
@@ -225,13 +226,13 @@ VALUES
 ("Cuidado de hamsters", "Hamster el mejor de los roedores, y al que mejor hay que cuidar", 30.20, 5, true, "aa.png, pp.png", 2);
 
 INSERT INTO mascota
-(nombre, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente)
+(nombre, tipo, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente)
 VALUES
-("Necesito que alguien cuide mi perro", "Roby", "Me voy de vacaciones y quiero que alguien lo cuide por mi", 10.20, 1.8, true, "k.png, l.png", 1),
-("Quiero que alguien me ayude a adiestrar a mi perro", "Roco", "No se comporta y no se que hacer ayuda :(", 8.20, 2.5, false, "lala.png, ppp.png", 2),
-("¿Alguien puede pasear a mi perro?", "Nina", "Trabajo de 9am a 9pm, y la pobre necesita caminar", 15.20, 3.8, true, "haom.png, iann.png", 3),
-("Mi pez esta loco", "Nemo", "Me voy de la casa y cuando vuelvo lo encuentro fuera de la pecera, RESPIRA AIRE", 10.20, 0, true, "k.png, l.png", 1),
-("Quiero que alguien me ayude a adiestrar a mi perro", "Roco", "No se comporta y no se que hacer ayuda :(", 8.20, 4.5, false, "lala.png, ppp.png", 2);
+("Necesito que alguien cuide mi perro", "PERRO", "Roby", "Me voy de vacaciones y quiero que alguien lo cuide por mi", 10.20, 1.8, true, "k.png, l.png", 1),
+("Quiero que alguien me ayude a adiestrar a mi gato", "GATO", "Roco", "No se comporta y no se que hacer ayuda :(", 8.20, 2.5, false, "lala.png, ppp.png", 2),
+("¿Alguien puede pasear a mi perro?", "PERRO", "Nina", "Trabajo de 9am a 9pm, y la pobre necesita caminar", 15.20, 3.8, true, "haom.png, iann.png", 3),
+("Mi pez esta loco", "PEZ", "Nemo", "Me voy de la casa y cuando vuelvo lo encuentro fuera de la pecera, RESPIRA AIRE", 10.20, 0, true, "k.png, l.png", 1),
+("Quiero que alguien me ayude a adiestrar a mi canario", "AVE", "Emilio", "No se comporta y no se que hacer ayuda :(", 8.20, 4.5, false, "lala.png, ppp.png", 2);
 
 INSERT INTO proveedor
 (nombre, cif, email, telefono, ciudad, direccion)

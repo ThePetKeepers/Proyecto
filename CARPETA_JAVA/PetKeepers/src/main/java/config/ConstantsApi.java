@@ -36,10 +36,11 @@ public class ConstantsApi {
 
 	// MASCOTAS
 	public static final String GET_MASCOTAS_BY_CLIENT_ID = "SELECT id FROM petkeepers.mascota WHERE id_cliente = ?";
+	public static final String GET_MASCOTAS_BY_TIPO = "SELECT id FROM petkeepers.mascota WHERE tipo = ?";
 	public static final String GET_MASCOTAS = "SELECT * FROM petkeepers.mascota";
 	public static final String GET_MASCOTA = "SELECT * FROM petkeepers.mascota WHERE id = ?";
-	public static final String POST_MASCOTA = "INSERT INTO petkeepers.mascota (nombre, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente) VALUES (?,?,?,?,?,?,?,?)";
-	public static final String UPDATE_MASCOTA = "UPDATE petkeepers.mascota SET nombre = ?, nombre_mascota = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_cliente = ? WHERE (id = ?)";
+	public static final String POST_MASCOTA = "INSERT INTO petkeepers.mascota (nombre, tipo, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente) VALUES (?,?,?,?,?,?,?,?)";
+	public static final String UPDATE_MASCOTA = "UPDATE petkeepers.mascota SET nombre = ?, tipo = ?,  nombre_mascota = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_cliente = ? WHERE (id = ?)";
 	public static final String DELETE_MASCOTA = "DELETE FROM petkeepers.mascota WHERE (id = ?)";
 
 	// USUARIO
@@ -74,6 +75,7 @@ public class ConstantsApi {
 	// PRODUCTO
 	public static final String GET_PRODUCTOS = "SELECT * FROM petkeepers.producto";
 	public static final String GET_PRODUCTO_BY_ID = "SELECT * FROM petkeepers.producto WHERE id = ?";
+	public static final String GET_PRODUCTOS_BY_NOMBRE = "SELECT * FROM petkeepers.producto WHERE nombre = ?";
 	public static final String POST_PRODUCTO = "INSERT INTO petkeepers.producto (nombre, descripcion, precio, puntuacion, activo, imagenes, id_proveedor) VALUES (?,?,?,?,?,?,?)";
 	public static final String UPDATE_PRODUCTO = "UPDATE petkeepers.producto SET nombre = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_proveedor = ? WHERE (id = ?)";
 	public static final String DELETE_PRODUCTO = "DELETE FROM petkeepers.producto WHERE (id = ?)";

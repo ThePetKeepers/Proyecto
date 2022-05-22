@@ -10,7 +10,7 @@ export class ProductoService {
 
     getAllProductos(): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getAllProductos.php",
+            "/api/producto",
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -21,6 +21,16 @@ export class ProductoService {
     getTop5Productos(): Observable<any> {
         return this.conexHttp.get(
             "/api/producto/top5",
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
+
+    getProductosByName(nombre: String): Observable<any> {
+        return this.conexHttp.get(
+            "api/producto/nombre=" + nombre,
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
