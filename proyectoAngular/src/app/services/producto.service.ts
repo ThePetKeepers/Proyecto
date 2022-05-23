@@ -37,4 +37,14 @@ export class ProductoService {
             }
         );
     }
+
+    getProductoById(id: number): Observable<any> {
+        return this.conexHttp.get(
+            "api/producto/" + id,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
 }
