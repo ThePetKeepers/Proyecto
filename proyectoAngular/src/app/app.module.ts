@@ -24,6 +24,7 @@ import { condicionesComponent } from './condicionesComponent/condiciones.compone
 import { cookiesComponent } from './cookiesComponent/cookies.component';
 import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
 import { ListadoMascotasComponent } from './listado-mascotas/listado-mascotas.component';
+import { VistaProductoComponentComponent } from './vista-producto-component/vista-producto-component.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ListadoMascotasComponent } from './listado-mascotas/listado-mascotas.co
     cookiesComponent,
     SubscriptionsComponentComponent,
     ListadoProductosComponent,
-    ListadoMascotasComponent
+    ListadoMascotasComponent,
+    VistaProductoComponentComponent
   ],
   imports: [
     BrowserModule,

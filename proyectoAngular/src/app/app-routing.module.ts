@@ -21,6 +21,8 @@ import { condicionesComponent } from './condicionesComponent/condiciones.compone
 import { cookiesComponent } from './cookiesComponent/cookies.component';
 import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
 import { ListadoMascotasComponent } from './listado-mascotas/listado-mascotas.component';
+import { VistaProductoComponentComponent } from './vista-producto-component/vista-producto-component.component';
+
 const routes: Routes = [
   {path:'',component:mainComponent},
   {path:'main',component:mainComponent},
@@ -36,6 +38,7 @@ const routes: Routes = [
   {path:'crearcuenta',component:crearcuentaComponent},
   {path:'vistaservicio/:servicio',component:vistaservicioComponent},
   {path:'vistamascota/:mascota',component:vistamascotaComponent},
+  {path:'vistaproducto/:producto',component:VistaProductoComponentComponent},
   {path:'perfil',component:perfilComponent},
   {path:'perfil/:id',component:perfilComponent},
   {path:'crearServicio',component:crearservicioComponent},
