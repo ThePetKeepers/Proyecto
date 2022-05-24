@@ -212,6 +212,21 @@ public class MascotaDao {
 		return mascotas;
 	}
 	
+	public ArrayList<Mascota> getMascotasByClientId(int id) throws SQLException, ClassNotFoundException {
+		ArrayList<Mascota> mascotas = new ArrayList<>();
+
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_MASCOTAS_BY_CLIENT_ID);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			Mascota mascotaObtenida = getMascota(rs.getInt("id"));
+			mascotas.add(mascotaObtenida);
+		}
+
+		return mascotas;
+	}
+	
 	static class SortByPuntuacion implements Comparator<Mascota> {
 		@SuppressWarnings("deprecation")
 		@Override
