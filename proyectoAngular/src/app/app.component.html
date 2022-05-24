@@ -1,7 +1,7 @@
 <nav class="" style="background-color: #39ACA2; margin-bottom: 0px !important;">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-7">
+      <div class="col-6">
         <div class="row">
           <div class="col-1">
             <img [src]="'/assets/logoSinFondo.png'" id="logo" href="#" [routerLink]="['/']">
@@ -9,36 +9,37 @@
           <div class="col-11">
             <input type="text" placeholder="Buscar servicios..." (keyup.enter)="sendit()" [(ngModel)]="search">
           </div>
-          <button style="margin:0px" class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/servicio']">
-            Servicios
-          </button>
-          <button style="margin:0px" class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/productos']">
-            Productos
-          </button>
-          <button style="margin:0px" class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/mascotas']">
-            Mascotas
-          </button>
         </div>
       </div>
-      <div class="col-5">
+      <div class="col-6">
         <div class="row">
           <div class="col">
-            <button class="btn btn-primary" aria-current="page" [routerLink]="['/suscripciones',id]">
+            <button *ngIf="token==true" class="btn btn-primary" aria-current="page" [routerLink]="['/suscripciones',id]">
               Suscripciones
             </button>
           </div>
-
           <div class="col">
-            <button *ngIf="token==false" class="btn btn-primary" aria-current="page" [routerLink]="['/login']">
-              Iniciar sesión
-            </button>
-            <button *ngIf="token==false" class="btn btn-primary" aria-current="page" [routerLink]="['/crearcuenta']">
-              Registrarse
+            <button class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/servicio']">
+              Servicios
             </button>
           </div>
-
           <div class="col">
-            <div class="dropdown">
+            <button class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/productos']">
+              Productos
+            </button>
+          </div>
+          <div class="col">
+            <button class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/mascotas']">
+              Mascotas
+            </button>
+          </div>
+          <div class="col">
+            <button *ngIf="token==true" class="btn btn-primary" aria-current="page" [routerLink]="['/login']">
+              Iniciar sesión
+            </button>
+          </div>
+          <div class="col">
+            <div class="dropdown" *ngIf="token==false">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 ≡
@@ -58,7 +59,11 @@
                 </button>
               </div>
             </div>
-
+            <div class="col">
+              <button *ngIf="token==true" class="btn btn-primary" aria-current="page" [routerLink]="['/crearcuenta']">
+                Registrarse
+              </button>
+            </div>
           </div>
         </div>
       </div>

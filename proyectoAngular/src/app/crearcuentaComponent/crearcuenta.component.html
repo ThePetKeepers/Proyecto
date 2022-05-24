@@ -1,6 +1,7 @@
-<div style="background-color: #d2eeec; height: 850px;">
+<div id="tapar">
+  <img [src]="'/assets/logoSinFondo.png'" id="logo" href="#" [routerLink]="['/']">
   <h1>Crear cuenta</h1>
-  <form #newUsr="ngForm" id="usr">
+  <form #newUsr="ngForm">
     <div align="center">
       <div *ngIf="step==0" class="card" id="card1" style="width: 60%;" align="left">
         <div class="card-body">
