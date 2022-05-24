@@ -20,7 +20,6 @@ public class ConstantsApi {
 			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 	*/
 	
-	
 	// ADQUISISICION DE MASCOTAS Y SERVICIOS
 	public static final String GET_SERVICIOS_BY_CLIENT_ID = "SELECT id_servicio FROM petkeepers.adquirir_servicio WHERE id_cliente = ?";
 	public static final String GET_MASCOTAS_BY_SUSCRIPTOR_ID = "SELECT id_mascota FROM petkeepers.adquirir_mascota WHERE id_suscriptor = ?";

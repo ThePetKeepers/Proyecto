@@ -23,7 +23,7 @@ export class AppComponent {
   }
   limit=true;
   search='';
-  id=0;
+  id=1;
   buscador(){
     if(this.search == ''){
         this.limit=true;
