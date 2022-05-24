@@ -8,11 +8,11 @@ public class ConstantsApi {
 			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 	*/
 
-	/*DIEGO:
+	/*DIEGO:*/
 	public static final String PASS_CONNECTION = "";
 	public static final String CONNECTION = "jdbc:mysql://localhost:3306/" + "petkeepers"
 			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
-	*/
+	
 	
 	/*CRISTIAN:
 	public static final String PASS_CONNECTION = "root";

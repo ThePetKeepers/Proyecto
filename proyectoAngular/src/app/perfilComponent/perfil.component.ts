@@ -43,7 +43,7 @@ export class perfilComponent implements OnInit{
                     resultado.mascotas
                 )
             })
-        this._servicioService.getAllServicios()
+        this._servicioService.getServiciosBySuscriptorId(this.id)
             .subscribe(async (resultado) =>{
                 for (let i of resultado) {
                     let servicio = new Servicio(
