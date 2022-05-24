@@ -1,15 +1,24 @@
 package config;
 
 public class ConstantsApi {
+	public static final String USER_CONNECTION = "root";
+	/*JUAN:
+	public static final String PASS_CONNECTION = "12341234";
+	public static final String CONNECTION = "jdbc:mysql://localhost:3306/" + "petkeepers"
+			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+	*/
+
+	/*DIEGO:
+	public static final String PASS_CONNECTION = "";
+	public static final String CONNECTION = "jdbc:mysql://localhost:3306/" + "petkeepers"
+			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
+	*/
+	
+	/*CRISTIAN:
+	public static final String PASS_CONNECTION = "root";
 	public static final String CONNECTION = "jdbc:mysql://localhost:8889/" + "petkeepers"
 			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
-	public static final String USER_CONNECTION = "root";
-	//JUAN:
-	//public static final String PASS_CONNECTION = "12341234";
-	//DIEGO:
-	public static final String PASS_CONNECTION = "";
-	//CRISTIAN:
-	public static final String PASS_CONNECTION = "root";
+	*/
 	
 	
 	// ADQUISISICION DE MASCOTAS Y SERVICIOS
