@@ -44,14 +44,6 @@ public class ServicioApi {
 		service = new ServiceServicio();
 		return Response.ok(service.getServicio(id), MediaType.APPLICATION_JSON).build();
 	}
-	
-	@GET
-	@Path("/suscriptor/{id}")
-	public Response getServiciosBySuscriptorId(@PathParam("id") int id)
-			throws ClassNotFoundException, SQLException, NullPointerException {
-		service = new ServiceServicio();
-		return Response.ok(service.getServicio(id), MediaType.APPLICATION_JSON).build();
-	}
 
 	@POST
 	@Path("/")
