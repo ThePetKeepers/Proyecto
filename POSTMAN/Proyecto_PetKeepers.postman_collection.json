@@ -557,10 +557,19 @@
 				{
 					"name": "USUARIO_GET_ID_BY_LOGIN",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"juan@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario/login?user=juan@gmail.com&password=1234",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/usuario/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -571,16 +580,6 @@
 								"api",
 								"usuario",
 								"login"
-							],
-							"query": [
-								{
-									"key": "user",
-									"value": "juan@gmail.com"
-								},
-								{
-									"key": "password",
-									"value": "1234"
-								}
 							]
 						}
 					},

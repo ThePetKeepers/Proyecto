@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 //DEPENDENCIAS
 //OBJETOS
 import config.ConstantsApi;
+import model.CredencialesLogin;
 import model.Usuario;
 //ECEPCIONES
 import java.sql.SQLException;
@@ -29,7 +30,7 @@ public class UsuarioDao {
 			bbddConnection.close();
 		}
 	}
-	
+
 	public ArrayList<Usuario> getUsuarios() throws SQLException, ClassNotFoundException {
 		ArrayList<Usuario> usuarios = new ArrayList<>();
 
@@ -39,7 +40,7 @@ public class UsuarioDao {
 		ResultSet rs = st.executeQuery(select);
 
 		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-		while (rs.next()) {			
+		while (rs.next()) {
 			Usuario usuarioObtenido = getUsuario(rs.getInt("id"));
 			usuarios.add(usuarioObtenido);
 
@@ -47,7 +48,7 @@ public class UsuarioDao {
 
 		return usuarios;
 	}
-	
+
 	public Usuario getUsuario(int id) throws SQLException, ClassNotFoundException {
 		Usuario usuarioObtenido = new Usuario();
 
@@ -60,31 +61,19 @@ public class UsuarioDao {
 			daoMascota.connect();
 			ArrayList<Integer> mascotas = daoMascota.getMascotasByClient(rs.getInt("id"));
 			daoMascota.disconnect();
-			
-			usuarioObtenido = new Usuario(
-					rs.getInt("id"),
-					rs.getString("nombre"),
-					rs.getString("primer_apellido"),
-					rs.getString("segundo_apellido"),
-					rs.getString("email"),
-					rs.getString("password"),
-					rs.getString("dni"),
-					rs.getString("nacimiento"),
-					rs.getString("telefono"),
-					rs.getString("ciudad"),
-					rs.getString("direccion"),
-					rs.getString("foto"),
-					rs.getInt("tipo_usuario"),
-					mascotas
-			);
+
+			usuarioObtenido = new Usuario(rs.getInt("id"), rs.getString("nombre"), rs.getString("primer_apellido"),
+					rs.getString("segundo_apellido"), rs.getString("email"), rs.getString("password"),
+					rs.getString("dni"), rs.getString("nacimiento"), rs.getString("telefono"), rs.getString("ciudad"),
+					rs.getString("direccion"), rs.getString("foto"), rs.getInt("tipo_usuario"), mascotas);
 		}
 
 		return usuarioObtenido;
 	}
-	
+
 	public void postUsuario(Usuario usuario) throws SQLException, NullPointerException {
 		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.POST_USUARIO);
-		
+
 		ps.setString(1, usuario.getNombre());
 		ps.setString(2, usuario.getPrimer_apellido());
 		ps.setString(3, usuario.getSegundo_apellido());
@@ -101,7 +90,7 @@ public class UsuarioDao {
 		ps.execute();
 		ps.close();
 	}
-	
+
 	public void updateUsuario(int id, Usuario usuario) throws SQLException, NullPointerException {
 		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.UPDATE_USUARIO);
 
@@ -122,7 +111,7 @@ public class UsuarioDao {
 		ps.execute();
 		ps.close();
 	}
-	
+
 	public void deleteUsuario(int id) throws SQLException, NullPointerException, ClassNotFoundException {
 		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.DELETE_USUARIO);
 
@@ -131,25 +120,26 @@ public class UsuarioDao {
 		ps.close();
 
 	}
-	
+
 	// Endpoints adicionales:
-	public int getUsarioIdByLogin(String user, String password) throws SQLException, ClassNotFoundException {
+	public int getUsarioIdByLogin(CredencialesLogin credenciales) throws SQLException, ClassNotFoundException {
 		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_USUARIO_BY_LOGIN);
 
-		ps.setString(1, user);
-		ps.setString(2, password);
+		ps.setString(1, credenciales.getEmail());
+		ps.setString(2, credenciales.getPassword());
 
 		System.out.println(ps);
 
 		ResultSet rs = ps.executeQuery();
 
-		System.out.println(rs.next());
-		System.out.println(rs.getInt("id"));
+		if (rs.next()) {
+			System.out.println(rs.getInt("id"));
 
-		if (rs.getInt("id") != -1)
-			return rs.getInt("id");
+			if (rs.getInt("id") != -1)
+				return rs.getInt("id");
 
+		}
 		return -1;
 	}
-	
+
 }

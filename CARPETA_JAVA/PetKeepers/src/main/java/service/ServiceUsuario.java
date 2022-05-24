@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import dao.UsuarioDao;
 import model.Usuario;
+import model.CredencialesLogin;
 
 public class ServiceUsuario {
 	private UsuarioDao Dao;
@@ -87,7 +88,7 @@ public class ServiceUsuario {
 	}
 	
 	// Endpoints adicionales:
-	public int getUsarioIdByLogin(String user, String password) throws SQLException, ClassNotFoundException {
+	public int getUsarioIdByLogin(CredencialesLogin credenciales) throws SQLException, ClassNotFoundException {
 		Dao = new UsuarioDao();
 		try {
 			Dao.connect();
@@ -97,7 +98,7 @@ public class ServiceUsuario {
 			e.printStackTrace();
 		}
 
-		int id = Dao.getUsarioIdByLogin(user, password);
+		int id = Dao.getUsarioIdByLogin(credenciales);
 		Dao.disconnect();
 
 		return id;
