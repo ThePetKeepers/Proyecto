@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { Servicio } from "../clases/servicio";
 import { Usuario } from "../clases/usuario";
+import { ServicioService } from "../services/servicio.service";
 import { UsuarioService } from "../services/usuario.service";
 //import { countries } from "./countries/country-data-store";
 
@@ -8,17 +10,20 @@ import { UsuarioService } from "../services/usuario.service";
     selector:'perfil-comp',
     templateUrl:'perfil.component.html',
     styleUrls:['perfil.component.css'],
-    providers:[UsuarioService]
+    providers:[UsuarioService,ServicioService]
 })
 
 
 export class perfilComponent implements OnInit{
     //public countries: any = countries;
-    constructor(private _activRoute:ActivatedRoute,private _usuarioService:UsuarioService){}
+    constructor(private _activRoute:ActivatedRoute,private _usuarioService:UsuarioService,private _servicioService:ServicioService){}
     urlVal="";
     id = 0;
     step = 0;
     usuario = new Usuario();
+    servicios: Array<Servicio> = [];
+    cantidadServicios: number = 0;
+
     ngOnInit(): void {
         this._activRoute.paramMap.subscribe(
             (params) => {
@@ -38,6 +43,19 @@ export class perfilComponent implements OnInit{
                     resultado.mascotas
                 )
             })
+        this._servicioService.getAllServicios()
+            .subscribe(async (resultado) =>{
+                for (let i of resultado) {
+                    let servicio = new Servicio(
+                        i['id'], i['nombre'], i['descripcion'],
+                        i['precio'], i['puntuacion'], i['activo'],
+                        i['imagenes'], i['suscriptor']
+                    );
+                    this.cantidadServicios = ++this.cantidadServicios;
+                    this.servicios.push(servicio);
+                }
+            })
+            console.log(this.servicios);
     }
     edit() {
         if(this.step == 0) {
