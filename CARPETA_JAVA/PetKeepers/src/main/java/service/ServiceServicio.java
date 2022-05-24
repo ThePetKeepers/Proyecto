@@ -42,25 +42,7 @@ public class ServiceServicio {
 
 		return servicios;
 	}
-	
-	public ArrayList<Servicio> getServiciosBySuscriptorId(int id) throws SQLException, ClassNotFoundException {
-		Dao = new ServicioDao();
-		try {
-			Dao.connect();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-		ArrayList<Servicio> servicios = Dao.getServiciosBySuscriptorId(id);
-		Dao.disconnect();
-
-		return servicios;
-	}
-	
-	
-
+		
 	public void postServicio(Servicio servicio) throws SQLException, NullPointerException, ClassNotFoundException {
 		Dao = new ServicioDao();
 		try {
@@ -179,6 +161,22 @@ public class ServiceServicio {
 		}
 
 		ArrayList<Servicio> servicios = Dao.getTop5();
+		Dao.disconnect();
+
+		return servicios;
+	}
+	
+	public ArrayList<Servicio> getServiciosBySuscriptorId(int id) throws SQLException, ClassNotFoundException {
+		Dao = new ServicioDao();
+		try {
+			Dao.connect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		ArrayList<Servicio> servicios = Dao.getServiciosBySuscriptorId(id);
 		Dao.disconnect();
 
 		return servicios;

@@ -113,4 +113,10 @@ public class MascotaApi {
 		System.out.print("NNNNNNN");
 		return Response.ok(service.getMascotasByTipo(tipo), MediaType.APPLICATION_JSON).build();
 	}
+	
+	@GET
+	@Path("/cliente={id}")
+	public Response getMascotasByClientId(@PathParam("id") int id)throws ClassNotFoundException, SQLException, NullPointerException {
+		return Response.ok(service.getMascotasByClientId(id), MediaType.APPLICATION_JSON).build();
+	}
 }

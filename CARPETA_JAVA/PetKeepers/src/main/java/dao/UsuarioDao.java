@@ -39,7 +39,6 @@ public class UsuarioDao {
 		Statement st = bbddConnection.createStatement();
 		ResultSet rs = st.executeQuery(select);
 
-		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		while (rs.next()) {
 			Usuario usuarioObtenido = getUsuario(rs.getInt("id"));
 			usuarios.add(usuarioObtenido);
