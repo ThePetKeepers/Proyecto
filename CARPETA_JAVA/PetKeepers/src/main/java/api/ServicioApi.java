@@ -116,4 +116,10 @@ public class ServicioApi {
 	public Response getTop5()throws ClassNotFoundException, SQLException, NullPointerException {
 		return Response.ok(service.getTop5(), MediaType.APPLICATION_JSON).build();
 	}
+	
+	@GET
+	@Path("/suscriptor={id}")
+	public Response getServiciosBySuscriptorId(@PathParam("id") int id)throws ClassNotFoundException, SQLException, NullPointerException {
+		return Response.ok(service.getServiciosBySuscriptorId(id), MediaType.APPLICATION_JSON).build();
+	}
 }

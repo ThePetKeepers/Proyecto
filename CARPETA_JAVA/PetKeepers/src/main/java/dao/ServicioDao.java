@@ -209,6 +209,21 @@ public class ServicioDao {
 		return servicios;
 	}
 	
+	public ArrayList<Servicio> getServiciosBySuscriptorId(int id) throws SQLException, ClassNotFoundException {
+		ArrayList<Servicio> servicios = new ArrayList<>();
+
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_SERVICIOS_BY_SUSCRIPTOR_ID);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+			Servicio servicioObtenido = getServicio(rs.getInt("id"));
+			servicios.add(servicioObtenido);
+		}
+
+		return servicios;
+	}
+	
 	static class SortByPuntuacion implements Comparator<Servicio> {
 		@SuppressWarnings("deprecation")
 		@Override

@@ -14,7 +14,7 @@
       <div class="col-6">
         <div class="row">
           <div class="col">
-            <button *ngIf="token==true" class="btn btn-primary" aria-current="page" [routerLink]="['/suscripciones',id]">
+            <button *ngIf="token==false" class="btn btn-primary" aria-current="page" [routerLink]="['/suscripciones',id]">
               Suscripciones
             </button>
           </div>
@@ -34,7 +34,7 @@
             </button>
           </div>
           <div class="col">
-            <button *ngIf="token==true" class="btn btn-primary" aria-current="page" [routerLink]="['/login']">
+            <button *ngIf="token==false" class="btn btn-primary" aria-current="page" [routerLink]="['/login']">
               Iniciar sesión
             </button>
           </div>
@@ -60,7 +60,7 @@
               </div>
             </div>
             <div class="col">
-              <button *ngIf="token==true" class="btn btn-primary" aria-current="page" [routerLink]="['/crearcuenta']">
+              <button *ngIf="token==false" class="btn btn-primary" aria-current="page" [routerLink]="['/crearcuenta']">
                 Registrarse
               </button>
             </div>

@@ -7,7 +7,6 @@ import { Proveedor } from "../clases/proveedor";
 import { Suscriptor } from "../clases/suscriptor";
 import { ProductoService } from "../services/producto.service";
 
-
 @Component({
   selector: 'app-listado-productos',
   templateUrl: './listado-productos.component.html',
@@ -36,6 +35,9 @@ export class ListadoProductosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    console.log(localStorage);
+
     this._activRoute.paramMap.subscribe((params) => {
       this.productoPedido = params.get("tipo") + "";
     });

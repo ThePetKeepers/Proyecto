@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
-
 import { LoginServices } from "../services/login.service";
-
+import { UsuarioService } from "../services/usuario.service";
+import { credencialesUsuario } from "../clases/credencialesLogin";
 @Component({
     selector: 'login-comp',
     templateUrl: 'login.component.html',
     styleUrls: ['login.component.css'],
-    providers: [LoginServices]
+    providers: [LoginServices, UsuarioService]
 })
 
 export class loginComponent implements OnInit {
@@ -14,7 +14,12 @@ export class loginComponent implements OnInit {
     password = '';
     email2 = '';
     password2 = '';
-    constructor(private loginService: LoginServices) { }
+    credenciales: credencialesUsuario = new credencialesUsuario();
+
+    constructor(
+        private loginService: LoginServices,
+        private usuarioService: UsuarioService
+    ) { }
 
 
     loginUser() {
@@ -42,6 +47,27 @@ export class loginComponent implements OnInit {
     }
 
     loginJava() {
+        this.credenciales = new credencialesUsuario(this.email, this.password);
+        this.usuarioService.getUsarioIdByLogin(this.credenciales)
+            .subscribe((id) => {
+                this.usuarioService.getUsuarioById(id)
+                    .subscribe((resultado) => {
+                        localStorage.setItem("login", "true");
+                        localStorage.setItem("usuarioLogueado", id);
+                        localStorage.setItem("rol", resultado.tipo_usuario);
+
+                    }, (err) => {
+                        console.log(err);
+                    });
+            }, (error) => {
+                console.log(error);
+            });
+        //document.location.href = 'http://localhost:4200/';
+        /*
+        globalVars.usuarioLogueado = "Adeu";
+        console.log(globalVars.usuarioLogueado)
+        */
+        /*
         this.loginService.loguearUsuario(this.email, this.password)
             .subscribe((result) => {
                 console.log(result.login);
@@ -51,6 +77,7 @@ export class loginComponent implements OnInit {
                     alert("Contraseña incorrecta");
                 }
             }, (error) => { console.log("error: ", error) });
+        */
     }
 
     /*
