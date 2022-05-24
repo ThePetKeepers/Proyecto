@@ -938,6 +938,28 @@
 					"response": []
 				},
 				{
+					"name": "Servicio_GET_BY_SUSCRIPTOR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/servicio/suscriptor=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"servicio",
+								"suscriptor=1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Servicio_GET_ONE",
 					"request": {
 						"method": "GET",
@@ -1191,6 +1213,28 @@
 					"response": []
 				},
 				{
+					"name": "Mascota_GET_BY_CLIENTE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/cliente=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"mascota",
+								"cliente=1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "MASCOTA_GET_BY_TIPO",
 					"request": {
 						"method": "GET",
@@ -1366,6 +1410,64 @@
 								"api",
 								"mascota",
 								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "Token_CREACION",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/token/suscriptor=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"token",
+								"suscriptor=1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token_VERIFICACION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUGV0a2VlcGVycyJ9.VMnW6s3B2d6ZQhW09QcQYjI1oazV0vJNrP7uGycvXDo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/token/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"token",
+								""
 							]
 						}
 					},
