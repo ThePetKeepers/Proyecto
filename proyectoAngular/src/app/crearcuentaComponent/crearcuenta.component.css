@@ -73,3 +73,22 @@ button:hover {
     color: black;
     border-color: #205f5a;
 }
+
+#tapar{
+    width: 100%;
+    height: 1000px;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:30%;
+    position: absolute;
+    background-color: #d2eeec;
+}
+
+#logo{
+    height: 50px;
+    background-color: #d2eeec;
+    border-radius: 15px;
+    margin-top: 1%;
+    margin-left: 1%;
+}
