@@ -9,12 +9,14 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import model.Suscriptor;
 import model.Usuario;
 import service.ServiceUsuario;
+import model.CredencialesLogin;
 
 @Path("/usuario")
 @Produces(MediaType.APPLICATION_JSON)
@@ -66,10 +68,11 @@ public class UsuarioApi {
 	}
 	
 	// Endpoints adicionales:
-	@GET
-	@Path("/login?user={user}&password={password}")
-	public Response getUsarioIdByLogin(@PathParam("usuario") String usuario, @PathParam("password") String password) throws SQLException, ClassNotFoundException {
+	@POST
+	@Path("/login")
+	public Response getUsarioIdByLogin(CredencialesLogin credenciales) throws ClassNotFoundException, SQLException, NullPointerException {
+		System.out.println("AAAAAAAAAAAa");
 		service = new ServiceUsuario();
-		return Response.ok(service.getUsarioIdByLogin(usuario, password), MediaType.APPLICATION_JSON).build();
+		return Response.ok(service.getUsarioIdByLogin(credenciales), MediaType.APPLICATION_JSON).build();
 	}
 }
