@@ -7,7 +7,7 @@ public class ConstantsApi {
 	//JUAN:
 	//public static final String PASS_CONNECTION = "12341234";
 	//DIEGO:
-	//public static final String PASS_CONNECTION = "";
+	public static final String PASS_CONNECTION = "";
 	//CRISTIAN:
 	public static final String PASS_CONNECTION = "root";
 	
