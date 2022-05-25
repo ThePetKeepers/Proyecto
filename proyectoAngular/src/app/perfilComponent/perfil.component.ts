@@ -20,6 +20,7 @@ export class perfilComponent implements OnInit{
     urlVal="";
     id = 0;
     step = 0;
+    service = 0;
     usuario = new Usuario();
     servicios: Array<Servicio> = [];
     cantidadServicios: number = 0;
@@ -60,8 +61,18 @@ export class perfilComponent implements OnInit{
     edit() {
         if(this.step == 0) {
             this.step = 1;
+            this.service = 0;
         } else if(this.step == 1){
             this.step = 0;
+        }
+    }
+
+    services() {
+        if(this.service == 0) {
+            this.service = 1;
+            this.step = 0;
+        } else if(this.service == 1){
+            this.service = 0;
         }
     }
 }
