@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ServicioService } from "../services/servicio.service";
 import { Servicio } from "../clases/servicio";
 import { TokenService } from '../services/token.service';
-import { UsuarioService } from '../services/usuario.service';
 import { Token } from '../clases/token';
 import { SuscriptorService } from "../services/suscriptor.service";
 import { Suscriptor } from "../clases/suscriptor";
@@ -13,8 +12,9 @@ import { Suscriptor } from "../clases/suscriptor";
   templateUrl: 'crearservicio.component.html',
   styleUrls: ['crearservicio.component.css'],
   providers: [
-    ServicioService, TokenService,
-    UsuarioService, SuscriptorService
+    ServicioService,
+    TokenService,
+    SuscriptorService
   ]
 })
 
@@ -25,16 +25,15 @@ export class crearservicioComponent implements OnInit {
   filesToUpload: any;
   imagenes: Array<String> = [];
   servicio = new Servicio();
-  suscriptor: Suscriptor = new Suscriptor;
+  suscriptor: Suscriptor = new Suscriptor();
   id = 0;
 
   constructor(
     private _servicio: ServicioService,
     private _activRoute: ActivatedRoute,
     private _tokenService: TokenService,
-    private _usuarioService: UsuarioService,
-    private _suscriptorService: SuscriptorService) {
-  }
+    private _suscriptorService: SuscriptorService
+  ) {}
 
   ngOnInit(): void {
     //Si existe un token:
@@ -47,25 +46,13 @@ export class crearservicioComponent implements OnInit {
           this._tokenService.
             obtenerUsuarioByToken(new Token(localStorage.getItem("token")!))
             .subscribe((result) => {
-              //Guardamos el usuario en una variable
-              this._usuarioService.getUsuarioById(result)
-                .subscribe((usuario) => {
-                  this._suscriptorService.getSuscriptorByIdUsuario(usuario.id)
-                    .subscribe((suscriptor) => {
-                      this.suscriptor = suscriptor;
-                    }, (e) => {
-                      console.log("error: ", e);
-                    });
-                }, (er) => {
-                  console.log("error: ", er);
-                });
-            }, (err) => {
-              console.log("error: ", err);
-            }
-            );
-        }, (error) => {
-          console.log("error: ", error);
-        });
+              //Guardamos el suscriptor en una variable
+              this._suscriptorService.getSuscriptorByIdUsuario(result)
+                .subscribe((suscriptor) => {
+                  this.suscriptor = suscriptor;
+                }, (e) => { console.log("error: ", e) });
+            }, (err) => { console.log("error: ", err) });
+        }, (error) => { console.log("error: ", error) });
     }
   }
 

@@ -2,11 +2,11 @@ package config;
 
 public class ConstantsApi {
 	public static final String USER_CONNECTION = "root";
-	/*JUAN:
+	/*JUAN:*/
 	public static final String PASS_CONNECTION = "12341234";
 	public static final String CONNECTION = "jdbc:mysql://localhost:3306/" + "petkeepers"
 			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
-	*/
+
 	
 	/*DIEGO:	
 	public static final String PASS_CONNECTION = "";

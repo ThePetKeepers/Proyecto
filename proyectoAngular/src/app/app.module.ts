@@ -8,7 +8,6 @@ import { loginComponent } from './loginComponent/login.component';
 import { mainComponent } from './mainComponent/main.component';
 import { PageNotFoundComponent } from './PageNotFoundComponent/pagenotfound.component';
 import { servicioComponent } from './servicioComponent/servicio.component';
-import { mensajesComponent } from './mensajesComponent/mensajes.component';
 import { crearcuentaComponent } from './crearcuentaComponent/crearcuenta.component';
 import { vistaservicioComponent } from './vistaservicioComponent/vistaservicio.component';
 import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.component';
@@ -32,7 +31,6 @@ import { VistaProductoComponentComponent } from './vista-producto-component/vist
     loginComponent,
     mainComponent,
     servicioComponent,
-    mensajesComponent,
     crearcuentaComponent,
     vistaservicioComponent,
     vistamascotaComponent,

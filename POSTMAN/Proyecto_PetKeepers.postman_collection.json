@@ -315,6 +315,28 @@
 					"response": []
 				},
 				{
+					"name": "Suscriptor_GET_BY_USUARIO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/suscriptor/usuario=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"suscriptor",
+								"usuario=8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Suscriptor_POST",
 					"request": {
 						"method": "POST",
@@ -943,7 +965,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/servicio/suscriptor=1",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/servicio/suscriptor=5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -953,7 +975,7 @@
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
 								"servicio",
-								"suscriptor=1"
+								"suscriptor=5"
 							]
 						}
 					},
@@ -1308,7 +1330,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Necesito que alguien cuide mi gato\",\r\n    \"descripcion\": \"Me voy de vacaciones\",\r\n    \"precio\": 20.2,\r\n    \"puntuacion\": 2.0,\r\n    \"activo\": false,\r\n    \"imagenes\": [\r\n        \"ksss.png\",\r\n        \"lqqqq.png\"\r\n    ],\r\n    \"usuario\": 1,\r\n    \"nombre_mascota\": \"Cristian\"\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Necesito que alguien cuide mi gato\",\r\n    \"tipo\": \"perro\",\r\n    \"descripcion\": \"Me voy de vacaciones\",\r\n    \"precio\": 20.2,\r\n    \"puntuacion\": 2.0,\r\n    \"activo\": false,\r\n    \"imagenes\": [\r\n        \"ksss.png\",\r\n        \"lqqqq.png\"\r\n    ],\r\n    \"usuario\": 1,\r\n    \"nombre_mascota\": \"Cristian\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
