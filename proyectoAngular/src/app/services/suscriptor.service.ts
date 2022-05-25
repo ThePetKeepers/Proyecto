@@ -17,6 +17,16 @@ export class SuscriptorService {
         );
     }
 
+    getSuscriptorByIdUsuario(id: number): Observable<any> {
+        return this.conexHttp.get(
+            "/api/suscriptor/usuario=" + id,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
+
     getAllSuscriptores(): Observable<any> {
         return this.conexHttp.get(
             "/Proyecto/CARPETA_PHP/getAllSuscriptores.php", 

@@ -2,11 +2,12 @@ package service;
 
 import java.sql.SQLException;
 import dao.TokenDao;
+import model.Token;
 
 public class ServiceToken {
 	private TokenDao Dao;
 
-	public String crearToken(int id) throws SQLException, ClassNotFoundException {
+	public Token crearToken(int id) throws SQLException, ClassNotFoundException {
 		Dao = new TokenDao();
 		try {
 			Dao.connect();
@@ -16,7 +17,7 @@ public class ServiceToken {
 			e.printStackTrace();
 		}
 
-		String token = Dao.crearToken(id);
+		Token token = Dao.crearToken(id);
 		Dao.disconnect();
 
 		return token;

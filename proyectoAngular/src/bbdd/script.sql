@@ -180,9 +180,9 @@ VALUES
 INSERT INTO tipo_usuario
 (tipo)
 VALUES
-("ADMIN"),
 ("CLIENTE"),
-("SUSCRIPTOR");
+("SUSCRIPTOR"),
+("ADMIN");
 
 INSERT INTO cliente
 (nombre, primer_apellido, email, password, dni, nacimiento, telefono, ciudad, direccion, tipo_usuario)
@@ -192,9 +192,9 @@ VALUES
 ("Cristian", "Ayala", "cristian@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
 ("Diego", "Catanyo", "diego@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
 -- SUSCRIPTORES
-("Cristiano", "Ronaldo", "a@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
-("Leo", "Messi", "f@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
-("Lebron", "James", "c@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
+("Cristiano", "Ronaldo", "cristiano@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 1),
+("Leo", "Messi", "messi@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 1),
+("Lebron", "James", "lebron@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 1),
 -- SOLO CLIENTES:
 ("Zoya", "Aleksanyan", "zoya.aleksanyan@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 2),
 ("Javier", "Perea", "pedro.penya@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Spain", "Pelai, 8", 2),

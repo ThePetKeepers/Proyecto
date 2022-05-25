@@ -2,11 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { LoginServices } from "../services/login.service";
 import { UsuarioService } from "../services/usuario.service";
 import { credencialesUsuario } from "../clases/credencialesLogin";
+import { TokenService } from "../services/token.service";
+
 @Component({
     selector: 'login-comp',
     templateUrl: 'login.component.html',
     styleUrls: ['login.component.css'],
-    providers: [LoginServices, UsuarioService]
+    providers: [LoginServices, UsuarioService, TokenService]
 })
 
 export class loginComponent implements OnInit {
@@ -18,7 +20,8 @@ export class loginComponent implements OnInit {
 
     constructor(
         private loginService: LoginServices,
-        private usuarioService: UsuarioService
+        private usuarioService: UsuarioService,
+        private tokenService: TokenService
     ) { }
 
 
@@ -50,34 +53,19 @@ export class loginComponent implements OnInit {
         this.credenciales = new credencialesUsuario(this.email, this.password);
         this.usuarioService.getUsarioIdByLogin(this.credenciales)
             .subscribe((id) => {
-                this.usuarioService.getUsuarioById(id)
-                    .subscribe((resultado) => {
-                        localStorage.setItem("login", "true");
-                        localStorage.setItem("usuarioLogueado", id);
-                        localStorage.setItem("rol", resultado.tipo_usuario);
-
+                if (id != -1) {
+                    this.tokenService.crearTokenByUserId(id).subscribe((token) => {
+                        localStorage.setItem("token", token.valor);
+                        document.location.href = 'http://localhost:4200/';
                     }, (err) => {
-                        console.log(err);
+                        console.log("error: ", err);
                     });
-            }, (error) => {
-                console.log(error);
-            });
-        //document.location.href = 'http://localhost:4200/';
-        /*
-        globalVars.usuarioLogueado = "Adeu";
-        console.log(globalVars.usuarioLogueado)
-        */
-        /*
-        this.loginService.loguearUsuario(this.email, this.password)
-            .subscribe((result) => {
-                console.log(result.login);
-                if (result.login == true) {
-                    localStorage.setItem("token", result.token);
                 } else {
-                    alert("Contraseña incorrecta");
+                    alert("No tienes cuenta")
                 }
-            }, (error) => { console.log("error: ", error) });
-        */
+            }, (error) => {
+                console.log("error: ", error);
+            });
     }
 
     /*

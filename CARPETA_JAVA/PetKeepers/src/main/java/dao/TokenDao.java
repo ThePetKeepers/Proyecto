@@ -16,7 +16,7 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 
 import config.ConstantsApi;
-import model.Usuario;
+import model.Token;
 
 public class TokenDao {
 	private Connection bbddConnection;
@@ -32,7 +32,7 @@ public class TokenDao {
 		}
 	}
 
-	public String crearToken(int id) throws SQLException, ClassNotFoundException {
+	public Token crearToken(int id) throws SQLException, ClassNotFoundException {
 		// Establecemos la clave secreta
 		String key = "password";
 
@@ -40,11 +40,11 @@ public class TokenDao {
 		Algorithm alg = Algorithm.HMAC256(key);
 
 		// Generamos el token a partir del id
-		String token = JWT.create().withIssuer("Petkeepers") // EMISOR DE TOKEN
+		String valor = JWT.create().withIssuer("Petkeepers") // EMISOR DE TOKEN
 				.withSubject(String.valueOf(id)) // ID
 				.sign(alg);
 
-		return token;
+		return new Token(valor);
 	}
 
 	public boolean verificarToken(String token) throws SQLException, ClassNotFoundException {

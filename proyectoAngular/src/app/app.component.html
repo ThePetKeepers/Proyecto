@@ -14,7 +14,7 @@
       <div class="col-6">
         <div class="row">
           <div class="col">
-            <button *ngIf="token==false" class="btn btn-primary" aria-current="page" [routerLink]="['/suscripciones',id]">
+            <button *ngIf="token==false" class="btn btn-primary" aria-current="page" [routerLink]="['/suscripciones',usuario.id]">
               Suscripciones
             </button>
           </div>
@@ -29,7 +29,7 @@
             </button>
           </div>
           <div class="col">
-            <button class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/mascotas']">
+            <button *ngIf="usuario.tipo_usuario!=1" class="btn btn-primary btn-lg" aria-current="page" [routerLink]="['/mascotas']">
               Mascotas
             </button>
           </div>
@@ -39,19 +39,19 @@
             </button>
           </div>
           <div class="col">
-            <div class="dropdown" *ngIf="token==false">
+            <div class="dropdown" *ngIf="token==true">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 ≡
               </button>
               <div class="dropdown-menu" style=" border-radius: 10px 10px 10px 10px; padding: 3px;">
-                <button class="btn btn-primary" type="button" [routerLink]="['/perfil',id]">
+                <button class="btn btn-primary" type="button" [routerLink]="['/perfil', usuario.id]">
                   Perfil
                 </button>
-                <button class="btn btn-primary" type="button" [routerLink]="['/crearServicio',id]">
+                <button *ngIf="usuario.tipo_usuario!=1" class="btn btn-primary" type="button" [routerLink]="['/crearServicio']">
                   Nuevo servicio
                 </button>
-                <button class="btn btn-primary" type="button" [routerLink]="['/crearMascota',id]">
+                <button class="btn btn-primary" type="button" [routerLink]="['/crearMascota']">
                   Nueva mascota
                 </button>
                 <button class="btn btn-primary" aria-current="page" (click)="logout()">
