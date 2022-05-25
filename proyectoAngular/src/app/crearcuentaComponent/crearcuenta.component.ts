@@ -32,21 +32,18 @@ export class crearcuentaComponent implements OnInit {
     telefono = 0;
     ciudad = "";
     direccion = "";
-    foto = "";
     tipo_usuario = 2;
     mascotas: Array<Mascota> = [];
     filesToUpload: any;
+    foto = "";
+
 
     handleFileInput(event: Event) {
         const el = event.currentTarget as HTMLInputElement;
         let FileList: FileList | null = el.files;
         this.filesToUpload = FileList;
-    }
-    data:any;
-
-    crearCuenta() {
-
-        var form = new FormData();
+        if(this.filesToUpload){
+            var form = new FormData();
         form.append("file",this.filesToUpload[0]);
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open("POST", 'http://localhost/Proyecto/CARPETA_PHP/test.php', true);
@@ -59,23 +56,28 @@ export class crearcuentaComponent implements OnInit {
                 }
             }
         }
-        var x = document.getElementById("imageUrl")?.nodeValue;
-        console.log(x);
-    /*
+        }
+    }
+    data:any;
+
+    crearCuenta() {
+
+        var foto = document.getElementById("imageUrl")?.textContent;
+        var finalFoto = foto?.slice(1,-1);
         this.usuario = new Usuario(
             -1, this.nombre,
             this.primerApellido, this.segundoApellido,
             this.email, this.password,
             this.dni, this.nacimiento,
             String(this.telefono), this.ciudad,
-            this.direccion, this.foto,
+            this.direccion, finalFoto!,
              this.tipo_usuario, this.mascotas
         );
 
         this._registrar.postUsuario(this.usuario).subscribe((result) => {
             console.log(result);
         });
-        document.location.href = 'http://localhost:4200/';*/
+        document.location.href = 'http://localhost:4200/';
 
     }
 
