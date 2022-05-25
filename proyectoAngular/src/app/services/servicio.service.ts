@@ -74,6 +74,16 @@ export class ServicioService {
         );
     }
 
+    getServiciosBySuscriptorId(id: Number): Observable<any> {
+        return this.conexHttp.get(
+            "/api/servicio/suscriptor=" + id,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
+
     postNuevoServicio(servicio: Servicio): Observable<any> {
         return this.conexHttp.post(
             "/api/servicio", servicio,

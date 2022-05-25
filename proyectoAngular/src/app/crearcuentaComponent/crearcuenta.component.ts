@@ -42,8 +42,26 @@ export class crearcuentaComponent implements OnInit {
         let FileList: FileList | null = el.files;
         this.filesToUpload = FileList;
     }
+    data:any;
 
     crearCuenta() {
+
+        var form = new FormData();
+        form.append("file",this.filesToUpload[0]);
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("POST", 'http://localhost/Proyecto/CARPETA_PHP/test.php', true);
+        xmlHttp.send(form);
+        var self  = this;
+        xmlHttp.onreadystatechange = function x() {
+            if (xmlHttp.readyState == 4) {
+                if (xmlHttp.status == 200) {
+                    self.data = JSON.parse(xmlHttp.responseText);
+                }
+            }
+        }
+        var x = document.getElementById("imageUrl")?.nodeValue;
+        console.log(x);
+    /*
         this.usuario = new Usuario(
             -1, this.nombre,
             this.primerApellido, this.segundoApellido,
@@ -57,7 +75,7 @@ export class crearcuentaComponent implements OnInit {
         this._registrar.postUsuario(this.usuario).subscribe((result) => {
             console.log(result);
         });
-        document.location.href = 'http://localhost:4200/';
+        document.location.href = 'http://localhost:4200/';*/
 
     }
 

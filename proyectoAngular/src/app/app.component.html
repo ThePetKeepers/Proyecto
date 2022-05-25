@@ -44,14 +44,14 @@
                 aria-haspopup="true" aria-expanded="false">
                 ≡
               </button>
-              <div class="dropdown-menu" style="padding: 10px; border-radius: 10px 10px 10px 10px;">
-                <button class="dropdown-item" type="button" [routerLink]="['/perfil',id]">
+              <div class="dropdown-menu" style=" border-radius: 10px 10px 10px 10px; padding: 3px;">
+                <button class="btn btn-primary" type="button" [routerLink]="['/perfil',id]">
                   Perfil
                 </button>
-                <button class="dropdown-item" type="button" [routerLink]="['/crearServicio',id]">
+                <button class="btn btn-primary" type="button" [routerLink]="['/crearServicio',id]">
                   Nuevo servicio
                 </button>
-                <button class="dropdown-item" type="button" [routerLink]="['/crearMascota',id]">
+                <button class="btn btn-primary" type="button" [routerLink]="['/crearMascota',id]">
                   Nueva mascota
                 </button>
                 <button class="btn btn-primary" aria-current="page" (click)="logout()">
