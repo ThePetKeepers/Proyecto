@@ -62,3 +62,8 @@ button:hover {
   color: black;
   border-color: #205f5a;
 }
+
+button:focus{
+  background-color: #d2eeec;
+  color: black;
+}

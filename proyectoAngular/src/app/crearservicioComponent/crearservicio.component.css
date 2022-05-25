@@ -13,6 +13,12 @@ h1{
     padding-top: 3%;
 }
 
+button:focus{
+    background-color: #d2eeec;
+    color: black;
+}
+
+
 input{
     border-radius: 25px;
     background-color: #EEF5F3;

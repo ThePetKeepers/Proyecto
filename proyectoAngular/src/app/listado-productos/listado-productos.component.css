@@ -26,6 +26,10 @@ h2{
     margin-left: 2%;
     
 }
+button:focus{
+    background-color: #d2eeec;
+    color: black;
+}
 
 .btn{
     width: 220px;
