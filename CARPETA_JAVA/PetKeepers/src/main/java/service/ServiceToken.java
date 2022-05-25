@@ -37,4 +37,21 @@ public class ServiceToken {
 
 		return resultado;
 	}
+	
+	public int obtenerUsuarioByToken(String token) throws SQLException, ClassNotFoundException {
+	
+		Dao = new TokenDao();
+		try {
+			Dao.connect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		int usuario = Dao.obtenerUsuarioByToken(token);
+		Dao.disconnect();
+
+		return usuario;
+	}
 }

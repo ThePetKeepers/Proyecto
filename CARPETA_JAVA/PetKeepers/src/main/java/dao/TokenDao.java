@@ -11,7 +11,9 @@ import java.util.ArrayList;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.DecodedJWT;
 
 import config.ConstantsApi;
 import model.Usuario;
@@ -53,6 +55,7 @@ public class TokenDao {
 		// Generamos el algotirmo
 		Algorithm alg = Algorithm.HMAC256(key);
 
+		// Verificamos el token a partir del issuer
 		JWTVerifier verifier = JWT.require(alg).withIssuer("Petkeepers").build();
 		try {
 			verifier.verify(token);
@@ -62,5 +65,24 @@ public class TokenDao {
 		}
 
 		return false;
+	}
+
+	public int obtenerUsuarioByToken(String token) throws SQLException, ClassNotFoundException {
+
+		// Establecemos la clave secreta
+		String key = "password";
+
+		// Generamos el algotirmo
+		Algorithm alg = Algorithm.HMAC256(key);
+
+		// Devolvemos el id de usuario
+		try {
+			DecodedJWT originToken = JWT.decode(token);
+			return Integer.parseInt(originToken.getSubject());
+		} catch (JWTDecodeException e) {
+			e.printStackTrace();
+		}
+
+		return -1;
 	}
 }

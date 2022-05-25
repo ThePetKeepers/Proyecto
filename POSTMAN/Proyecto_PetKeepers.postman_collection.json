@@ -1426,7 +1426,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/token/suscriptor=1",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/token/usuario=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1436,7 +1436,7 @@
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
 								"token",
-								"suscriptor=1"
+								"usuario=1"
 							]
 						}
 					},
@@ -1468,6 +1468,37 @@
 								"api",
 								"token",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token_GET_USARIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiUGV0a2VlcGVycyJ9.VMnW6s3B2d6ZQhW09QcQYjI1oazV0vJNrP7uGycvXDo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/token/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"PetKeepers-0.0.1-SNAPSHOT",
+								"api",
+								"token",
+								"usuario"
 							]
 						}
 					},

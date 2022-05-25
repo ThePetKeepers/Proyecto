@@ -31,7 +31,7 @@ public class TokenApi {
 	}
 	
 	@GET
-	@Path("/suscriptor={id}")
+	@Path("/usuario={id}")
 	public Response crearToken(@PathParam("id") int id) throws SQLException, ClassNotFoundException {
 		service = new ServiceToken();
 		return Response.ok(service.crearToken(id), MediaType.APPLICATION_JSON).build();
@@ -42,5 +42,12 @@ public class TokenApi {
 	public Response verificarToken(Token token) throws ClassNotFoundException, SQLException, NullPointerException {
 		service = new ServiceToken();
 		return Response.ok(service.verificarToken(token.getValor()), MediaType.APPLICATION_JSON).build();
+	}
+	
+	@POST
+	@Path("/usuario")
+	public Response obtenerUsuarioByToken(Token token) throws ClassNotFoundException, SQLException, NullPointerException {
+		service = new ServiceToken();
+		return Response.ok(service.obtenerUsuarioByToken(token.getValor()), MediaType.APPLICATION_JSON).build();
 	}
 }
