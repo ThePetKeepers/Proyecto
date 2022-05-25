@@ -1,18 +1,28 @@
 img{
-    height: 450px !important;
-    width: 85% !important;
+    height: 270px !important;
+    width: 70% !important;
     padding-top: 10%;
     padding-left: 10%;
     padding-bottom: 10%;
 }
 
+#info{
+    font-size: 17px;
+    padding-left: 3%;
+}
+
+label{
+    font-size: 20px !important;
+}
+
 #card1{
     background-color: #39ACA2;
-    width: 95%; 
+    width: 75%; 
     border-radius: 25px;
     border-color: #205f5a;
     background-color: #39ACA2;
     height: 40% !important;
+    margin-bottom: 4%;
 }
 
 #carouselExampleDark{
@@ -43,6 +53,13 @@ button:focus{
 }
 
 h3{
+    font-weight: bold;
+    font-size: 35px;
+    padding-top: 5%;
+    padding-bottom: 3%;
+}
+
+h4{
     font-weight: bold;
     font-size: 25px;
     padding-top: 5%;
@@ -96,7 +113,7 @@ button{
     font-size: 17px;
     border-radius: 15px;
     margin-top: 3%;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
 }
 
 button:hover {
@@ -106,10 +123,17 @@ button:hover {
 }
 
 #mapa{
-    padding-bottom: 5%;
-    padding-top: 5%;
+    padding-bottom: 3%;
+    padding-top: 3%;
 }
 
-table{
-    
+#servicios{
+    background-color: #d2eeec;
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius:  20px 20px 20px 20px;
+    -webkit-border-radius:  20px 20px 20px 20px;
+    border: 0px solid #000000;
+    margin-bottom: 5%;
+    padding-bottom: 4%;
+    margin-top: 10%;
 }
