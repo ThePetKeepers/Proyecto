@@ -7,40 +7,69 @@ import { mascotaService } from "../services/mascota.service";
 import { ProductoService } from "../services/producto.service";
 import { ServicioService } from "../services/servicio.service";
 import { TokenService } from "../services/token.service";
-
+import { UsuarioService } from '../services/usuario.service';
+import { Usuario } from '../clases/usuario';
+import { Token } from '../clases/token';
 @Component({
   selector: 'main-comp',
   templateUrl: 'main.component.html',
   styleUrls: ['main.component.css'],
-  providers: [TokenService, ProductoService, ServicioService, mascotaService]
+  providers: [
+    TokenService, ProductoService, ServicioService,
+    mascotaService, UsuarioService
+  ]
 })
 
 
 
 export class mainComponent implements OnInit {
-  constructor(private _tokenService: TokenService, private _productoService: ProductoService, private _servicioService: ServicioService, private _mascotaService: mascotaService) {
+  constructor(
+    private _tokenService: TokenService,
+    private _productoService: ProductoService,
+    private _servicioService: ServicioService,
+    private _mascotaService: mascotaService,
+    private _usuarioService: UsuarioService
+  ) {
 
   }
+
   productos: Array<Producto> = [];
   servicios: Array<Servicio> = [];
   mascotas: Array<Mascota> = [];
   mybutton: any;
   token = false;
-  ngOnInit(): void {
+  usuario: Usuario = new Usuario;
 
-    /*
-    this._tokenService.getToken().subscribe(
-      (resul) => {
-        console.log(resul);
-        if (resul["correcte"] == true) {
-          this.token = true;
-        }
-      },
-      (error) => {
-        console.log(error);
-      }
-    )
-    */
+  ngOnInit(): void {
+    //Si existe un token:
+    if (localStorage.getItem("token")) {
+      //Verificamos el token:
+      this._tokenService.verificarToken(new Token(localStorage.getItem("token")!))
+        .subscribe((verificacion) => {
+          console.log("El token es: " + verificacion);
+          //Obtenemos el Id del usuario
+          this._tokenService.
+            obtenerUsuarioByToken(new Token(localStorage.getItem("token")!))
+            .subscribe(
+              (result) => {
+                this.token = true;
+                //Guardamos el usuario en una variable
+                this._usuarioService.getUsuarioById(result)
+                  .subscribe((usuario) => {
+                    this.usuario = usuario;
+                    console.log(this.usuario);
+                  }, (er) => {
+                    console.log("error: ", er);
+                  });
+              }, (err) => {
+                console.log("error: ", err);
+              }
+            );
+        }, (error) => {
+          console.log("error: ", error);
+        });
+    }
+
     this._productoService.getTop5Productos()
       .subscribe(async (resultado) => {
         this.productos = resultado;

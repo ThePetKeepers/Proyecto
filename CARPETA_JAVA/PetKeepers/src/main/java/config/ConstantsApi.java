@@ -47,7 +47,7 @@ public class ConstantsApi {
 	public static final String GET_MASCOTAS_BY_TIPO = "SELECT id FROM petkeepers.mascota WHERE tipo = ?";
 	public static final String GET_MASCOTAS = "SELECT * FROM petkeepers.mascota";
 	public static final String GET_MASCOTA = "SELECT * FROM petkeepers.mascota WHERE id = ?";
-	public static final String POST_MASCOTA = "INSERT INTO petkeepers.mascota (nombre, tipo, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente) VALUES (?,?,?,?,?,?,?,?)";
+	public static final String POST_MASCOTA = "INSERT INTO petkeepers.mascota (nombre, tipo, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente) VALUES (?,?,?,?,?,?,?,?,?)";
 	public static final String UPDATE_MASCOTA = "UPDATE petkeepers.mascota SET nombre = ?, tipo = ?,  nombre_mascota = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_cliente = ? WHERE (id = ?)";
 	public static final String DELETE_MASCOTA = "DELETE FROM petkeepers.mascota WHERE (id = ?)";
 
@@ -62,6 +62,7 @@ public class ConstantsApi {
 	// SUSCRIPTOR
 	public static final String GET_SUSCRIPTORES = "SELECT * FROM petkeepers.suscriptor";
 	public static final String GET_SUSCRIPTOR = "SELECT * FROM petkeepers.suscriptor WHERE id = ?";
+	public static final String GET_SUSCRIPTOR_BY_USUARIO = "SELECT id FROM petkeepers.suscriptor WHERE id_cliente = ?";
 	public static final String POST_SUSCRIPTOR = "INSERT INTO petkeepers.suscriptor (nombre, primer_apellido, segundo_apellido, email, dni, nacimiento, telefono, ciudad, direccion, foto, password, id_cliente, tipo_usuario, metodo_de_pago, id_suscripcion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	public static final String UPDATE_SUSCRIPTOR = "UPDATE petkeepers.suscriptor SET nombre = ?, primer_apellido = ?, segundo_apellido = ?, email = ?, dni = ?, nacimiento = ?, telefono = ?, ciudad = ?, direccion = ?, foto = ?, password = ?, id_cliente = ?, tipo_usuario = ?, metodo_de_pago = ?, id_suscripcion = ? WHERE (id = ?)";
 	public static final String DELETE_SUSCRIPTOR = "DELETE FROM petkeepers.suscriptor WHERE (id = ?)";

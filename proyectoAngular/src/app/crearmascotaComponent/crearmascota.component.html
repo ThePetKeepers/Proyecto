@@ -17,12 +17,17 @@
       </div>
       <div class="mb-3"> 
         <label for="exampleInputPassword1" class="form-label">Tipo:</label>
+        <!--
         <select class="form-select" aria-label="Default select example">
           <option selected>Selecciona</option>
           <option value="Ave">Ave</option>
           <option value="Pez">Pez</option>
           <option value="Perro">Perro</option>
           <option value="Gato">Gato</option>
+        </select>
+        -->
+        <select id="selectTipoMascota" name="selectTipoMascota" [(ngModel)]=tipoMascota >
+          <option option="tipo" *ngFor="let tipo of tipos">{{tipo}}</option>
         </select>
       </div>
       <div class="mb-3">

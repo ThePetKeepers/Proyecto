@@ -67,4 +67,11 @@ public class SuscriptorApi {
 		service.deleteSuscriptor(id);
 		return Response.ok("Se ha eliminado el Suscriptor", MediaType.APPLICATION_JSON).build();
 	}
+	
+	@GET
+	@Path("/usuario={id}")
+	public Response getSuscriptorByIdUsuario(@PathParam("id") int id) throws SQLException, ClassNotFoundException {
+		service = new ServiceSuscriptor();
+		return Response.ok(service.getSuscriptorByIdUsuario(id), MediaType.APPLICATION_JSON).build();
+	}
 }
