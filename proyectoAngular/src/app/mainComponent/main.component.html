@@ -155,7 +155,7 @@
           </div>
         </div>
       </ng-container>
-      <div *ngIf="usuario.tipo_usuario!=1">
+      <div *ngIf="usuario.tipo_usuario!=1 && token==true">
         <h2 align="center" style="margin-top: 5%;">Mascotas destacadas</h2>
         <div style="display: flex; flex-direction: row; justify-content: space-around;">
           <ng-container *ngFor="let mascota of mascotas">

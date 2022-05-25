@@ -5,7 +5,6 @@ import { loginComponent } from './loginComponent/login.component';
 import { mainComponent } from './mainComponent/main.component';
 import { PageNotFoundComponent } from './PageNotFoundComponent/pagenotfound.component';
 import { servicioComponent } from './servicioComponent/servicio.component';
-import { mensajesComponent } from './mensajesComponent/mensajes.component';
 import { crearcuentaComponent } from './crearcuentaComponent/crearcuenta.component';
 import { vistaservicioComponent } from './vistaservicioComponent/vistaservicio.component';
 import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.component';
@@ -34,13 +33,11 @@ const routes: Routes = [
   {path:'mascotas/:tipo',component:ListadoMascotasComponent},
   {path:'suscripciones/:id',component:SubscriptionsComponentComponent},
   {path:'servicio/:tipo',component:servicioComponent},
-  {path:'mensajes',component:mensajesComponent},
   {path:'crearcuenta',component:crearcuentaComponent},
   {path:'vistaservicio/:servicio',component:vistaservicioComponent},
   {path:'vistamascota/:mascota',component:vistamascotaComponent},
   {path:'vistaproducto/:producto',component:VistaProductoComponentComponent},
   {path:'perfil',component:perfilComponent},
-  {path:'perfil/:id',component:perfilComponent},
   {path:'crearServicio',component:crearservicioComponent},
   {path:'crearMascota',component:crearmascotaComponent},
   {path:'crearSuscripcion/:id/:type',component:crearsubscriptionComponent},

@@ -30,7 +30,7 @@ export class crearmascotaComponent implements OnInit {
     usuario: Usuario = new Usuario();
     tipos = ["Perro", "Gato", "Pez", "Ave"];
     tipoMascota = this.tipos[0];
-    
+
     constructor(
         private _mascota: mascotaService,
         private _activRoute: ActivatedRoute,
@@ -39,7 +39,7 @@ export class crearmascotaComponent implements OnInit {
     ) {
 
     }
-    id = 0;
+
     ngOnInit(): void {
         //Si existe un token:
         if (localStorage.getItem("token")) {
@@ -51,21 +51,14 @@ export class crearmascotaComponent implements OnInit {
                     this._tokenService.
                         obtenerUsuarioByToken(new Token(localStorage.getItem("token")!))
                         .subscribe((result) => {
-                                //Guardamos el usuario en una variable
-                                this._usuarioService.getUsuarioById(result)
-                                    .subscribe((usuario) => {
-                                        this.usuario = usuario;
-                                        console.log(this.usuario);
-                                    }, (er) => {
-                                        console.log("error: ", er);
-                                    });
-                            }, (err) => {
-                                console.log("error: ", err);
-                            }
-                        );
-                }, (error) => {
-                    console.log("error: ", error);
-                });
+                            //Guardamos el usuario en una variable
+                            this._usuarioService.getUsuarioById(result)
+                                .subscribe((usuario) => {
+                                    this.usuario = usuario;
+                                    console.log(this.usuario);
+                                }, (er) => { console.log("error: ", er) });
+                        }, (err) => { console.log("error: ", err) });
+                }, (error) => { console.log("error: ", error) });
         }
     }
 
@@ -79,9 +72,6 @@ export class crearmascotaComponent implements OnInit {
         this._mascota.postNuevaMascota(this.mascota).subscribe((result) => {
             console.log(result);
         });
-        //document.location.href = 'http://localhost:4200/';
+        document.location.href = 'http://localhost:4200/';
     }
-
-
-
 }

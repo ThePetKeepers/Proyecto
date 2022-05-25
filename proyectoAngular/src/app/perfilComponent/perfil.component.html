@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <button class="btn btn-primary btn-lg" aria-current="page" (click)="services()">
+                    <button *ngIf="usuario.tipo_usuario!=1" class="btn btn-primary btn-lg" aria-current="page" (click)="services()">
                         Servicios
                     </button>
                 </div>
