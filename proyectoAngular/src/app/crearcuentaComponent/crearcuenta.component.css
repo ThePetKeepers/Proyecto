@@ -10,6 +10,11 @@ input{
     padding-left: 2%;
 }
 
+button:focus{
+    background-color: #d2eeec;
+    color: black;
+}
+
 select{
     width: 600px;
     height: 40px;
