@@ -57,4 +57,14 @@ export class mascotaService {
             }
         );
     }
+
+    getMascotasByUsuarioId(id: Number): Observable<any> {
+        return this.conexHttp.get(
+            "/api/mascota/cliente=" + id,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
 }

@@ -71,7 +71,6 @@ public class UsuarioApi {
 	@POST
 	@Path("/login")
 	public Response getUsarioIdByLogin(CredencialesLogin credenciales) throws ClassNotFoundException, SQLException, NullPointerException {
-		System.out.println("AAAAAAAAAAAa");
 		service = new ServiceUsuario();
 		return Response.ok(service.getUsarioIdByLogin(credenciales), MediaType.APPLICATION_JSON).build();
 	}
