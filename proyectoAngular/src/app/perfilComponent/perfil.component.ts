@@ -38,6 +38,7 @@ export class perfilComponent implements OnInit {
     urlVal = "";
     step = 0;
     service = 0;
+    mascotaSelector = 0;
     usuario = new Usuario();
     servicios: Array<Servicio> = [];
     mascotas: Array<Mascota> = [];
@@ -105,6 +106,7 @@ export class perfilComponent implements OnInit {
         if (this.step == 0) {
             this.step = 1;
             this.service = 0;
+            this.mascotaSelector = 0;
         } else if (this.step == 1) {
             this.step = 0;
         }
@@ -114,8 +116,19 @@ export class perfilComponent implements OnInit {
         if (this.service == 0) {
             this.service = 1;
             this.step = 0;
+            this.mascotaSelector = 0;
         } else if (this.service == 1) {
             this.service = 0;
+        }
+    }
+
+    mascotasS() {
+        if (this.mascotaSelector == 0) {
+            this.mascotaSelector = 1;
+            this.step = 0;
+            this.service = 0;
+        } else if (this.mascotaSelector == 1) {
+            this.mascotaSelector = 0;
         }
     }
 }

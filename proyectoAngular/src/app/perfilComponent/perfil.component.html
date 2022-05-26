@@ -41,12 +41,13 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <button *ngIf="usuario.tipo_usuario!=1" class="btn btn-primary btn-lg" aria-current="page" (click)="services()">
+                    <button *ngIf="usuario.tipo_usuario!=1" class="btn btn-primary btn-lg" aria-current="page"
+                        (click)="services()">
                         Servicios
                     </button>
                 </div>
                 <div class="col">
-                    <button class="btn btn-primary btn-lg" aria-current="page">
+                    <button class="btn btn-primary btn-lg" aria-current="page" (click)="mascotasS()">
                         Mascotas
                     </button>
                 </div>
@@ -132,6 +133,24 @@
                                     <div class="card-body">
                                         <h4 class="card-text"><b>{{servicio.nombre}}</b></h4>
                                         <h5 class="card-text">{{servicio.descripcion}}</h5>
+                                    </div>
+                                </div>
+                            </li>
+                        </ng-container>
+                    </div>
+                    <div *ngIf="mascotaSelector==1">
+                        <ng-container *ngFor="let mascota of mascotas">
+                            <li style="display: inline-block;  padding-top: 2%; margin-right: 2%;">
+                                <div class="card" id="servicios" style="width: 35rem !important;"
+                                    [routerLink]="['/vistamascota',mascota.id]">
+                                    <div align="center">
+                                        <img class="card-img-top" src="./../../assets/dog.png"
+                                            style="margin-top: 5%; padding: 5%" alt="Card image cap">
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h4 class="card-text"><b>{{mascota.nombre}}</b></h4>
+                                        <h5 class="card-text">{{mascota.descripcion}}</h5>
                                     </div>
                                 </div>
                             </li>
