@@ -8,6 +8,8 @@ import { TokenService } from '../services/token.service';
 import { Token } from '../clases/token';
 import { Suscriptor } from "../clases/suscriptor";
 import { SuscriptorService } from "../services/suscriptor.service";
+import { mascotaService } from "../services/mascota.service";
+import { Mascota } from "../clases/mascota";
 
 @Component({
     selector: 'perfil-comp',
@@ -17,7 +19,8 @@ import { SuscriptorService } from "../services/suscriptor.service";
         UsuarioService,
         ServicioService,
         TokenService,
-        SuscriptorService
+        SuscriptorService,
+        mascotaService
     ]
 })
 
@@ -28,7 +31,8 @@ export class perfilComponent implements OnInit {
         private _usuarioService: UsuarioService,
         private _servicioService: ServicioService,
         private _tokenService: TokenService,
-        private _suscriptorService: SuscriptorService
+        private _suscriptorService: SuscriptorService,
+        private _mascotaService: mascotaService
     ) { }
 
     urlVal = "";
@@ -36,7 +40,9 @@ export class perfilComponent implements OnInit {
     service = 0;
     usuario = new Usuario();
     servicios: Array<Servicio> = [];
+    mascotas: Array<Mascota> = [];
     cantidadServicios: number = 0;
+    cantidadMascotas: number = 0;
     suscriptor: Suscriptor = new Suscriptor();
 
     ngOnInit(): void {
@@ -53,13 +59,29 @@ export class perfilComponent implements OnInit {
                             this._usuarioService.getUsuarioById(result)
                                 .subscribe((usuario) => {
                                     this.usuario = usuario;
+                                    console.log(this.usuario);
+                                    //Guardar mascotas
+                                    this._mascotaService.getMascotasByUsuarioId(this.usuario.id)
+                                        .subscribe((mascotas) => {
+                                            console.log(mascotas);
+                                            for (let i of mascotas) {
+                                                let mascota = new Mascota(
+                                                    i['id'], i['nombre'], i['tipo'],
+                                                    i['descripcion'], i['precio'], i['puntuacion'], i['activo'],
+                                                    i['imagenes'], i['usuario'], i['nombre_mascota']
+                                                );
+                                                this.cantidadMascotas = ++this.cantidadMascotas;
+                                                this.mascotas.push(mascota);
+                                            }
+                                        }, (r) => { console.log("error: ", r) });
                                     //Si el usuario es suscriptor lo guardamos en una var
                                     if (this.usuario.tipo_usuario != 1) {
                                         this._suscriptorService.getSuscriptorByIdUsuario(usuario.id)
                                             .subscribe((suscriptor) => {
                                                 this.suscriptor = suscriptor;
+                                                //Guardar servicios
                                                 this._servicioService.
-                                                getServiciosBySuscriptorId(this.suscriptor.id)
+                                                    getServiciosBySuscriptorId(this.suscriptor.id)
                                                     .subscribe((servicios) => {
                                                         for (let i of servicios) {
                                                             let servicio = new Servicio(
