@@ -110,7 +110,6 @@ public class MascotaApi {
 	public Response getMascotasAdquiridasBySuscriptor(@PathParam("tipo") String tipo)
 			throws ClassNotFoundException, SQLException, NullPointerException {
 		service = new ServiceMascota();
-		System.out.print("NNNNNNN");
 		return Response.ok(service.getMascotasByTipo(tipo), MediaType.APPLICATION_JSON).build();
 	}
 	

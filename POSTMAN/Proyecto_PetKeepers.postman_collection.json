@@ -1217,7 +1217,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/suscriptor/1",
+							"raw": "http://localhost:8080/PetKeepers-0.0.1-SNAPSHOT/api/mascota/cliente=4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1227,8 +1227,7 @@
 								"PetKeepers-0.0.1-SNAPSHOT",
 								"api",
 								"mascota",
-								"suscriptor",
-								"1"
+								"cliente=4"
 							]
 						}
 					},
