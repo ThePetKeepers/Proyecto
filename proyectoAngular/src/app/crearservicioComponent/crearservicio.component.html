@@ -17,11 +17,13 @@
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Imagenes:</label>
-        <input type="file" class="form-control">
+        <input id="inputImagen" type="file" [(ngModel)]="foto" #fotoEn="ngModel" name="fotoEn"
+        (change)="handleFileInput($event)" required>
       </div>
       <div align="center">
         <button type="submit" class="btn btn-primary" (click)="crearServicio()">Crear</button>
       </div>
     </div>
+    <div id="imageUrl" style="display: none;">{{data|json}}</div>
   </div>
 </form>

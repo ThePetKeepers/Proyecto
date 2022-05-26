@@ -8,7 +8,7 @@ export class Servicio extends Objeto {
             id: number = -1, nombre: String = "",
             descripcion: String = "", precio: number = -1,
             puntuacion: number = -1, activo: boolean = true,
-            imagenes: Array<String> = [], suscriptor: number = -1
+            imagenes: String = "", suscriptor: number = -1
         ) {
         super
             (

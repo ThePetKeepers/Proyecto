@@ -23,8 +23,9 @@ export class crearmascotaComponent implements OnInit {
     nombre = "";
     descripcion = "";
     precio = 0;
+    foto = "";
     filesToUpload: any;
-    imagenes: Array<String> = [];
+    imagenes: String = "";
     mascota = new Mascota();
     servicio = new Servicio();
     usuario: Usuario = new Usuario();
@@ -39,6 +40,29 @@ export class crearmascotaComponent implements OnInit {
     ) {
 
     }
+
+    handleFileInput(event: Event) {
+        const el = event.currentTarget as HTMLInputElement;
+        let FileList: FileList | null = el.files;
+        this.filesToUpload = FileList;
+        if(this.filesToUpload){
+            var form = new FormData();
+        form.append("file",this.filesToUpload[0]);
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("POST", 'http://localhost/Proyecto/CARPETA_PHP/imagenMascota.php', true);
+        xmlHttp.send(form);
+        var self  = this;
+        xmlHttp.onreadystatechange = function x() {
+            if (xmlHttp.readyState == 4) {
+                if (xmlHttp.status == 200) {
+                    self.data = JSON.parse(xmlHttp.responseText);
+                }
+            }
+        }
+        }
+    }
+    data:any;
+
 
     ngOnInit(): void {
         //Si existe un token:
@@ -63,9 +87,11 @@ export class crearmascotaComponent implements OnInit {
     }
 
     crearMascota() {
+        var foto = document.getElementById("imageUrl")?.textContent;
+        var finalFoto = foto?.slice(1,-1);
         this.mascota = new Mascota(
             -1, this.nombre, this.tipoMascota, this.descripcion, this.precio,
-            0, true, this.imagenes, this.usuario.id,
+            0, true, finalFoto, this.usuario.id,
             this.nombreMascota
         );
 

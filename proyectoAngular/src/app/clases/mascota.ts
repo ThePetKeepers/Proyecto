@@ -10,7 +10,7 @@ export class Mascota extends Objeto {
             id: number = -1, nombre: String = "", tipo: String = "",
             descripcion: String = "", precio: number = -1,
             puntuacion: number = -1, activo: boolean = true,
-            imagenes: Array<String> = [], usuario: number = -1,
+            imagenes: String = "", usuario: number = -1,
             nombre_mascota: String = ""
         ) {
         super

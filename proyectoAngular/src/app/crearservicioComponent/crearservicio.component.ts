@@ -23,7 +23,7 @@ export class crearservicioComponent implements OnInit {
   descripcion = "";
   precio = 0;
   filesToUpload: any;
-  imagenes: Array<String> = [];
+  imagenes: String = "";
   servicio = new Servicio();
   suscriptor: Suscriptor = new Suscriptor();
   id = 0;
@@ -34,6 +34,28 @@ export class crearservicioComponent implements OnInit {
     private _tokenService: TokenService,
     private _suscriptorService: SuscriptorService
   ) {}
+    foto="";
+  handleFileInput(event: Event) {
+    const el = event.currentTarget as HTMLInputElement;
+    let FileList: FileList | null = el.files;
+    this.filesToUpload = FileList;
+    if(this.filesToUpload){
+        var form = new FormData();
+    form.append("file",this.filesToUpload[0]);
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("POST", 'http://localhost/Proyecto/CARPETA_PHP/imagenServicio.php', true);
+    xmlHttp.send(form);
+    var self  = this;
+    xmlHttp.onreadystatechange = function x() {
+        if (xmlHttp.readyState == 4) {
+            if (xmlHttp.status == 200) {
+                self.data = JSON.parse(xmlHttp.responseText);
+            }
+        }
+    }
+    }
+}
+data:any;
 
   ngOnInit(): void {
     //Si existe un token:
@@ -46,6 +68,7 @@ export class crearservicioComponent implements OnInit {
           this._tokenService.
             obtenerUsuarioByToken(new Token(localStorage.getItem("token")!))
             .subscribe((result) => {
+              console.log(result);
               //Guardamos el suscriptor en una variable
               this._suscriptorService.getSuscriptorByIdUsuario(result)
                 .subscribe((suscriptor) => {
@@ -58,15 +81,18 @@ export class crearservicioComponent implements OnInit {
 
 
   crearServicio() {
+    var foto = document.getElementById("imageUrl")?.textContent;
+    var finalFoto = foto?.slice(1,-1);
+    console.log(finalFoto);
     this.servicio = new Servicio(
       -1, this.nombre, this.descripcion, this.precio,
-      0, true, this.imagenes, this.suscriptor.id
+      0, true, finalFoto, this.suscriptor.id
     );
 
     this._servicio.postNuevoServicio(this.servicio).subscribe((result) => {
       console.log(result);
     });
-    document.location.href = 'http://localhost:4200/';
+    //document.location.href = 'http://localhost:4200/';
   }
 
 }
