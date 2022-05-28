@@ -185,20 +185,20 @@ VALUES
 ("ADMIN");
 
 INSERT INTO cliente
-(nombre, primer_apellido, email, password, dni, nacimiento, telefono, ciudad, direccion, tipo_usuario)
+(nombre, primer_apellido, email, password, dni, nacimiento, telefono, ciudad, direccion, tipo_usuario, foto)
 VALUES
 -- ADMINS:
-("Juan", "Mata", "juan@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
-("Cristian", "Ayala", "cristian@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
-("Diego", "Catanyo", "diego@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3),
+("Juan", "Mata", "juan@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3, "http://localhost/Proyecto/IMAGENES/cuentas/juan.jpg"),
+("Cristian", "Ayala", "cristian@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3, "http://localhost/Proyecto/IMAGENES/productos/tenis.jpg"),
+("Diego", "Catanyo", "diego@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 3, "http://localhost/Proyecto/IMAGENES/productos/tenis.jpg"),
 -- CLIENTES
-("Cristiano", "Ronaldo", "cristiano@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 1),
-("Leo", "Messi", "messi@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 1),
-("Lebron", "James", "lebron@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 1),
+("Cristiano", "Ronaldo", "cristiano@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 1, "http://localhost/Proyecto/IMAGENES/productos/tenis.jpg"),
+("Leo", "Messi", "messi@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 1, "http://localhost/Proyecto/IMAGENES/productos/tenis.jpg"),
+("Lebron", "James", "lebron@gmail.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 1, "http://localhost/Proyecto/IMAGENES/productos/tenis.jpg"),
 -- SUSCRIPTORES:
-("Zoya", "Aleksanyan", "zoya.aleksanyan@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 2),
-("Javier", "Perea", "javier.perea@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Spain", "Pelai, 8", 2),
-("Cristian", "Catalan", "cristian.catalan@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 2);
+("Zoya", "Aleksanyan", "zoya.aleksanyan@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 2, "http://localhost/Proyecto/IMAGENES/productos/tenis.jpg"),
+("Javier", "Perea", "javier.perea@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Spain", "Pelai, 8", 2, "http://localhost/Proyecto/IMAGENES/productos/tenis.jpg"),
+("Cristian", "Catalan", "cristian.catalan@stucom.com", "1234", "888888888", "2001-06-01", "555555555", "Barcelona", "Pelai, 8", 2, "http://localhost/Proyecto/IMAGENES/productos/tenis.jpg");
 
 -- ADMINS:
 INSERT INTO suscriptor
@@ -216,23 +216,23 @@ VALUES
 ("Javier", "Perea", "javier.perea@stucom.com", "888888888", "2001-001-01", "666666666", "Barcelona", "Pelai, 8", "1234", 8, 3, 2, 3),
 ("Cristian", "Catalan", "cristian.catalan@stucom.com", "888888888", "2001-001-01", "666666666", "Barcelona", "Pelai, 8", "1234", 9, 3, 2, 3);
 
-INSERT INTO servicio
-(nombre, descripcion, precio, puntuacion, activo, imagenes, id_suscriptor)
+INSERT INTO servicio 
+(nombre, descripcion, precio, puntuacion, activo, imagenes, id_suscriptor) 
 VALUES
-("Paseo de perros", "Pasear a tu perro por el parque", 10.50, 1.20, true, "poa.png, lsls.png", 1),
-("Adiestramiento de perros", "Tu perro aprendera a comportarse", 30.20, 2.5, true, "aa.png, pp.png", 2),
-("Cuidado de perros por vacaciones", "No te preocuparas por tu mascota durante el viaje", 40.80, 3.8, true, "aa.png, pp.png", 3),
-("Limpieza de peceras", "La pecera quedara limpia como nunca", 10.50, 4.1, true, "poa.png, lsls.png", 1),
-("Cuidado de hamsters", "Hamster el mejor de los roedores, y al que mejor hay que cuidar", 30.20, 5, true, "aa.png, pp.png", 2);
+("Paseo de perros", "Pasear a tu perro por el parque", 10.5, 1.2, 1, "http://localhost/Proyecto/IMAGENES/servicios/walker.png", 1),
+("Adiestramiento de perros", "Tu perro aprendera a comportarse", 30.2, 2.5, 1, "http://localhost/Proyecto/IMAGENES/servicios/nose.jpeg", 2),
+("Cuidado de perros por vacaciones", "No te preocuparas por tu mascota durante el viaje", 40.8, 3.8, 1, "http://localhost/Proyecto/IMAGENES/servicios/vistaservicio3.jpeg", 3),
+("Limpieza de peceras", "La pecera quedara limpia como nunca", 10.5, 4.1, 1, "http://localhost/Proyecto/IMAGENES/servicios/pecera.png", 1),
+("Cuidado de hamsters", "Hamster el mejor de los roedores, y al que mejor hay que cuidar", 30.2, 5, 1, "http://localhost/Proyecto/IMAGENES/servicios/comerham.png", 2);
 
-INSERT INTO mascota
-(nombre, tipo, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente)
+INSERT INTO mascota 
+(nombre, tipo, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente) 
 VALUES
-("Necesito que alguien cuide mi perro", "PERRO", "Roby", "Me voy de vacaciones y quiero que alguien lo cuide por mi", 10.20, 1.8, true, "k.png, l.png", 1),
-("Quiero que alguien me ayude a adiestrar a mi gato", "GATO", "Roco", "No se comporta y no se que hacer ayuda :(", 8.20, 2.5, false, "lala.png, ppp.png", 2),
-("¿Alguien puede pasear a mi perro?", "PERRO", "Nina", "Trabajo de 9am a 9pm, y la pobre necesita caminar", 15.20, 3.8, true, "haom.png, iann.png", 3),
-("Mi pez esta loco", "PEZ", "Nemo", "Me voy de la casa y cuando vuelvo lo encuentro fuera de la pecera, RESPIRA AIRE", 10.20, 0, true, "k.png, l.png", 1),
-("Quiero que alguien me ayude a adiestrar a mi canario", "AVE", "Emilio", "No se comporta y no se que hacer ayuda :(", 8.20, 4.5, false, "lala.png, ppp.png", 2);
+("Necesito que alguien cuide mi perro", "PERRO", "Roby", "Me voy de vacaciones y quiero que alguien lo cuide por mi", 10.2, 1.8, 1, "http://localhost/Proyecto/IMAGENES/mascotas/dog.png", 1),
+("Quiero que alguien me ayude a adiestrar a mi gato", "GATO", "Roco", "No se comporta y no se que hacer ayuda :(", 8.2, 2.5, 0, "http://localhost/Proyecto/IMAGENES/mascotas/gato.jpeg", 2),
+("¿Alguien puede pasear a mi perro?", "PERRO", "Nina", "Trabajo de 9am a 9pm, y la pobre necesita caminar", 15.2, 3.8, 1, "http://localhost/Proyecto/IMAGENES/mascotas/perro.jpg", 3),
+("Mi pecera está sucia", "PEZ", "Nemo", "No se como limpiar bien una pecera, busco a alguien dispuesto a hacerlo. En ella solo vive mi pequeño pez dorado.", 10.2, 0, 1, "http://localhost/Proyecto/IMAGENES/mascotas/Goldfish-1.jpg", 1),
+("Quiero que alguien me ayude a adiestrar a mi canario", "AVE", "Emilio", "No se comporta y no se que hacer ayuda :(", 8.2, 4.5, 0, "http://localhost/Proyecto/IMAGENES/mascotas/canario.jpg", 2);
 
 INSERT INTO proveedor
 (nombre, cif, email, telefono, ciudad, direccion)
@@ -241,14 +241,14 @@ VALUES
 ("Miscota", "888888888", "miscota@gmail.com", "888888888", "Barcelona", "Pelai, 8"),
 ("Kiwoko", "888888888", "kiwoko@gmail.com", "888888888", "Barcelona", "Pelai, 8");
 
-INSERT INTO producto
-(nombre, descripcion, precio, puntuacion, activo, imagenes, id_proveedor)
+INSERT INTO producto 
+(nombre, descripcion, precio, puntuacion, activo, imagenes, id_proveedor) 
 VALUES
-("Pelota de tenis", "Especial para la mandibula de tu mascota", 5.50, 2.80, true, "hola.png, adeu.png", 1),
-("Traje de Santa", "Perfecto para navidades", 8.50, 5, true, "a.png, e.png", 2),
-("Collar Rosado", "Collar talla M para perros", 7.50, 3.80, true, "q.png, k.png", 3),
-("Cepillo de dientes", "Tu mascota nunca tendra caries", 5.50, 5, true, "hola.png, adeu.png", 1),
-("Botas para la nieve", "Tu perro no tendra frio, al dar un paseo de invierno", 8.50, 3.5, true, "a.png, e.png", 2);
+("Pelota de tenis", "Especial para la mandibula de tu mascota", 5.5, 2.8, 1, "http://localhost/Proyecto/IMAGENES/productos/tenis.jpg", 1),
+("Traje de Santa", "Perfecto para navidades", 8.5, 5, 1, "http://localhost/Proyecto/IMAGENES/productos/santa.jpg", 2),
+("Collar Rosado", "Collar talla M para hamsters", 7.5, 3.8, 1, "http://localhost/Proyecto/IMAGENES/productos/collar.jpg", 3),
+("Cepillo de dientes", "Tu mascota nunca tendra caries", 5.5, 5, 1, "http://localhost/Proyecto/IMAGENES/productos/cepillo.jpg", 1),
+("Botas para la nieve", "Tu perro no tendra frio, al dar un paseo de invierno", 8.5, 3.5, 1, "http://localhost/Proyecto/IMAGENES/productos/botas.jpg", 2);
 
 INSERT INTO adquirir_servicio
 (id_servicio, id_cliente)
