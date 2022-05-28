@@ -148,6 +148,8 @@ export class perfilComponent implements OnInit {
                 .subscribe((resul) => {
                     console.log(resul);
                 }, (error) => { console.log("error: ", error) });
+        }
+    }
 
     mascotasS() {
         if (this.mascotaSelector == 0) {
