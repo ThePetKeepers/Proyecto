@@ -33,3 +33,23 @@ button:focus{
     background-color: #d2eeec;
     color: black;
 }
+
+h1{
+    font-size: 40px;
+    padding-top: 4%;
+    padding-left: 7%;
+    width: 300px;
+    font-weight: bold;
+}
+
+h2{
+    padding-left: 10%;
+    padding-top: 1%;
+}
+
+h3{
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 4%;
+    padding-left: 7%;
+}
