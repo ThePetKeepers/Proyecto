@@ -104,8 +104,8 @@ public class UsuarioDao {
 		ps.setString(9, usuario.getCiudad());
 		ps.setString(10, usuario.getDireccion());
 		ps.setString(11, usuario.getFoto());
-		ps.setInt(13, usuario.getTipo_usuario());
-		ps.setInt(12, id);
+		ps.setInt(12, usuario.getTipo_usuario());
+		ps.setInt(13, id);
 
 		ps.execute();
 		ps.close();

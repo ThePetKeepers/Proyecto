@@ -118,4 +118,33 @@ export class perfilComponent implements OnInit {
             this.service = 0;
         }
     }
+
+    editar(form: any) {
+        console.log(form);
+        console.log(form.controls["inputTelefono"].value);
+        if (form.status != "VALID") {
+            alert("El nombre, primer apellido, mail, contraseña, telefono, DNI deben tener un valor");
+        } else {
+            let usuarioActualizado = new Usuario(
+                -1,
+                form.controls["inputNombre"].value,
+                form.controls["inputPrimerApellido"].value,
+                form.controls["inputSegundoApellido"].value,
+                form.controls["inputCorreo"].value,
+                form.controls["inputPassword"].value,
+                form.controls["inputDni"].value,
+                form.controls["inputNacimiento"].value,
+                form.controls["inputTelefono"].value,
+                form.controls["inputCiudad"].value,
+                form.controls["inputDireccion"].value,
+                this.usuario.foto,
+                this.usuario.tipo_usuario,
+                this.usuario.mascotas
+            );
+            this._usuarioService.actualizarUsuario(this.usuario.id, usuarioActualizado)
+                .subscribe((resul) => {
+                    console.log(resul);
+                }, (error) => { console.log("error: ", error) });
+        }
+    }
 }

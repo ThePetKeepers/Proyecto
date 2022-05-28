@@ -41,7 +41,8 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <button *ngIf="usuario.tipo_usuario!=1" class="btn btn-primary btn-lg" aria-current="page" (click)="services()">
+                    <button *ngIf="usuario.tipo_usuario!=1" class="btn btn-primary btn-lg" aria-current="page"
+                        (click)="services()">
                         Servicios
                     </button>
                 </div>
@@ -60,65 +61,69 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div *ngIf="step==1" class="card" id="card1">
+                    <form *ngIf="step==1" #usuarioEditado="ngForm" class="card" id="card1">
                         <h3 class="card-title">Edita tu información</h3>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Nombre</label>
-                            <input type="text" class="form-control" name="nomEn" placeholder="Inserta tu nombre"
-                                required>
+                            <input type="text" class="form-control" name="inputNombre" placeholder="Inserta tu nombre"
+                                [(ngModel)]=usuario.nombre required>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Primer Apellido</label>
-                            <input type="text" class="form-control" name="ape1En"
-                                placeholder="Inserta tu primer apellido" required>
+                            <input type="text" class="form-control" name="inputPrimerApellido"
+                                placeholder="Inserta tu primer apellido" [(ngModel)]=usuario.primer_apellido required>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Segundo Apellido</label>
-                            <input type="text" class="form-control" name="ape2En"
-                                placeholder="Inserta tu segundo apellido" required>
+                            <input type="text" class="form-control" name="inputSegundoApellido"
+                                placeholder="Inserta tu segundo apellido" [(ngModel)]=usuario.segundo_apellido>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Correo Electrónico</label>
-                            <input type="email" class="form-control" name="corEn"
-                                placeholder="Inserta tu correo electrónico" required>
+                            <input type="email" class="form-control" name="inputCorreo"
+                                placeholder="Inserta tu correo electrónico" [(ngModel)]=usuario.email required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Contraseña</label>
+                            <input type="password" class="form-control" name="inputPassword"
+                                placeholder="Inserta tu contraseña" [(ngModel)]=usuario.password required>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Fecha nacimiento</label>
-                            <input type="date" class="form-control" name="nacEn" required>
+                            <input type="date" class="form-control" name="inputNacimiento"
+                                [(ngModel)]=usuario.nacimiento>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Teléfono</label>
-                            <input type="number" class="form-control" name="telEn" placeholder="Inserta tu teléfono"
-                                required>
+                            <input type="number" class="form-control" name="inputTelefono"
+                                placeholder="Inserta tu teléfono" [(ngModel)]=usuario.telefono required>
                         </div>
-
                         <div class="form-group">
                             <label for="exampleFormControlInput1">DNI</label>
-                            <input type="text" id="smallInputs" class="form-control" name="dniEn"
-                                placeholder="Inserta tu nombre" required>
+                            <input type="text" class="form-control" name="inputDni" placeholder="Inserta tu DNI"
+                                [(ngModel)]=usuario.dni required>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Ciudad</label>
-                            <select class="form-control" id="smallInputs" name="ciuEn" required>
-                                <option value="" disabled selected>Inserta tu ciudad</option>
-
-                            </select>
+                            <input type="text" class="form-control" name="inputCiudad" placeholder="Inserta tu ciudad"
+                                [(ngModel)]=usuario.ciudad>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Dirección</label>
-                            <input type="number" class="form-control" id="smallInputs" name="dirEn"
-                                placeholder="Inserte tu dirección" required>
+                            <input type="text" class="form-control" name="inputDireccion"
+                                placeholder="Inserta tu dirección" [(ngModel)]=usuario.direccion>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Fotografía</label>
-                            <input id="inputImagen" type="file" id="smallInputs" name="IMGEn" required>
+                            <input id="inputImagen" type="file" id="smallInputs" name="IMGEn">
                         </div>
                         <div class="col">
-                            <button class="btn btn-primary btn-lg" aria-current="page">
+                            <button class="btn btn-primary btn-lg" type="submit" aria-current="page" (click)="editar(usuarioEditado)">
                                 Guardar
                             </button>
                         </div>
-                    </div>
+                    </form>
+
                     <div *ngIf="service==1">
                         <ng-container *ngFor="let servicio of servicios">
                             <li style="display: inline-block;  padding-top: 2%; margin-right: 2%;">
@@ -132,6 +137,10 @@
                                     <div class="card-body">
                                         <h4 class="card-text"><b>{{servicio.nombre}}</b></h4>
                                         <h5 class="card-text">{{servicio.descripcion}}</h5>
+                                        <br>
+                                        <button class="btn btn-primary btn-lg" aria-current="page">
+                                            Editar
+                                        </button>
                                     </div>
                                 </div>
                             </li>
