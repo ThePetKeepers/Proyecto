@@ -28,7 +28,7 @@ public class Mascota extends Objeto {
 			@JsonProperty("precio") final double precio,
 			@JsonProperty("puntuacion") final double puntuacion,
 			@JsonProperty("activo") final boolean activo,
-			@JsonProperty("imagenes") final ArrayList<String> imagenes,
+			@JsonProperty("imagenes") final String imagenes,
 			@JsonProperty("usuario") final int usuario,
 			@JsonProperty("nombre_mascota") final String nombre_mascota) {
 		super(id, nombre, descripcion, precio, puntuacion, activo, imagenes);

@@ -7,11 +7,11 @@ if ($_FILES["file"]["error"] > 0)
 {
 echo json_encode("Error");
 }else{
-$dir = "./imagenes";
+$dir = "../IMAGENES/servicios";
 $tmp_name = $_FILES["file"]["tmp_name"];
 $imgName = $_FILES["file"]["name"];
 
-$SoloUrl= "http://localhost/Proyecto/CARPETA_PHP/imagenes/".$imgName;
+$SoloUrl= "http://localhost/Proyecto/IMAGENES/servicios/".$imgName;
 move_uploaded_file($tmp_name, "$dir/$imgName");
 echo json_encode($SoloUrl);
 }

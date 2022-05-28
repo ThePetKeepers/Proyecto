@@ -21,7 +21,7 @@ public class Producto extends Objeto {
 			@JsonProperty("precio") final double precio,
 			@JsonProperty("puntuacion") final double puntuacion,
 			@JsonProperty("activo") final boolean activo,
-			@JsonProperty("imagenes") final ArrayList<String> imagenes,
+			@JsonProperty("imagenes") final String imagenes,
 			@JsonProperty("proveedor") final Proveedor proveedor) {
 		super(id, nombre, descripcion, precio, puntuacion, activo, imagenes);
 		this.proveedor = proveedor;

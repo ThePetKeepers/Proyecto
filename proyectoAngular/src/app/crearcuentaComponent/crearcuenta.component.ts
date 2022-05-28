@@ -46,7 +46,7 @@ export class crearcuentaComponent implements OnInit {
             var form = new FormData();
         form.append("file",this.filesToUpload[0]);
         var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("POST", 'http://localhost/Proyecto/CARPETA_PHP/test.php', true);
+        xmlHttp.open("POST", 'http://localhost/Proyecto/CARPETA_PHP/imagenCuenta.php', true);
         xmlHttp.send(form);
         var self  = this;
         xmlHttp.onreadystatechange = function x() {
@@ -70,7 +70,7 @@ export class crearcuentaComponent implements OnInit {
             this.email, this.password,
             this.dni, this.nacimiento,
             String(this.telefono), this.ciudad,
-            this.direccion, finalFoto!,
+            this.direccion, finalFoto,
              this.tipo_usuario, this.mascotas
         );
 

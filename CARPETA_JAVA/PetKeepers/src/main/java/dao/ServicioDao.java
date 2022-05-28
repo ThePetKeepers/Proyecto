@@ -52,7 +52,7 @@ public class ServicioDao {
 		while (rs.next()) {
 			servicioObtenido = new Servicio(rs.getInt("id"), rs.getString("nombre"), rs.getString("descripcion"),
 					rs.getDouble("precio"), rs.getDouble("puntuacion"), rs.getBoolean("activo"),
-					MyFunctions.stringToArrayList(rs.getString("imagenes")), rs.getInt("id_suscriptor"));
+					rs.getString("imagenes"), rs.getInt("id_suscriptor"));
 		}
 
 		return servicioObtenido;
@@ -81,7 +81,7 @@ public class ServicioDao {
 		ps.setDouble(3, servicio.getPrecio());
 		ps.setDouble(4, servicio.getPuntuacion());
 		ps.setBoolean(5, servicio.isActivo());
-		ps.setString(6, MyFunctions.arrayListToString(servicio.getImagenes()));
+		ps.setString(6, servicio.getImagenes());
 		ps.setInt(7, servicio.getSuscriptor());
 
 		ps.execute();
@@ -96,7 +96,7 @@ public class ServicioDao {
 		ps.setDouble(3, servicio.getPrecio());
 		ps.setDouble(4, servicio.getPuntuacion());
 		ps.setBoolean(5, servicio.isActivo());
-		ps.setString(6, MyFunctions.arrayListToString(servicio.getImagenes()));
+		ps.setString(6,servicio.getImagenes());
 		ps.setInt(7, servicio.getSuscriptor());
 		ps.setInt(8, id);
 

@@ -5,14 +5,14 @@ export class Objeto {
     precio: number = -1;
     puntuacion: number = -1;
     activo: boolean = true;
-    imagenes: Array<String> = [];
+    imagenes: String = "";
 
     constructor
         (
             id: number = -1, nombre: String = "",
             descripcion: String = "", precio: number = -1,
             puntuacion: number = -1, activo: boolean = true,
-            imagenes: Array<String> = []
+            imagenes: String = ""
         ) {
         this.id = id;
         this.nombre = nombre;

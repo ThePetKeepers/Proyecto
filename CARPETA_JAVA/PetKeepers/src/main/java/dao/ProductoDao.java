@@ -67,7 +67,7 @@ public class ProductoDao {
 					rs.getDouble("precio"), 
 					rs.getDouble("puntuacion"),
 					rs.getBoolean("activo"), 
-					MyFunctions.stringToArrayList(rs.getString("imagenes")), 
+					rs.getString("imagenes"), 
 					daoProveedor.getProveedor(rs.getInt("id_proveedor")));
 			daoProveedor.disconnect();
 			productos.add(proveedorObtenido);
@@ -95,7 +95,7 @@ public class ProductoDao {
 					rs.getDouble("precio"), 
 					rs.getDouble("puntuacion"), 
 					rs.getBoolean("activo"), 
-					MyFunctions.stringToArrayList(rs.getString("imagenes")),
+					rs.getString("imagenes"),
 					daoProveedor.getProveedor(rs.getInt("id_proveedor")));
 		}
 
@@ -110,7 +110,7 @@ public class ProductoDao {
 		ps.setDouble(3, producto.getPrecio());
 		ps.setDouble(4, producto.getPuntuacion());
 		ps.setBoolean(5, producto.isActivo());
-		ps.setString(6, MyFunctions.arrayListToString(producto.getImagenes()));
+		ps.setString(6, producto.getImagenes());
 		ps.setInt(7, producto.getProveedor().getId());
 		
 		ps.execute(); 
@@ -125,7 +125,7 @@ public class ProductoDao {
 		ps.setDouble(3, producto.getPrecio());
 		ps.setDouble(4, producto.getPuntuacion());
 		ps.setBoolean(5, producto.isActivo());
-		ps.setString(6, MyFunctions.arrayListToString(producto.getImagenes()));
+		ps.setString(6, producto.getImagenes());
 		ps.setInt(7, producto.getProveedor().getId());
 		ps.setInt(8, id);
 

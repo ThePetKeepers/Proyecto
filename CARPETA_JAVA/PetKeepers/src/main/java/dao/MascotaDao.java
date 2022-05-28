@@ -61,7 +61,8 @@ public class MascotaDao {
 					rs.getDouble("precio"), 
 					rs.getDouble("puntuacion"), 
 					rs.getBoolean("activo"),
-					MyFunctions.stringToArrayList(rs.getString("imagenes")), rs.getInt("id_cliente"),
+					rs.getString("imagenes"), 
+					rs.getInt("id_cliente"),
 					rs.getString("nombre_mascota"));
 
 		}
@@ -95,7 +96,7 @@ public class MascotaDao {
 		ps.setDouble(5, mascota.getPrecio());
 		ps.setDouble(6, mascota.getPuntuacion());
 		ps.setBoolean(7, mascota.isActivo());
-		ps.setString(8, MyFunctions.arrayListToString(mascota.getImagenes()));
+		ps.setString(8, mascota.getImagenes());
 		ps.setInt(9, mascota.getUsuario());
 
 		ps.execute();
@@ -112,7 +113,7 @@ public class MascotaDao {
 		ps.setDouble(5, mascota.getPrecio());
 		ps.setDouble(6, mascota.getPuntuacion());
 		ps.setBoolean(7, mascota.isActivo());
-		ps.setString(8, MyFunctions.arrayListToString(mascota.getImagenes()));
+		ps.setString(8, mascota.getImagenes());
 		ps.setInt(9, mascota.getUsuario());
 		ps.setInt(10, id);
 
