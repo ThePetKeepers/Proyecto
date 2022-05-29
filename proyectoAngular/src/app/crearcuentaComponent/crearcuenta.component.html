@@ -14,12 +14,12 @@
           <div class="form-group">
             <label for="exampleFormControlInput1">Primer Apellido</label>
             <input type="text" class="form-control" [(ngModel)]="primerApellido" #ape1En="ngModel" name="ape1En"
-              placeholder="Inserta tu primer apellido" required>
+              placeholder="Inserta tu primer apellido" >
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Segundo Apellido</label>
             <input type="text" class="form-control" [(ngModel)]="segundoApellido" #ape2En="ngModel" name="ape2En"
-              placeholder="Inserta tu segundo apellido" required>
+              placeholder="Inserta tu segundo apellido" >
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Teléfono</label>
@@ -55,7 +55,7 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Fecha nacimiento</label>
-            <input type="date" class="form-control" [(ngModel)]="nacimiento" #nacEn="ngModel" name="nacEn" required>
+            <input type="date" class="form-control" [(ngModel)]="nacimiento" #nacEn="ngModel" name="nacEn" >
           </div>
           <div align="center">
             <button class="btn btn-primary" (click)="nextStep()" id="nextButton">Siguiente</button>
@@ -79,12 +79,12 @@
           <div class="form-group">
             <label for="exampleFormControlInput1">Dirección</label>
             <input type="text" class="form-control" [(ngModel)]="direccion" #dirEn="ngModel" name="dirEn"
-              placeholder="Inserte tu dirección" required>
+              placeholder="Inserte tu dirección" >
           </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Fotografía</label>
             <input id="inputImagen" type="file" [(ngModel)]="foto" #fotoEn="ngModel" name="fotoEn"
-              (change)="handleFileInput($event)" required>
+              (change)="handleFileInput($event)" >
           </div>
           <div align="center">
             <button class="btn btn-primary" (click)="crearCuenta()" title="Crear cuenta" id="createAccount">Crear
