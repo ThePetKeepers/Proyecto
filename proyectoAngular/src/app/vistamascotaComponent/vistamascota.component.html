@@ -33,5 +33,14 @@
     </iframe>
   </div>
   <br>
-  <br>
+  <ng-container *ngFor="let comentario of comentarios">
+    <div class="card" style="margin: 20%;">
+      <h5 class="card-title">{{comentario.id_suscriptor}}</h5>
+      <div class="card-body" style="height: 100px;">
+        <h4 class="card-text"><b>Ha comentado:</b></h4>
+        <h3 class="card-text">{{comentario.comentario}}</h3>
+        <h5 class="card-text"><b>Fecha: </b>{{comentario.fecha}}</h5>
+      </div>
+    </div>
+  </ng-container>
 </div>
