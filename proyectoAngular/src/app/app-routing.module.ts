@@ -21,6 +21,8 @@ import { cookiesComponent } from './cookiesComponent/cookies.component';
 import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
 import { ListadoMascotasComponent } from './listado-mascotas/listado-mascotas.component';
 import { VistaProductoComponentComponent } from './vista-producto-component/vista-producto-component.component';
+import { ComentarServicio } from './comentarServicio/ComentarServicio';
+import { ComentarMascota } from './comentarMascota/ComentarMascota';
 
 const routes: Routes = [
   {path:'',component:mainComponent},
@@ -39,7 +41,9 @@ const routes: Routes = [
   {path:'vistaproducto/:producto',component:VistaProductoComponentComponent},
   {path:'perfil',component:perfilComponent},
   {path:'crearServicio',component:crearservicioComponent},
-  {path:'crearMascota',component:crearmascotaComponent},
+  {path:'comentarServicio/:id',component:ComentarServicio},
+  {path:'crearMascota',component:crearmascotaComponent},  
+  {path:'comentarMascota/:id',component:ComentarMascota},
   {path:'crearSuscripcion/:id/:type',component:crearsubscriptionComponent},
   {path:'quienesSomos',component:nosotrosComponent},
   {path:'comoFunciona',component:funcionamientoComponent},

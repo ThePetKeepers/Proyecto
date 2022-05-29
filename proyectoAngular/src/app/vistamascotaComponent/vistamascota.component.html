@@ -1,11 +1,13 @@
 <div id="card">
   <h1><b>{{ mascota.nombre_mascota }}</b></h1>
+  <button [routerLink]="['/comentarMascota',mascota.id]"
+    style="font-size: 20px; background-color: white !important; border-color: transparent !important; border-radius: 20px; width: auto; height: 40px; font-weight: bold;">
+    COMENTAR
+  </button>
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin-top: 20px;">
-
-        <div>
-          <img src="{{ mascota.imagenes }}" class="d-block w-100 h-100" alt="...">
-        </div>
-
+    <div>
+      <img src="{{ mascota.imagenes }}" class="d-block w-100 h-100" alt="...">
+    </div>
   </div>
   <div style="padding-top: 3%;">
     <h2><b>Puntuación:</b> {{mascota.puntuacion}}</h2>
@@ -33,14 +35,17 @@
     </iframe>
   </div>
   <br>
-  <ng-container *ngFor="let comentario of comentarios">
-    <div class="card" style="margin: 20%;">
-      <h5 class="card-title">{{comentario.id_suscriptor}}</h5>
-      <div class="card-body" style="height: 100px;">
-        <h4 class="card-text"><b>Ha comentado:</b></h4>
-        <h3 class="card-text">{{comentario.comentario}}</h3>
-        <h5 class="card-text"><b>Fecha: </b>{{comentario.fecha}}</h5>
+  <div style="padding-top: 5%; text-align: center;">
+    <h2 style="padding: 0;"><b>COMENTARIOS:</b></h2>
+    <ng-container *ngFor="let comentario of comentarios">
+      <div class="card" style="margin: 20%;">
+        <h5 class="card-title">{{comentario.nombre_suscriptor}}</h5>
+        <div class="card-body" style="height: 100px;">
+          <h4 class="card-text"><b>Ha comentado:</b></h4>
+          <h3 class="card-text">{{comentario.comentario}}</h3>
+          <h5 class="card-text"><b>Fecha: </b>{{comentario.fecha}}</h5>
+        </div>
       </div>
-    </div>
-  </ng-container>
+    </ng-container>
+  </div>
 </div>

@@ -21,7 +21,7 @@ import org.json.JSONObject;
 import org.json.JSONException;
 //OBJETOS
 import config.ConstantsApi;
-import dao.ServicioDao.SortByPuntuacion;
+import model.Mascota;
 import model.Objeto;
 import model.Producto;
 import externalLibrary.MyFunctions;
@@ -144,17 +144,16 @@ public class ProductoDao {
 	
 	// Endpoints adicionales:
 	public ArrayList<Producto> getTop5() throws SQLException, ClassNotFoundException {
-		ArrayList<Producto> todos = getProductos();
 		ArrayList<Producto> productos = new ArrayList<>();
 
-		Collections.sort(todos, new SortByPuntuacion());
+		String select = ConstantsApi.GET_TOP_5_PRODUCTOS;
 
-		
-		productos.add(todos.get(0));
-		productos.add(todos.get(1));
-		productos.add(todos.get(2));
-		productos.add(todos.get(3));
-		productos.add(todos.get(4));
+		Statement st = bbddConnection.createStatement();
+		ResultSet rs = st.executeQuery(select);
+
+		while (rs.next()) {
+			productos.add(getProducto(rs.getInt("id")));
+		}
 
 		return productos;
 	}
@@ -174,10 +173,4 @@ public class ProductoDao {
 		return productos;
 	}
 	
-	static class SortByPuntuacion implements Comparator<Producto> {
-		@SuppressWarnings("deprecation")
-		public int compare(Producto p1, Producto p2) {
-			return new Integer((int) p2.getPuntuacion()).compareTo(new Integer((int) p1.getPuntuacion()));
-		}
-    }
 }

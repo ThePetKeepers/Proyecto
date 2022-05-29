@@ -24,6 +24,8 @@ import { cookiesComponent } from './cookiesComponent/cookies.component';
 import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
 import { ListadoMascotasComponent } from './listado-mascotas/listado-mascotas.component';
 import { VistaProductoComponentComponent } from './vista-producto-component/vista-producto-component.component';
+import { ComentarServicio } from './comentarServicio/ComentarServicio';
+import { ComentarMascota } from './comentarMascota/ComentarMascota';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { VistaProductoComponentComponent } from './vista-producto-component/vist
     SubscriptionsComponentComponent,
     ListadoProductosComponent,
     ListadoMascotasComponent,
-    VistaProductoComponentComponent
+    VistaProductoComponentComponent,
+    ComentarServicio,
+    ComentarMascota
   ],
   imports: [
     BrowserModule,

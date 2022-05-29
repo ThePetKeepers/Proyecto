@@ -132,7 +132,7 @@ public class ServicioDao {
 	public ArrayList<ComentarioServicio> getComentariosServicio(int id) throws SQLException, ClassNotFoundException {
 		ArrayList<ComentarioServicio> comentarios = new ArrayList<>();
 
-		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_COMENTARIOS_MASCOTA);
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_COMENTARIOS_SERVICIO);
 		ps.setInt(1, id);
 
 		ResultSet rs = ps.executeQuery();
@@ -178,17 +178,16 @@ public class ServicioDao {
 	}
 	
 	public ArrayList<Servicio> getTop5() throws SQLException, ClassNotFoundException {
-		ArrayList<Servicio> todos = getServicios();
 		ArrayList<Servicio> servicios = new ArrayList<>();
 
-		Collections.sort(todos, new SortByPuntuacion());
+		String select = ConstantsApi.GET_TOP_5_SERVICIOS;
 
-		
-		servicios.add(todos.get(0));
-		servicios.add(todos.get(1));
-		servicios.add(todos.get(2));
-		servicios.add(todos.get(3));
-		servicios.add(todos.get(4));
+		Statement st = bbddConnection.createStatement();
+		ResultSet rs = st.executeQuery(select);
+
+		while (rs.next()) {
+			servicios.add(getServicio(rs.getInt("id")));
+		}
 
 		return servicios;
 	}
@@ -208,11 +207,4 @@ public class ServicioDao {
 		return servicios;
 	}
 	
-	static class SortByPuntuacion implements Comparator<Servicio> {
-		@SuppressWarnings("deprecation")
-		@Override
-		public int compare(Servicio s1, Servicio s2) {
-			return new Integer((int) s2.getPuntuacion()).compareTo(new Integer((int) s1.getPuntuacion()));
-		}
-    }
 }
