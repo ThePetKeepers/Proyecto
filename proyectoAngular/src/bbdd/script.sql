@@ -219,11 +219,17 @@ VALUES
 INSERT INTO servicio 
 (nombre, descripcion, precio, puntuacion, activo, imagenes, id_suscriptor) 
 VALUES
-("Paseo de perros", "Pasear a tu perro por el parque", 10.5, 1.2, 1, "http://localhost/Proyecto/IMAGENES/servicios/walker.png", 1),
+("Paseo de perros", "Pasear a tu perro por el parque", 10.5, 5, 1, "http://localhost/Proyecto/IMAGENES/servicios/walker.png", 1),
 ("Adiestramiento de perros", "Tu perro aprendera a comportarse", 30.2, 2.5, 1, "http://localhost/Proyecto/IMAGENES/servicios/nose.jpeg", 2),
 ("Cuidado de perros por vacaciones", "No te preocuparas por tu mascota durante el viaje", 40.8, 3.8, 1, "http://localhost/Proyecto/IMAGENES/servicios/vistaservicio3.jpeg", 3),
 ("Limpieza de peceras", "La pecera quedara limpia como nunca", 10.5, 4.1, 1, "http://localhost/Proyecto/IMAGENES/servicios/pecera.png", 1),
-("Cuidado de hamsters", "Hamster el mejor de los roedores, y al que mejor hay que cuidar", 30.2, 5, 1, "http://localhost/Proyecto/IMAGENES/servicios/comerham.png", 2);
+("Cuidado de hamsters", "Hamster el mejor de los roedores, y al que mejor hay que cuidar", 30.2, 5, 1, "http://localhost/Proyecto/IMAGENES/servicios/comerham.png", 2),
+("Higiene de perros", "Tu perro olera como nunca antes", 30.2, 5, 1, "http://localhost/Proyecto/IMAGENES/servicios/baperro.png", 2),
+("Entrenamiento de perros", "Te ayudare si tu mejor amigo no sabe comportarse", 30.2, 5, 1, "http://localhost/Proyecto/IMAGENES/servicios/nose.jpeg", 3),
+("Corte de pelo para conejos", "Hagamosle un nuevo estilo al pequeño", 30.2, 5, 1, "http://localhost/Proyecto/IMAGENES/servicios/rabbitGrooming.jpg", 3),
+("NUTRICIONISTA DE PERIQUITOS", "Para volar hay que bajar de peso", 30.2, 5, 1, "http://localhost/Proyecto/IMAGENES/servicios/periquito.jpg", 1),
+("Veterinaria", "El mejor doctor para tu pequeña mascota", 30.2, 5, 1, "http://localhost/Proyecto/IMAGENES/servicios/parrot.png", 3),
+("Cortador de uñas para gatos", "Manicure y pedicure para tu felino", 30.2, 5, 1, "http://localhost/Proyecto/IMAGENES/servicios/grooming.png", 2);
 
 INSERT INTO mascota 
 (nombre, tipo, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente) 

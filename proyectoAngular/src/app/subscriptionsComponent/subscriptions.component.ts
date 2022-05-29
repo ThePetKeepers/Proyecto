@@ -8,18 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SubscriptionsComponentComponent implements OnInit {
 
-  constructor(private _activRoute:ActivatedRoute) {
+  constructor(private _activRoute: ActivatedRoute) {
 
   }
-  urlVal="";
-  id = 0;
-    ngOnInit(): void {
-      this._activRoute.paramMap.subscribe(
-        (params) => {
-        this.urlVal = params.get("id")+"";    
-        this.id = Number(this.urlVal);
-    }
-    );
-    console.log(this.id);
-    }
+
+  ngOnInit(): void {
+
+  }
 }

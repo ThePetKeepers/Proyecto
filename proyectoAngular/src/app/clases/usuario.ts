@@ -24,7 +24,7 @@ export class Usuario {
         dni: String = "", nacimiento: String = "",
         telefono: String = "", ciudad: String = "",
         direccion: String = "", foto: String = "",
-        tipo_usuario: number = -1, mascotas:Array<Mascota> = [],
+        tipo_usuario: number = -1, mascotas:Array<Mascota> = []
     ) {
         this.id = id;
         this.nombre = nombre;
