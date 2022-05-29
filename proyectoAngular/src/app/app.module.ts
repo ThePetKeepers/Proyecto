@@ -8,16 +8,24 @@ import { loginComponent } from './loginComponent/login.component';
 import { mainComponent } from './mainComponent/main.component';
 import { PageNotFoundComponent } from './PageNotFoundComponent/pagenotfound.component';
 import { servicioComponent } from './servicioComponent/servicio.component';
-import { mensajesComponent } from './mensajesComponent/mensajes.component';
 import { crearcuentaComponent } from './crearcuentaComponent/crearcuenta.component';
 import { vistaservicioComponent } from './vistaservicioComponent/vistaservicio.component';
-import { mascotaComponent } from './mascotaComponent/mascota.component';
 import { vistamascotaComponent } from './vistamascotaComponent/vistamascota.component';
 import { perfilComponent } from './perfilComponent/perfil.component';
-import { mostrarserviciosComponent } from './mostrarserviciosComponent/mostrarservicios.component';
 import { SubscriptionsComponentComponent } from './subscriptionsComponent/subscriptions.component';
-import { ServicioService } from './services/servicio.service';
 import { crearservicioComponent } from './crearservicioComponent/crearservicio.component';
+import { crearmascotaComponent } from './crearmascotaComponent/crearmascota.component';
+import { footerComponent } from './footerComponent/footer.component';
+import { nosotrosComponent } from './nosotrosComponent/nosotros.component';
+import { funcionamientoComponent } from './funcionamientoComponent/funcionamiento.component';
+import { preguntasComponent } from './preguntasComponent/soporte.component';
+import { condicionesComponent } from './condicionesComponent/condiciones.component';
+import { cookiesComponent } from './cookiesComponent/cookies.component';
+import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
+import { ListadoMascotasComponent } from './listado-mascotas/listado-mascotas.component';
+import { VistaProductoComponentComponent } from './vista-producto-component/vista-producto-component.component';
+import { ComentarServicio } from './comentarServicio/ComentarServicio';
+import { ComentarMascota } from './comentarMascota/ComentarMascota';
 
 @NgModule({
   declarations: [
@@ -25,16 +33,25 @@ import { crearservicioComponent } from './crearservicioComponent/crearservicio.c
     loginComponent,
     mainComponent,
     servicioComponent,
-    mensajesComponent,
     crearcuentaComponent,
     vistaservicioComponent,
-    mascotaComponent,
     vistamascotaComponent,
     perfilComponent,
-    mostrarserviciosComponent,
     PageNotFoundComponent,
     crearservicioComponent,
-    SubscriptionsComponentComponent
+    crearmascotaComponent,
+    footerComponent,
+    nosotrosComponent,
+    funcionamientoComponent,
+    preguntasComponent,
+    condicionesComponent,
+    cookiesComponent,
+    SubscriptionsComponentComponent,
+    ListadoProductosComponent,
+    ListadoMascotasComponent,
+    VistaProductoComponentComponent,
+    ComentarServicio,
+    ComentarMascota
   ],
   imports: [
     BrowserModule,

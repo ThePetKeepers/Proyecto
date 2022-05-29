@@ -13,10 +13,7 @@ import javax.ws.rs.core.Response;
 //DEPENDENCIAS
 //OBJETOS
 import model.Producto;
-import model.Proveedor;
 import service.ServiceProducto;
-import service.ServiceProveedor;
-
 //ECEPCIONES
 import java.sql.SQLException;
 //ENDPOINTS
@@ -67,6 +64,20 @@ public class ProductoApi {
 		service = new ServiceProducto();
 		service.deleteProducto(id);
 		return Response.ok("Se ha eliminado el producto", MediaType.APPLICATION_JSON).build();
+	}
+	
+	// Endpoints adicionales:
+	@GET
+	@Path("/top5")
+	public Response getTop5() throws SQLException, ClassNotFoundException {
+		service = new ServiceProducto();
+		return Response.ok(service.getTop5(), MediaType.APPLICATION_JSON).build();
+	}
+	
+	@GET
+	@Path("/nombre={nombre}")
+	public Response getgetProductosByNombreroductos(@PathParam("nombre") String nombre)throws ClassNotFoundException, SQLException, NullPointerException {
+		return Response.ok(service.getgetProductosByNombreroductos(nombre), MediaType.APPLICATION_JSON).build();
 	}
 
 }

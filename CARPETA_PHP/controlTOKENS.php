@@ -7,6 +7,7 @@ $signature = base64_encode(hash_hmac('sha256', $header . '.' . $payload, $secret
 $jwt_token = $header . '.' . $payload . '.' . $signature;
 return $jwt_token;
 }
+
 function jwtCheckCodeJSON($jwt_token){
 $secret_key = 'Secret Key';
 $jwt_values = explode('.', $jwt_token);
@@ -20,7 +21,6 @@ if($resultedsignature == $signature) {
     return false; 
 }
 }
-
 
 function getUsr($jwt_token){
     $secret_key = 'Secret Key';

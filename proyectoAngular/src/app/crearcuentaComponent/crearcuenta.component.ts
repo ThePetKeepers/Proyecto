@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Usuario } from "../clases/usuario";
+import { Mascota } from "../clases/mascota";
 import { RegistrarServices } from "../services/registrar.service";
 import { countries } from "./countries/country-data-store";
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'crearcuenta-comp',
@@ -12,42 +14,70 @@ import { countries } from "./countries/country-data-store";
 
 export class crearcuentaComponent implements OnInit {
     public countries: any = countries;
-    constructor(private _registrar: RegistrarServices) {
+    constructor(private _registrar: RegistrarServices, protected router: Router, protected route: ActivatedRoute) {
 
     }
     ngOnInit(): void {
     }
+    usuario = new Usuario();
     step = 0;
     cuenta: any[] = [];
-    nom = "";
-    ape1 = "";
-    ape2 = "";
-    cor = "";
-    con = "";
-    DNI = "";
-    nac = "";
-    tel = 0;
-    ciu = "";
-    dir = "";
-    img = "";
+    nombre = "";
+    primerApellido = "";
+    segundoApellido = "";
+    email = "";
+    password = "";
+    dni = "";
+    nacimiento = "";
+    telefono = 0;
+    ciudad = "";
+    direccion = "";
+    tipo_usuario = 2;
+    mascotas: Array<Mascota> = [];
     filesToUpload: any;
+    foto = "";
+
+
     handleFileInput(event: Event) {
         const el = event.currentTarget as HTMLInputElement;
         let FileList: FileList | null = el.files;
         this.filesToUpload = FileList;
+        if(this.filesToUpload){
+            var form = new FormData();
+        form.append("file",this.filesToUpload[0]);
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("POST", 'http://localhost/Proyecto/CARPETA_PHP/imagenCuenta.php', true);
+        xmlHttp.send(form);
+        var self  = this;
+        xmlHttp.onreadystatechange = function x() {
+            if (xmlHttp.readyState == 4) {
+                if (xmlHttp.status == 200) {
+                    self.data = JSON.parse(xmlHttp.responseText);
+                }
+            }
+        }
+        }
     }
+    data:any;
 
-    crearCuenta(){
-        this.cuenta=[{"nom":this.nom,"ape1":this.ape1,"ape2":this.ape2,"cor":this.cor,"con":this.con,"DNI":this.DNI,"nac":this.nac,"tel":this.tel,"ciu":this.ciu,"dir":this.dir}]
-    
-        this._registrar.postNuevaCuenta(this.nom,this.ape1,this.ape2,this.cor,this.con,this.DNI,this.nac,this.tel,this.ciu,this.dir,this.filesToUpload)
-        .subscribe(
-            (result) => {
-                alert(result);
+    crearCuenta() {
 
-            },(error)=>{console.log("error: ",error); }
+        var foto = document.getElementById("imageUrl")?.textContent;
+        var finalFoto = foto?.slice(1,-1);
+        this.usuario = new Usuario(
+            -1, this.nombre,
+            this.primerApellido, this.segundoApellido,
+            this.email, this.password,
+            this.dni, this.nacimiento,
+            String(this.telefono), this.ciudad,
+            this.direccion, finalFoto,
+             this.tipo_usuario, this.mascotas
+        );
 
-        )
+        this._registrar.postUsuario(this.usuario).subscribe((result) => {
+            console.log(result);
+        });
+        document.location.href = 'http://localhost:4200/';
 
     }
 

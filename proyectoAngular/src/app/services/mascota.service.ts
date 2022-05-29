@@ -8,9 +8,9 @@ export class mascotaService {
     mascotas: Array<Mascota> = [];
     constructor(private conexHttp: HttpClient) { }
 
-    getMascotasAjax(): Observable<any> {
+    getMascotaById(id: Number): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/mascotasGET.php",
+            "/api/mascota/" + id,
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -18,10 +18,19 @@ export class mascotaService {
         );
     }
 
+    getAllMascotas(): Observable<any> {
+        return this.conexHttp.get(
+            "/api/mascota",
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
 
     getTop5Mascotas(): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getTop5Mascotas.php",
+            "/api/mascota/top5",
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -29,4 +38,33 @@ export class mascotaService {
         );
     }
 
+    postNuevaMascota(mascota: Mascota): Observable<any> {
+        return this.conexHttp.post(
+            "/api/mascota", mascota,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
+
+    getMascotasByTipo(tipo: String): Observable<any> {
+        return this.conexHttp.get(
+            "api/mascota/tipo=" + tipo,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
+
+    getMascotasByUsuarioId(id: Number): Observable<any> {
+        return this.conexHttp.get(
+            "/api/mascota/cliente=" + id,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
 }

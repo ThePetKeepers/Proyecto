@@ -35,6 +35,11 @@ button{
     margin-bottom: 2%;
 }
 
+button:focus{
+    background-color: #d2eeec;
+    color: black;
+}
+
 button:hover {
     background-color: white;
     color: black;

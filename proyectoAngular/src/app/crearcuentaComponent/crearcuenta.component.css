@@ -10,6 +10,11 @@ input{
     padding-left: 2%;
 }
 
+button:focus{
+    background-color: #d2eeec;
+    color: black;
+}
+
 select{
     width: 600px;
     height: 40px;
@@ -72,4 +77,23 @@ button:hover {
     background-color: white;
     color: black;
     border-color: #205f5a;
+}
+
+#tapar{
+    width: 100%;
+    height: 1000px;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:30%;
+    position: absolute;
+    background-color: #d2eeec;
+}
+
+#logo{
+    height: 50px;
+    background-color: #d2eeec;
+    border-radius: 15px;
+    margin-top: 1%;
+    margin-left: 1%;
 }

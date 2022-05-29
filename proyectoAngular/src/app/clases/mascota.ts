@@ -1,23 +1,24 @@
 import { Objeto } from "./objeto";
-import { Usuario } from "./usuario";
 
 export class Mascota extends Objeto {
-    usuario: Usuario = new Usuario();
-    nombre_mascota:String="";
+    tipo: String = "";
+    usuario: number = -1;
+    nombre_mascota: String = "";
 
     constructor
         (
-            id: number = -1, nombre: String = "",
+            id: number = -1, nombre: String = "", tipo: String = "",
             descripcion: String = "", precio: number = -1,
-            puntuacion: number = -1, activo: boolean,
-            imagen: Array<String>, usuario: Usuario = new Usuario(),
-            nombre_mascota:String=""
+            puntuacion: number = -1, activo: boolean = true,
+            imagenes: String = "", usuario: number = -1,
+            nombre_mascota: String = ""
         ) {
         super
             (
                 id, nombre, descripcion, precio,
-                puntuacion, activo, imagen
+                puntuacion, activo, imagenes
             );
+        this.tipo = tipo;
         this.usuario = usuario;
         this.nombre_mascota = nombre_mascota;
     }

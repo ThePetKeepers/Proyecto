@@ -2,8 +2,6 @@ package service;
 
 //CLASES
 import java.util.ArrayList;
-
-import model.Suscriptor;
 //DEPENDENCIAS
 //OBJETOS
 import model.Suscriptor;
@@ -89,5 +87,22 @@ public class ServiceSuscriptor {
 		Dao.deleteSuscriptor(id);
 		
 		Dao.disconnect();
+	}
+	
+	// Endpoints adicionales:
+	public Suscriptor getSuscriptorByIdUsuario(int id) throws SQLException, ClassNotFoundException {
+		Dao = new SuscriptorDao();
+		try {
+			Dao.connect();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		Suscriptor suscriptor = Dao.getSuscriptorByIdUsuario(id);
+		Dao.disconnect();
+
+		return suscriptor;
 	}
 }

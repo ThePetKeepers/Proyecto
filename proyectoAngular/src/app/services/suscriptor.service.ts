@@ -7,9 +7,19 @@ import { Suscriptor } from "../clases/suscriptor";
 export class SuscriptorService {
     constructor(private conexHttp: HttpClient) { }
 
-    getSuscriptor(id: number): Observable<any> {
+    getSuscriptorById(id: number): Observable<any> {
         return this.conexHttp.get(
-            "/Proyecto/CARPETA_PHP/getSuscriptor.php?id=" + id,
+            "/api/suscriptor/" + id,
+            {
+                headers: new HttpHeaders(
+                    { 'Content-Type': 'application/json' })
+            }
+        );
+    }
+
+    getSuscriptorByIdUsuario(id: number): Observable<any> {
+        return this.conexHttp.get(
+            "/api/suscriptor/usuario=" + id,
             {
                 headers: new HttpHeaders(
                     { 'Content-Type': 'application/json' })
@@ -25,5 +35,15 @@ export class SuscriptorService {
                     { 'Content-Type': 'application/json' })
             }
         );
+    }
+
+    newSuscriptor(id:Number,type:Number,payment:Number): Observable<any>{
+        let url="/Proyecto/CARPETA_PHP/nuevoSuscriptor.php";
+        let formData:FormData = new FormData();
+        formData.append("id",id+"");
+        formData.append("type",type+"");
+        formData.append("payment",payment+"");
+
+        return this.conexHttp.post(url,formData);
     }
 }

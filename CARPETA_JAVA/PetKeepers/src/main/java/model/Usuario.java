@@ -45,6 +45,9 @@ public class Usuario {
 	@JsonProperty("foto")
 	private String foto;
 	
+	@JsonProperty("tipo_usuario")
+	private int tipo_usuario;
+	
 	@JsonProperty("mascotas")
     private ArrayList<Integer> mascotas = new ArrayList<>();
 
@@ -63,6 +66,7 @@ public class Usuario {
 			@JsonProperty("ciudad") final String ciudad,
 			@JsonProperty("direccion") final String direccion,
 			@JsonProperty("foto") final String foto,
+			@JsonProperty("tipo_usuario") final int tipo_usuario,
 			@JsonProperty("mascotas") final ArrayList<Integer> mascotas) {
 		this.id = id;
 		this.nombre = nombre;
@@ -76,6 +80,7 @@ public class Usuario {
 		this.ciudad = ciudad;
 		this.direccion = direccion;
 		this.foto = foto;
+		this.tipo_usuario = tipo_usuario;
 		this.mascotas = mascotas;
 	}
 	
@@ -149,6 +154,11 @@ public class Usuario {
 		return foto;
 	}
 
+	@JsonProperty("tipo_usuario")
+	public int getTipo_usuario() {
+		return tipo_usuario;
+	}
+	
 	@JsonProperty("mascotas")
 	public ArrayList<Integer> getMascotas() {
 		return mascotas;

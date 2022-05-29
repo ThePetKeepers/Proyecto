@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-subscriptions-component',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubscriptionsComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _activRoute:ActivatedRoute) {
 
-  ngOnInit(): void {
   }
-
+  urlVal="";
+  id = 0;
+    ngOnInit(): void {
+      this._activRoute.paramMap.subscribe(
+        (params) => {
+        this.urlVal = params.get("id")+"";    
+        this.id = Number(this.urlVal);
+    }
+    );
+    console.log(this.id);
+    }
 }

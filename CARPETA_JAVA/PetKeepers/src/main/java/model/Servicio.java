@@ -21,7 +21,7 @@ public class Servicio extends Objeto {
 			@JsonProperty("precio") final double precio,
 			@JsonProperty("puntuacion") final double puntuacion,
 			@JsonProperty("activo") final boolean activo,
-			@JsonProperty("imagenes") final ArrayList<String> imagenes,
+			@JsonProperty("imagenes") final String imagenes,
 			@JsonProperty("suscriptor") final int suscriptor) {
 		super(id, nombre, descripcion, precio, puntuacion, activo, imagenes);
 		this.suscriptor = suscriptor;
@@ -36,6 +36,5 @@ public class Servicio extends Objeto {
 	public int getSuscriptor() {
 		return suscriptor;
 	}
-	
 	
 }

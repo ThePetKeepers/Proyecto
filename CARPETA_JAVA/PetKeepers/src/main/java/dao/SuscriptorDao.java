@@ -21,11 +21,8 @@ public class SuscriptorDao {
 	private Connection bbddConnection;
 
 	public void connect() throws SQLException, ClassNotFoundException {
-		bbddConnection = DriverManager.getConnection(
-				ConstantsApi.CONNECTION, 
-				ConstantsApi.USER_CONNECTION,
-				ConstantsApi.PASS_CONNECTION
-		);
+		bbddConnection = DriverManager.getConnection(ConstantsApi.CONNECTION, ConstantsApi.USER_CONNECTION,
+				ConstantsApi.PASS_CONNECTION);
 	}
 
 	public void disconnect() throws SQLException {
@@ -33,67 +30,26 @@ public class SuscriptorDao {
 			bbddConnection.close();
 		}
 	}
-	
+
 	public ArrayList<Suscriptor> getSuscriptores() throws SQLException, ClassNotFoundException {
-			ArrayList<Suscriptor> suscriptores = new ArrayList<>();
+		ArrayList<Suscriptor> suscriptores = new ArrayList<>();
 
-			String select = ConstantsApi.GET_SUSCRIPTORES;
+		String select = ConstantsApi.GET_SUSCRIPTORES;
 
-			Statement st = bbddConnection.createStatement();
-			ResultSet rs = st.executeQuery(select);
+		Statement st = bbddConnection.createStatement();
+		ResultSet rs = st.executeQuery(select);
 
-			while (rs.next()) {
-				MascotaDao daoMascota = new MascotaDao();
-				daoMascota.connect();
-				ArrayList<Integer> mascotas = daoMascota.getMascotasByClient(rs.getInt("id_cliente"));
-				daoMascota.disconnect();
-				
-				ServicioDao daoServicio = new ServicioDao();
-				daoServicio.connect();
-				ArrayList<Integer> servicios = daoServicio.getServiciosBySuscriptor(rs.getInt("id"));
-				daoServicio.disconnect();
-				
-				PagoDao daoPago = new PagoDao();
-				daoPago.connect();
-				Pago pago = daoPago.getPago(rs.getInt("metodo_de_pago"));
-				daoPago.disconnect();
-				
-				SuscripcionDao daoSuscripcion = new SuscripcionDao();
-				daoSuscripcion.connect();
-				Suscripcion suscripcion = daoSuscripcion.getSuscripcion(rs.getInt("id_suscripcion"));
-				daoSuscripcion.disconnect();
+		while (rs.next()) {
+			Suscriptor suscriptorObtenido = getSuscriptor(rs.getInt("id"));
+			suscriptores.add(suscriptorObtenido);
+		}
 
-				
-				Suscriptor suscriptorObtenido = new Suscriptor(
-						rs.getInt("id"),
-						rs.getString("nombre"),
-						rs.getString("primer_apellido"),
-						rs.getString("segundo_apellido"),
-						rs.getString("email"),
-						rs.getString("password"),
-						rs.getString("dni"),
-						rs.getString("nacimiento"),
-						rs.getString("telefono"),
-						rs.getString("ciudad"),
-						rs.getString("direccion"),
-						rs.getString("foto"),
-						mascotas,
-						rs.getInt("tipo_usuario"),
-						rs.getInt("id_cliente"),
-						pago,
-						suscripcion,
-						servicios
-				);
-				suscriptores.add(suscriptorObtenido);
-
-			}
-
-			return suscriptores;
+		return suscriptores;
 	}
-	
+
 	public Suscriptor getSuscriptor(int id) throws SQLException, ClassNotFoundException {
 		Suscriptor suscriptorObtenido = new Suscriptor();
-		
+
 		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_SUSCRIPTOR);
 		ps.setInt(1, id);
 		ResultSet rs = ps.executeQuery();
@@ -103,51 +59,35 @@ public class SuscriptorDao {
 			daoMascota.connect();
 			ArrayList<Integer> mascotas = daoMascota.getMascotasByClient(rs.getInt("id_cliente"));
 			daoMascota.disconnect();
-			
+
 			ServicioDao daoServicio = new ServicioDao();
 			daoServicio.connect();
 			ArrayList<Integer> servicios = daoServicio.getServiciosBySuscriptor(rs.getInt("id_cliente"));
 			daoServicio.disconnect();
-			
+
 			PagoDao daoPago = new PagoDao();
 			daoPago.connect();
 			Pago pago = daoPago.getPago(rs.getInt("metodo_de_pago"));
 			daoPago.disconnect();
-			
+
 			SuscripcionDao daoSuscripcion = new SuscripcionDao();
 			daoSuscripcion.connect();
 			Suscripcion suscripcion = daoSuscripcion.getSuscripcion(rs.getInt("id_suscripcion"));
 			daoSuscripcion.disconnect();
 
-			
-			suscriptorObtenido = new Suscriptor(
-					rs.getInt("id"),
-					rs.getString("nombre"),
-					rs.getString("primer_apellido"),
-					rs.getString("segundo_apellido"),
-					rs.getString("email"),
-					rs.getString("password"),
-					rs.getString("dni"),
-					rs.getString("nacimiento"),
-					rs.getString("telefono"),
-					rs.getString("ciudad"),
-					rs.getString("direccion"),
-					rs.getString("foto"),
-					mascotas,
-					rs.getInt("tipo_usuario"),
-					rs.getInt("id_cliente"),
-					pago,
-					suscripcion,
-					servicios
-			);
+			suscriptorObtenido = new Suscriptor(rs.getInt("id"), rs.getString("nombre"),
+					rs.getString("primer_apellido"), rs.getString("segundo_apellido"), rs.getString("email"),
+					rs.getString("password"), rs.getString("dni"), rs.getString("nacimiento"), rs.getString("telefono"),
+					rs.getString("ciudad"), rs.getString("direccion"), rs.getString("foto"), rs.getInt("tipo_usuario"),
+					mascotas, rs.getInt("id_cliente"), pago, suscripcion, servicios);
 		}
-		
+
 		return suscriptorObtenido;
 	}
-	
+
 	public void postSuscriptor(Suscriptor suscriptor) throws SQLException, NullPointerException {
 		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.POST_SUSCRIPTOR);
-		
+
 		ps.setString(1, suscriptor.getNombre());
 		ps.setString(2, suscriptor.getPrimer_apellido());
 		ps.setString(3, suscriptor.getSegundo_apellido());
@@ -191,7 +131,7 @@ public class SuscriptorDao {
 		ps.execute();
 		ps.close();
 	}
-	
+
 	public void deleteSuscriptor(int id) throws SQLException, NullPointerException, ClassNotFoundException {
 		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.DELETE_SUSCRIPTOR);
 
@@ -199,5 +139,21 @@ public class SuscriptorDao {
 		ps.execute();
 		ps.close();
 
+	}
+
+	// Endpoints adicionales:
+	public Suscriptor getSuscriptorByIdUsuario(int id) throws SQLException, ClassNotFoundException {
+		Suscriptor suscriptorObtenido = new Suscriptor();
+		
+		PreparedStatement ps = bbddConnection.prepareStatement(ConstantsApi.GET_SUSCRIPTOR_BY_USUARIO);
+		ps.setInt(1, id);
+		ResultSet rs = ps.executeQuery();
+
+		while (rs.next()) {
+
+			suscriptorObtenido = getSuscriptor(rs.getInt("id"));
+		}
+		
+		return suscriptorObtenido;		
 	}
 }
