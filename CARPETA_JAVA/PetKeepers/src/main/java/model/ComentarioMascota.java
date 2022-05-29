@@ -10,7 +10,9 @@ public class ComentarioMascota extends Comentario {
 	private int id_mascota;
 	@JsonProperty("id_suscriptor")
 	private int id_suscriptor;
-
+	@JsonProperty("nombre_suscriptor")
+	private String nombre_suscriptor;
+	
 	// CONSTRUCTORES
 	@JsonCreator
 	public ComentarioMascota(
@@ -18,10 +20,12 @@ public class ComentarioMascota extends Comentario {
 			@JsonProperty("comentario") final String comentario,
 			@JsonProperty("id_mascota") final int id_mascota,
 			@JsonProperty("id_suscriptor") final int id_suscriptor,
-			@JsonProperty("fecha") final String fecha) {
+			@JsonProperty("fecha") final String fecha,
+			@JsonProperty("nombre_suscriptor") final String nombre_suscriptor) {
 		super(id, comentario, fecha);
 		this.id_mascota = id_mascota;
 		this.id_suscriptor = id_suscriptor;
+		this.nombre_suscriptor = nombre_suscriptor;
 	}
 	
 	@JsonCreator
@@ -47,6 +51,11 @@ public class ComentarioMascota extends Comentario {
 	@JsonProperty("id_suscriptor")
 	public void setId_suscriptor(int id_suscriptor) {
 		this.id_suscriptor = id_suscriptor;
+	}
+	
+	@JsonProperty("nombre_suscriptor")
+	public String getNombre_suscriptor() {
+		return nombre_suscriptor;
 	}
 	
 }

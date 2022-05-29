@@ -35,7 +35,8 @@ public class ComentarioMascotaDao {
 					rs.getString("comentario"),
 					rs.getInt("id_mascota"),
 					rs.getInt("id_suscriptor"),
-					rs.getString("fecha")
+					rs.getString("fecha"),
+					"nombre"
 			);
 
 		}

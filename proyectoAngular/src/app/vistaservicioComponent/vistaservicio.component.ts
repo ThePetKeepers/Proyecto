@@ -6,6 +6,8 @@ import { ServicioService } from "../services/servicio.service";
 import { SuscriptorService } from "../services/suscriptor.service";
 import { ComentarioService } from "../services/comentario.service";
 import { ComentarioServicio } from "../clases/comentarioServicio";
+import { Usuario } from "../clases/usuario";
+import { UsuarioService } from "../services/usuario.service";
 
 @Component({
     selector: 'vistaservicio-comp',
@@ -14,7 +16,8 @@ import { ComentarioServicio } from "../clases/comentarioServicio";
     providers: [
         SuscriptorService,
         ServicioService,
-        ComentarioService
+        ComentarioService,
+        UsuarioService
     ]
 })
 
@@ -31,7 +34,9 @@ export class vistaservicioComponent implements OnInit {
         private _activRoute: ActivatedRoute,
         private _suscriptorService: SuscriptorService,
         private _servicioService: ServicioService,
-        private _comentarioService: ComentarioService
+        private _comentarioService: ComentarioService,
+        private _usuarioService: UsuarioService
+
     ) { }
 
     ngOnInit(): void {
@@ -52,11 +57,20 @@ export class vistaservicioComponent implements OnInit {
             //Comentarios del servicio
             this._comentarioService.getServicioComentariosByIdServicio(this.servicio.id)
                 .subscribe((response) => {
-                    this.comentarios.push(response);
+                    for (let comentario of response) {
+                        //Nombre del comentador
+                        this._usuarioService.getUsuarioById(comentario.id_usuario)
+                            .subscribe((usuario) => {
+                                let coment = new ComentarioServicio(
+                                    comentario.id, comentario.comentario,
+                                    comentario.fecha, comentario.id_servicio,
+                                    comentario.id_usuario, usuario.nombre + " " + usuario.primer_apellido
+                                );
+                                this.comentarios.push(coment);
+                            });
+                    }
                     console.log(this.comentarios);
                 }, (er) => { console.log("Error: " + er) });
-        }, (error) => {
-            console.log("Error: " + error);
-        });
+        }, (error) => { console.log("Error: " + error) });
     }
 }

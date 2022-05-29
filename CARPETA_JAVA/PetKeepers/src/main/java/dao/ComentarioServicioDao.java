@@ -36,7 +36,8 @@ public class ComentarioServicioDao {
 					rs.getString("comentario"),
 					rs.getInt("id_servicio"),
 					rs.getInt("id_cliente"),
-					rs.getString("fecha")
+					rs.getString("fecha"),
+					"nombre"
 			);
 
 		}

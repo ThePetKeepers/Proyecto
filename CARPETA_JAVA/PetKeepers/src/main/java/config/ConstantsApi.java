@@ -2,11 +2,11 @@ package config;
 
 public class ConstantsApi {
 	public static final String USER_CONNECTION = "root";
-	/*JUAN:
+	/*JUAN:*/
 	public static final String PASS_CONNECTION = "12341234";
 	public static final String CONNECTION = "jdbc:mysql://localhost:3306/" + "petkeepers"
 			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
-	*/
+	
 	
 	/*DIEGO:
 	public static final String PASS_CONNECTION = "";
@@ -39,6 +39,7 @@ public class ConstantsApi {
 	public static final String GET_SERVICIOS = "SELECT * FROM petkeepers.servicio";
 	public static final String GET_SERVICIO = "SELECT * FROM petkeepers.servicio WHERE id = ?";
 	public static final String GET_SERVICIOS_BY_NOMBRE = "SELECT * FROM petkeepers.servicio WHERE nombre = ?";
+	public static final String GET_TOP_5_SERVICIOS = "SELECT * FROM petkeepers.servicio ORDER BY puntuacion DESC LIMIT 5";
 	public static final String POST_SERVICIO = "INSERT INTO petkeepers.servicio (nombre, descripcion, precio, puntuacion, activo, imagenes, id_suscriptor) VALUES (?,?,?,?,?,?,?)";
 	public static final String UPDATE_SERVICIO = "UPDATE petkeepers.servicio SET nombre = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_suscriptor = ? WHERE (id = ?)";
 	public static final String DELETE_SERVICIO = "DELETE FROM petkeepers.servicio WHERE (id = ?)";
@@ -48,6 +49,7 @@ public class ConstantsApi {
 	public static final String GET_MASCOTAS_BY_TIPO = "SELECT id FROM petkeepers.mascota WHERE tipo = ?";
 	public static final String GET_MASCOTAS = "SELECT * FROM petkeepers.mascota";
 	public static final String GET_MASCOTA = "SELECT * FROM petkeepers.mascota WHERE id = ?";
+	public static final String GET_TOP_5_MASCOTAS = "SELECT * FROM petkeepers.mascota ORDER BY puntuacion DESC LIMIT 5";
 	public static final String POST_MASCOTA = "INSERT INTO petkeepers.mascota (nombre, tipo, nombre_mascota, descripcion, precio, puntuacion, activo, imagenes, id_cliente) VALUES (?,?,?,?,?,?,?,?,?)";
 	public static final String UPDATE_MASCOTA = "UPDATE petkeepers.mascota SET nombre = ?, tipo = ?,  nombre_mascota = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_cliente = ? WHERE (id = ?)";
 	public static final String DELETE_MASCOTA = "DELETE FROM petkeepers.mascota WHERE (id = ?)";
@@ -86,6 +88,7 @@ public class ConstantsApi {
 	public static final String GET_PRODUCTOS = "SELECT * FROM petkeepers.producto";
 	public static final String GET_PRODUCTO_BY_ID = "SELECT * FROM petkeepers.producto WHERE id = ?";
 	public static final String GET_PRODUCTOS_BY_NOMBRE = "SELECT * FROM petkeepers.producto WHERE nombre = ?";
+	public static final String GET_TOP_5_PRODUCTOS = "SELECT * FROM petkeepers.producto ORDER BY puntuacion DESC LIMIT 5";
 	public static final String POST_PRODUCTO = "INSERT INTO petkeepers.producto (nombre, descripcion, precio, puntuacion, activo, imagenes, id_proveedor) VALUES (?,?,?,?,?,?,?)";
 	public static final String UPDATE_PRODUCTO = "UPDATE petkeepers.producto SET nombre = ?, descripcion = ?, precio = ?, puntuacion = ?, activo = ?, imagenes = ?, id_proveedor = ? WHERE (id = ?)";
 	public static final String DELETE_PRODUCTO = "DELETE FROM petkeepers.producto WHERE (id = ?)";

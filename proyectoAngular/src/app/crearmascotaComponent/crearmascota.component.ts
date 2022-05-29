@@ -98,6 +98,6 @@ export class crearmascotaComponent implements OnInit {
         this._mascota.postNuevaMascota(this.mascota).subscribe((result) => {
             console.log(result);
         });
-        document.location.href = 'http://localhost:4200/';
+        document.location.href = 'http://localhost:4200/perfil';
     }
 }

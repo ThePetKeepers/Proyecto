@@ -1,11 +1,13 @@
 <div id="card">
   <h1>{{ suscriptor.nombre }}</h1>
+  <button [routerLink]="['/comentarServicio',servicio.id]"
+    style="font-size: 20px; background-color: white !important; border-color: transparent !important; border-radius: 20px; width: auto; height: 40px; font-weight: bold;">
+    COMENTAR
+  </button>
   <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin-top: 20px;">
-
     <div>
       <img src="{{servicio.imagenes}}" class="d-block w-100 h-100" alt="...">
     </div>
-
   </div>
   <div style="padding-top: 5%;">
     <h2><b>Descripción: </b>{{ servicio.descripcion }}</h2>
@@ -21,7 +23,7 @@
     <br>
     <ng-container *ngFor="let comentario of comentarios">
       <div class="card" style="margin: 20%;">
-        <h5 class="card-title">{{comentario.id_usuario}}</h5>
+        <h5 class="card-title">{{comentario.nombre_usuario}}</h5>
         <div class="card-body" style="height: 100px;">
           <h4 class="card-text"><b>Ha comentado:</b></h4>
           <h3 class="card-text">{{comentario.comentario}}</h3>

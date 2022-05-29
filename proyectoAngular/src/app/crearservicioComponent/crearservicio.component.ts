@@ -92,7 +92,7 @@ data:any;
     this._servicio.postNuevoServicio(this.servicio).subscribe((result) => {
       console.log(result);
     });
-    //document.location.href = 'http://localhost:4200/';
+    document.location.href = 'http://localhost:4200/perfil';
   }
 
 }
