@@ -22,7 +22,7 @@
       <ng-container *ngFor="let producto of productos">
         <li style="display: inline-block;  padding-top: 2%; margin-right: 2%;">
           <div class="card" id="servicios" style="width: 30rem;" [routerLink]="['/vistaproducto',producto.id]">
-            <img class="card-img-top" src="./../../assets/conejo.jpeg" style="margin-top: 5%; padding: 5%"
+            <img class="card-img-top" src="{{producto.imagenes}}" id="imagenPro" style="margin-top: 5%; padding: 5%"
               alt="Card image cap">
             <div class="card-body">
               <h3 class="card-text"><b>{{producto.nombre}}</b></h3>

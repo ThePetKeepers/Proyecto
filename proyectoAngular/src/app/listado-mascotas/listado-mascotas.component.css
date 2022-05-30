@@ -27,6 +27,10 @@ h2{
     
 }
 
+#imgennnn{
+    height: 200px;
+}
+
 button:focus{
     background-color: #d2eeec;
     color: black;

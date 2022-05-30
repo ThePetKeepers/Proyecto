@@ -20,6 +20,10 @@ h2{
     margin-left: 2%;
 }
 
+#imagenPro{
+    height: 220px;
+}
+
 #anuncios{
     color: grey;
     font-size: 20px;
@@ -85,6 +89,7 @@ input{
     -moz-border-radius:  20px 20px 20px 20px;
     -webkit-border-radius:  20px 20px 20px 20px;
     border: 0px solid #000000;
+    padding-bottom: 2%;
 }
 
 h5{

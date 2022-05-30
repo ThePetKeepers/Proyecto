@@ -22,7 +22,7 @@
     <ng-container *ngFor="let mascota of mascotas">
       <li style="display: inline-block;  padding-top: 2%; margin-right: 2%;">
         <div class="card" id="servicios" style="width: 30rem;" [routerLink]="['/vistamascota',mascota.id]">
-          <img class="card-img-top" src="{{mascota.imagenes}}" style="margin-top: 5%; padding: 5%" alt="Card image cap">
+          <img class="card-img-top" src="{{mascota.imagenes}}" id="imgennnn" style="margin-top: 5%; padding: 5%" alt="Card image cap">
           <div class="card-body" style="padding-bottom: 5%;">
             <h3 class="card-text"><b>{{mascota.nombre}}</b></h3>
             <h5 class="card-text"><b>Descripcón: </b>{{mascota.descripcion}}</h5>

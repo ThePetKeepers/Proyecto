@@ -17,6 +17,16 @@
     padding-left: 10%;
 }
 
+#imagenMain{
+    width: 200px;
+    height: 180px;
+    padding-left: 30%;
+}
+
+#imagenServicio{
+    height: 200px;
+}
+
 #header{
     background-color: #d2eeec;
 }

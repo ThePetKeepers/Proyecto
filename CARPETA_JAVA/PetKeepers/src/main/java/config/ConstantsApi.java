@@ -14,11 +14,11 @@ public class ConstantsApi {
 			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
 	*/
 
-	/*CRISTIAN:
+	/*CRISTIAN:*/
 	public static final String PASS_CONNECTION = "root";
 	public static final String CONNECTION = "jdbc:mysql://localhost:8889/" + "petkeepers"
 			+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
-	*/
+	
 	
 	// ADQUISISICION DE MASCOTAS Y SERVICIOS
 	public static final String GET_SERVICIOS_BY_CLIENT_ID = "SELECT id_servicio FROM petkeepers.adquirir_servicio WHERE id_cliente = ?";
