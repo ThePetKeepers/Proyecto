@@ -251,7 +251,7 @@ INSERT INTO producto
 (nombre, descripcion, precio, puntuacion, activo, imagenes, id_proveedor) 
 VALUES
 ("Pelota de tenis", "Especial para la mandibula de tu mascota", 5.5, 2.8, 1, "http://localhost/Proyecto/IMAGENES/productos/tenis.jpg", 1),
-("Traje de Santa", "Perfecto para navidades", 8.5, 5, 1, "http://localhost/Proyecto/IMAGENES/productos/santa.jpg", 2),
+("Traje de Santa", "Perfecto para navidades", 8.5, 5, 1, "http://localhost/Proyecto/IMAGENES/productos/santaa.jpg", 2),
 ("Collar Rosado", "Collar talla M para hamsters", 7.5, 3.8, 1, "http://localhost/Proyecto/IMAGENES/productos/collar.jpg", 3),
 ("Cepillo de dientes", "Tu mascota nunca tendra caries", 5.5, 5, 1, "http://localhost/Proyecto/IMAGENES/productos/cepillo.jpg", 1),
 ("Botas para la nieve", "Tu perro no tendra frio, al dar un paseo de invierno", 8.5, 3.5, 1, "http://localhost/Proyecto/IMAGENES/productos/botas.jpg", 2);
